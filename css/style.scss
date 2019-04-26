@@ -1,0 +1,448 @@
+// out: ../css/style.css, outputStyle: expanded
+
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h2,
+h3,
+h3,
+h4,
+h4,
+h5,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:after,
+blockquote:before,
+q:after,
+q:before {
+	content: '';
+	content: none;
+}
+
+svg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+body,
+html {
+	height: 100%;
+}
+
+img {
+	max-width: 100%;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: inherit;
+}
+
+a,
+input,
+textarea {
+	outline: none;
+}
+@font-face {
+	font-family: "Gilroy-ExtraBold";
+	src: url("../fonts/Gilroy-ExtraBold/Gilroy-ExtraBold.eot");
+	src: local('☺'), url("../fonts/Gilroy-ExtraBold/Gilroy-ExtraBold.woff") format('woff'), url("../fonts/Gilroy-ExtraBold/Gilroy-ExtraBold.ttf") format('truetype'), url("../fonts/Gilroy-ExtraBold/Gilroy-ExtraBold.svg") format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Gilroy-Light";
+	src: url("../fonts/Gilroy-Light/Gilroy-Light.eot");
+	src: local('☺'), url("../fonts/Gilroy-Light/Gilroy-Light.woff") format('woff'), url("../fonts/Gilroy-Light/Gilroy-Light.ttf") format('truetype'), url("../fonts/Gilroy-Light/Gilroy-Light.svg") format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+// .wrapper {
+// 	display: flex;
+// 	flex-direction: column;
+// 	height: 100%;
+// }
+// .content {
+// 	flex: 1 0 auto;
+// }
+//
+// .footer-wrap {
+// 	flex: 0 0 auto;
+// }
+//
+// .vertical-align {
+// 	vertical-align: middle;
+// }
+//
+// .clear {
+// 	clear: both;
+// }
+//
+// .center {
+// 	text-align: center;
+// }
+/*======================================
+  Selectric
+======================================*/
+
+.selectric-wrapper {
+	position: relative;
+	cursor: pointer;
+	text-align: center;
+	display: inline-block;
+}
+
+.selectric-responsive {
+	width: 100%;
+}
+
+.selectric {
+	border-radius: 0;
+	position: relative;
+	display: inline-block;
+	padding: 0 20px 0 0;
+	margin-left: 5px;
+
+	&:after {
+		content: "";
+		position: absolute;
+		bottom: -5px;
+		left: 0;
+		height: 1px;
+		width: 100%;
+		background: #3D3D3D;
+		z-index: 1;
+	}
+}
+
+.selectric .label {
+	display: inline-block;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-size: 17px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.selectric .button {
+	display: block;
+	position: absolute;
+	right: -10px;
+	top: -10px;
+	width: 38px;
+	height: 38px;
+	line-height: 38px;
+	color: #BBB;
+	text-align: center;
+	font: 0/0 a;
+	*font: 20px/38px Lucida Sans Unicode, Arial Unicode MS, Arial;
+}
+
+.selectric .button:after {
+	content: " ";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	width: 0;
+	height: 0;
+	border: 4px solid transparent;
+	border-top-color: #3D3D3D;
+	border-bottom: none;
+}
+
+.selectric-focus .selectric {
+	border-color: #aaaaaa;
+}
+
+.selectric-hover .selectric {
+	border-color: #c4c4c4;
+}
+
+.selectric-hover .selectric .button {
+	color: #a2a2a2;
+}
+
+.selectric-hover .selectric .button:after {
+	border-top-color: #a2a2a2;
+}
+
+.selectric-open {
+	z-index: 9999;
+}
+
+.selectric-open .selectric {
+	border-color: #c4c4c4;
+}
+
+.selectric-open .selectric-items {
+	display: block;
+}
+
+.selectric-disabled {
+	filter: alpha(opacity=50);
+	opacity: 0.5;
+	cursor: default;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.selectric-hide-select {
+	position: relative;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+}
+
+.selectric-hide-select select {
+	position: absolute;
+	left: -100%;
+}
+
+.selectric-hide-select.selectric-is-native {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+}
+
+.selectric-hide-select.selectric-is-native select {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	border: none;
+	z-index: 1;
+	box-sizing: border-box;
+	opacity: 0;
+}
+
+.selectric-input {
+	position: absolute !important;
+	top: 0 !important;
+	left: 0 !important;
+	overflow: hidden !important;
+	clip: rect(0, 0, 0, 0) !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	width: 1px !important;
+	height: 1px !important;
+	outline: none !important;
+	border: none !important;
+	*font: 0/0 a !important;
+	background: none !important;
+}
+
+.selectric-temp-show {
+	position: absolute !important;
+	visibility: hidden !important;
+	display: block !important;
+}
+/* Items box */
+.selectric-items {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background: white;
+	border: 1px solid #3D3D3D;
+	z-index: 10;
+}
+
+.selectric-items .selectric-scroll {
+	height: 100%;
+	overflow: auto;
+}
+
+.selectric-above .selectric-items {
+	top: auto;
+	bottom: 100%;
+}
+
+.selectric-items li,
+.selectric-items ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	font-size: 12px;
+	line-height: 20px;
+	min-height: 20px;
+}
+
+.selectric-items li {
+	display: block;
+	padding: 6px;
+	font-size: 17px;
+	cursor: pointer;
+}
+
+.selectric-items li.selected {
+	background: white;
+}
+
+.selectric-items li.highlighted {
+	background: white;
+}
+
+.selectric-items li:hover {
+	background: white;
+}
+
+.selectric-items .disabled {
+	filter: alpha(opacity=50);
+	opacity: 0.5;
+	cursor: default !important;
+	background: none !important;
+	color: #666 !important;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.selectric-items .selectric-group .selectric-group-label {
+	font-weight: bold;
+	padding-left: 10px;
+	cursor: default;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background: none;
+	color: #444;
+}
+
+.selectric-items .selectric-group.disabled li {
+	filter: alpha(opacity=100);
+	opacity: 1;
+}
+
+.selectric-items .selectric-group li {
+	padding-left: 25px;
+}
