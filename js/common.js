@@ -1,23 +1,23 @@
 $(document).ready(function() {
 
     // Mobile menu =============================================================
-    // $(function() {
-    //     function burger() {
-    //         $('.main-nav').toggleClass('nav-show');
-    //     };
-    //     $('.burger-menu').click(function() {
-    //         burger();
-    //     });
-    //     $('.close').click(function() {
-    //         $('.main-nav').removeClass('nav-show');
-    //     });
-    //     $(window).resize(function() {
-    //         var w = $(window).width();
-    //         if (w >= 768) {
-    //             $('.main-nav').removeAttr('style');
-    //         }
-    //     });
-    // });
+    $(".burger").click(function() {
+        $(this).toggleClass("is-active");
+        var check = $(this).hasClass("is-active");
+        if (check) {
+            $(".header-fixed").fadeIn();
+        } else {
+            $(".header-fixed").fadeOut();
+        }
+    });
+    $(function() {
+        $(window).resize(function() {
+            var w = $(window).width();
+            if (w >= 991) {
+                $('.header-fixed').removeAttr('style');
+            }
+        });
+    });
 
     // send message ============================================================
     // $(".form-reserv").submit(function () {
