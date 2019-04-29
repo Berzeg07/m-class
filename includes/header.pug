@@ -1,16 +1,26 @@
 .header
 	.header-top
 		.header-top_inner
-			.header-top_item
-				img(src="img/main-logo.png")
-			.header-top_item
-				p г.Москва, ул.Перовская,д.61/2, стр.1
-			.header-top_item
-				a(href="#").header-email sales@m-class.ru
-				a(href="#").header-phone
-					|+7(495)
-					span 127-09-27
-				a(href="#").btn.header-btn Перезвонить с сайта
+			.header-top_item.header-top_item__left
+				a(href="#").header-logo
+					.bg-box
+						.bg-box_inner
+					.header-logo_item.header-logo_img
+						img(src="img/logo-header.png")
+					.header-logo_item
+						p Мастер 
+							span Класс
+						p Водительские тренинги    
+			.header-top_item__right            
+				.header-top_item
+					p.header-adress г.Москва, 
+						b ул.Перовская,д.61/2, стр.1
+				.header-top_item
+					a(href="#").header-email sales@m-class.ru
+					a(href="#").header-phone
+						|+7(495)
+						b 127-09-27
+					a(href="#").btn.header-btn Перезвонить с сайта
 	.header-fixed
 		.header-fixed_inner
 			nav
@@ -25,12 +35,15 @@
 						a(href="#") БЛОГ МастерКласса
 					li
 						a(href="#") Контакты
-		.header-fixed_links
-			a(href="#") Заявка
-			.checkTypeint
-				a(href="#") Физ.лица
-				a(href="#") Юр.лица
-			.social
-				a(href="#").vk-social
-				a(href="#").fb-social
-				a(href="#").inst-social   
+			.header-fixed_links
+				a(href="#") Заявка
+				.checkTypeint
+					a(href="#") Физ.лица
+					a(href="#") Юр.лица
+				.social
+					a(href="#").vk-social
+						img(src="img/vk-icon.png")
+					a(href="#").fb-social
+						img(src="img/fb-icon.png")
+					a(href="#").inst-social
+						img(src="img/inst-icon.png")

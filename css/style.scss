@@ -93,6 +93,7 @@ video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
+
 article,
 aside,
 details,
@@ -175,6 +176,340 @@ textarea {
 	font-style: normal;
 }
 
+.btn {
+	font-family: "Gilroy-ExtraBold";
+	font-size: 14px;
+	width: 206px;
+	height: 44px;
+	line-height: 44px;
+	display: block;
+	border: none;
+	background: white;
+	color: #DF543E;
+	position: relative;
+	border-radius: 10em;
+	text-transform: uppercase;
+	text-align: center;
+	z-index: 1;
+	-webkit-backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+	transition: 0.5s;
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border: 2px solid white;
+		z-index: -1;
+		border-radius: inherit;
+		opacity: 0;
+		-webkit-transform: scale3d(0.6, 0.6, 1);
+		transform: scale3d(0.6, 0.6, 1);
+		-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+		transition: transform 0.3s, opacity 0.3s;
+		-webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+		transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+	}
+
+	&:hover {
+		background-color: #37474f;
+		color: white;
+	}
+
+	&:hover:before {
+		-webkit-transform: scale3d(1, 1, 1);
+		transform: scale3d(1, 1, 1);
+		opacity: 1;
+	}
+}
+
+.header-btn {
+	@media(min-width: 768px) {
+		width: 150px;
+		font-size: 11px;
+	}
+	@media(min-width: 1280px) {
+		width: 206px;
+		font-size: 14px;
+	}
+}
+
+.header {
+	&-top {
+		@media(min-width: 992px) {
+			background: linear-gradient(to right, white 26%, rgba(0,0,0,0.5) 26%, rgba(0,0,0,0.5) 100%);
+		}
+		@media(min-width: 1600px) {
+			background: linear-gradient(to right, white 35%, rgba(0,0,0,0.5) 25%, rgba(0,0,0,0.5) 100%);
+		}
+
+		&_inner {
+			max-width: 1500px;
+			margin: 0 auto;
+			display: -webkit-flex;
+			display: -ms-flex;
+			display: flex;
+			flex-direction: column;
+			@media(min-width: 992px) {
+				flex-direction: row;
+
+				.header-top_item__left {
+					display: -webkit-flex;
+					display: -ms-flex;
+					display: flex;
+				}
+			}
+		}
+
+		&_item {
+			&__right {
+				display: -webkit-flex;
+				display: -ms-flex;
+				display: flex;
+				align-items: center;
+				background: rgba(0,0,0,0.5);
+				flex-direction: column;
+				padding: 15px 0;
+				@media(min-width: 768px) {
+					align-items: baseline;
+					flex-direction: row;
+					justify-content: space-between;
+					padding: 8px 10px;
+				}
+				@media(min-width: 992px) {
+					margin-left: auto;
+					background: none;
+					flex-direction: row;
+				}
+				@media(min-width: 1280px) {
+					width: 100%;
+				}
+
+				.header-top_item {
+					&:last-child {
+						display: -webkit-flex;
+						display: -ms-flex;
+						display: flex;
+						align-items: baseline;
+						justify-content: center;
+						flex-wrap: wrap;
+						margin-top: 5px;
+						@media(min-width: 768px) {
+							margin-top: 0;
+						}
+						@media(min-width: 1280px) {
+							width: 60%;
+						}
+						@media(min-width: 1366px) {
+							width: unset;
+						}
+
+						a {
+							margin: 5px;
+							display: inline-block;
+							@media(min-width: 992px) {
+								margin: 0;
+								margin-right: 10px;
+							}
+							&:first-child{
+								@media(min-width: 992px) {
+									margin-right: 18px;
+								}
+								@media(min-width: 1280px) {
+									margin-right: auto;
+								}
+								@media(min-width: 1366px) {
+									margin-right: 57px;
+								}
+							}
+							&:nth-child(2){
+								@media(min-width: 992px) {
+									margin-right: 5px;
+								}
+								@media(min-width: 1280px) {
+									margin-right: 23px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&-adress {
+		font-family: "Gilroy-Light";
+		padding-left: 50px;
+		position: relative;
+		color: white;
+		font-size: 12px;
+		@media(min-width: 992px) {
+			margin-right: 20px;
+			padding-left: 34px;
+		}
+		@media(min-width: 1280px) {
+			margin-left: 40px;
+		}
+		@media(min-width: 1340px) {
+			margin-left: 60px;
+		}
+		@media(min-width: 1470px) {
+			margin-left: 90px;
+		}
+
+		&:hover:after {
+			transform: scale(0.8);
+		}
+
+		b {
+			font-family: "Gilroy-ExtraBold";
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: -4px;
+			width: 22px;
+			height: 22px;
+			background: url("../img/adress-icon.png") no-repeat top center;
+			transition: 0.5s;
+		}
+	}
+
+	&-email {
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 300;
+		color: white;
+		font-size: 12px;
+		padding-left: 32px;
+		position: relative;
+
+		&:after {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 4px;
+			width: 18px;
+			height: 11px;
+			background: url("../img/email-icon.png") no-repeat top center;
+		}
+	}
+
+	&-phone {
+		font-family: "Gilroy-Light";
+		color: white;
+		font-size: 12px;
+		transition: 0.5s;
+
+		&:hover {
+			font-size: 24px;
+			font-family: "Gilroy-ExtraBold";
+		}
+
+		b {
+			font-size: 24px;
+			font-family: "Gilroy-ExtraBold";
+		}
+	}
+
+	&-logo {
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 4px 0;
+		background: white;
+		position: relative;
+		@media(min-width: 1280px) {
+			width: 350px;
+		}
+		@media(min-width: 1600px) {
+			width: 450px;
+		}
+
+		.bg-box {
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 50px;
+			background: #797C7F;
+			height: 100%;
+			display: none;
+			@media(min-width: 1280px) {
+				display: block;
+			}
+			@media(min-width: 1340px) {
+				right: -33px;
+			}
+			@media(min-width: 1470px) {
+				right: -60px;
+			}
+
+			&_inner {
+				position: relative;
+
+				&:after {
+					content: "";
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 0;
+					height: 0;
+					border-top: 30px solid transparent;
+					border-left: 18px solid white;
+					border-bottom: 30px solid transparent;
+				}
+
+				&:before {
+					content: "";
+					position: absolute;
+					right: -18px;
+					top: 0;
+					width: 0;
+					height: 0;
+					border-top: 30px solid transparent;
+					border-left: 18px solid #797C7F;
+					border-bottom: 30px solid transparent;
+				}
+			}
+		}
+		@media(min-width: 992px) {
+			padding: 4px 0 0 6px;
+		}
+
+		.header-logo_img {
+			margin-right: 19px;
+		}
+
+		&_item {
+			p {
+				font-family: "Gilroy-ExtraBold";
+				font-size: 18px;
+				color: #e2543c;
+				text-transform: uppercase;
+
+				&:first-child {
+					letter-spacing: 4.26px;
+				}
+
+				&:last-child {
+					font-family: "Gilroy-Light";
+					font-size: 10px;
+					color: #2e2a34;
+				}
+
+				span {
+					font-family: "Gilroy-Light";
+				}
+			}
+		}
+	}
+}
 // .wrapper {
 // 	display: flex;
 // 	flex-direction: column;
@@ -202,7 +537,6 @@ textarea {
 /*======================================
   Selectric
 ======================================*/
-
 .selectric-wrapper {
 	position: relative;
 	cursor: pointer;
@@ -365,6 +699,7 @@ textarea {
 	display: block !important;
 }
 /* Items box */
+
 .selectric-items {
 	display: none;
 	position: absolute;
