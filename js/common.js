@@ -19,6 +19,59 @@ $(document).ready(function() {
         });
     });
 
+    $(".letters-slider").owlCarousel({
+        loop: true,
+        margin: 62,
+        responsiveClass: true,
+        nav: true,
+        autoplay: false,
+        smartSpeed: 1000,
+        center: false, //если нужны обрезаные края
+        navText: ['<span class="nav-left"></span>', '<span class="nav-right"></span>'],
+        responsive: {
+            320: {
+                items: 1
+            },
+            600: {
+                items: 2
+            },
+            768: {
+                items: 3
+            },
+            1000: {
+                items: 4
+            }
+        }
+    });
+
+    // var swiper = new Swiper('.letters-slider', {
+    //     slidesPerView: 4,
+    //     spaceBetween: 68,
+    //     loop: true,
+    //     breakpoints: {
+    //         1024: {
+    //             slidesPerView: 4,
+    //             spaceBetween: 63,
+    //         },
+    //         768: {
+    //             slidesPerView: 3,
+    //             spaceBetween: 30,
+    //         },
+    //         640: {
+    //             slidesPerView: 2,
+    //             spaceBetween: 30,
+    //         },
+    //         320: {
+    //             slidesPerView: 0,
+    //             spaceBetween: 30,
+    //         }
+    //     },
+    //     navigation: {
+    //         nextEl: '.swiper-button-next',
+    //         prevEl: '.swiper-button-prev',
+    //     },
+    // });
+
     // send message ============================================================
     // $(".form-reserv").submit(function () {
     //     var inpFirst = $(this).find('.inp_first');
