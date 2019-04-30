@@ -1,5 +1,8 @@
 $(document).ready(function() {
 
+    // wow animate
+    new WOW().init();
+
     // Mobile menu =============================================================
     $(".burger").click(function() {
         $(this).toggleClass("is-active");
@@ -74,8 +77,8 @@ $(document).ready(function() {
             els, i, l;
         if (document.querySelectorAll) {
             els = document.querySelectorAll('a[rel=simplebox]');
-            Box.getStyles('libs/simplebox/simplebox_css', 'libs/simplebox/simplebox.css');
-            Box.getScripts('libs/simplebox/simplebox_js', 'libs/simplebox/simplebox.js', function() {
+            Box.getStyles('simplebox_css', 'libs/simplebox/simplebox.css');
+            Box.getScripts('simplebox_js', 'libs/simplebox/simplebox.js', function() {
                 simplebox.init();
                 for (i = 0, l = els.length; i < l; ++i)
                     simplebox.start(els[i]);
