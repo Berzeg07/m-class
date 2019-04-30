@@ -1221,6 +1221,7 @@ nav a {
 
 .letters-slider_item:hover:after {
   background: rgba(20, 21, 25, 0);
+  display: none;
 }
 
 .letters-slider_item p {
@@ -1238,6 +1239,129 @@ nav a {
   width: 32px;
   height: 32px;
   background: url("../img/star.png") no-repeat center;
+}
+
+.newsBlock {
+  max-width: 1180px;
+  padding: 0 10px;
+  margin: 26px auto 20px;
+}
+
+.newsBlock-title {
+  margin-bottom: 25px;
+}
+
+.newsBlock-title p {
+  font-family: "Gilroy-ExtraBold";
+  text-transform: uppercase;
+  font-size: 18px;
+  color: #373737;
+}
+
+.newsBlock-slider {
+  max-width: 1006px;
+  width: 100%;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.newsBlock-slider .owl-dots {
+  display: none;
+}
+
+.newsBlock-slider .owl-nav {
+  display: block !important;
+}
+
+.newsBlock-slider .owl-nav .owl-prev, .newsBlock-slider .owl-nav .owl-next {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 18px;
+  height: 35px;
+  transition: 0,5s;
+  opacity: 1;
+}
+
+.newsBlock-slider .owl-nav .owl-prev:hover, .newsBlock-slider .owl-nav .owl-next:hover {
+  opacity: 0.5;
+}
+
+.newsBlock-slider .owl-nav .owl-prev {
+  left: -1px;
+}
+
+@media (min-width: 1280px) {
+  .newsBlock-slider .owl-nav .owl-prev {
+    left: -50px;
+  }
+}
+
+.newsBlock-slider .owl-nav .owl-prev .nav-left {
+  width: 18px;
+  height: 35px;
+  display: inline-block;
+  background: url(../img/arrow-left-2.png) no-repeat center;
+}
+
+.newsBlock-slider .owl-nav .owl-next {
+  right: -18px;
+}
+
+@media (min-width: 1280px) {
+  .newsBlock-slider .owl-nav .owl-next {
+    right: -67px;
+  }
+}
+
+.newsBlock-slider .owl-nav .owl-next .nav-right {
+  width: 18px;
+  height: 35px;
+  display: inline-block;
+  background: url(../img/arrow-right-2.png) no-repeat center;
+}
+
+.newsBlock-slider_item {
+  position: relative;
+  overflow: hidden;
+}
+
+.newsBlock-slider_item:hover .newsBlock-slider_hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.newsBlock-slider_item:hover .newsBlock-slider_text {
+  left: 50%;
+}
+
+.newsBlock-slider .newsBlock-slider_text {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 150%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s;
+}
+
+.newsBlock-slider_hover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0);
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  transition: 0.5s;
+}
+
+.newsBlock-slider_hover p {
+  font-family: "Gilroy-Light";
+}
+
+.newsBlock-slider_hover p b {
+  font-family: "Gilroy-ExtraBold";
 }
 
 /*======================================

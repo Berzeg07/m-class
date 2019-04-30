@@ -93,7 +93,6 @@ video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-
 article,
 aside,
 details,
@@ -999,7 +998,8 @@ nav {
 	background-size: cover;
 	position: relative;
 	margin-top: 20px;
-	&:after{
+
+	&:after {
 		content: '';
 		position: absolute;
 		top: -6px;
@@ -1015,6 +1015,7 @@ nav {
 	margin: 0 auto;
 	padding: 0 10px;
 	margin-bottom: 45px;
+
 	p {
 		font-family: "Gilroy-ExtraBold";
 		font-size: 18px;
@@ -1108,6 +1109,7 @@ nav {
 
 	&:hover:after {
 		background: rgba(20,21,25,0);
+		display: none;
 	}
 
 	p {
@@ -1124,6 +1126,117 @@ nav {
 			width: 32px;
 			height: 32px;
 			background: url("../img/star.png") no-repeat center;
+		}
+	}
+}
+
+.newsBlock {
+	max-width: 1180px;
+	padding: 0 10px;
+	margin: 26px auto 20px;
+
+	&-title {
+		margin-bottom: 25px;
+
+		p {
+			font-family: "Gilroy-ExtraBold";
+			text-transform: uppercase;
+			font-size: 18px;
+			color: #373737;
+		}
+	}
+}
+
+.newsBlock-slider {
+	max-width: 1006px;
+	width: 100%;
+	padding: 0 10px;
+	margin: 0 auto;
+	.owl-dots{
+		display: none;
+	}
+	.owl-nav {
+		display: block !important;
+		.owl-prev, .owl-next{
+			position: absolute;
+			top: 50%;
+			transform: translate(-50%,-50%);
+			width: 18px;
+			height: 35px;
+			transition: 0,5s;
+			opacity: 1;
+			&:hover{
+				opacity: 0.5;
+			}
+		}
+		.owl-prev{
+			left: -1px;
+			@media(min-width: 1280px){
+				left: -50px;
+			}
+			.nav-left{
+				width: 18px;
+				height: 35px;
+				display: inline-block;
+				background: url(../img/arrow-left-2.png) no-repeat center;
+			}
+		}
+		.owl-next{
+			right: -18px;
+			@media(min-width: 1280px){
+				right: -67px;
+			}
+			.nav-right{
+				width: 18px;
+				height: 35px;
+				display: inline-block;
+				background: url(../img/arrow-right-2.png) no-repeat center;
+			}
+		}
+	}
+
+	&_item {
+		position: relative;
+		overflow: hidden;
+
+		&:hover {
+			.newsBlock-slider_hover {
+				background: rgba(0,0,0,0.7);
+			}
+
+			.newsBlock-slider_text {
+				left: 50%;
+			}
+		}
+	}
+
+	.newsBlock-slider_text {
+		position: absolute;
+		width: 100%;
+		top: 50%;
+		left: 150%;
+		transform: translate(-50%,-50%);
+		transition: 0.5s;
+	}
+
+	&_hover {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background: rgba(0,0,0,0);
+		color: white;
+		text-align: center;
+		font-size: 18px;
+		transition: 0.5s;
+
+		p {
+			font-family: "Gilroy-Light";
+
+			b {
+				font-family: "Gilroy-ExtraBold";
+			}
 		}
 	}
 }
@@ -1177,6 +1290,7 @@ nav {
 /*======================================
   Selectric
 ======================================*/
+
 .selectric-wrapper {
 	position: relative;
 	cursor: pointer;
@@ -1339,7 +1453,6 @@ nav {
 	display: block !important;
 }
 /* Items box */
-
 .selectric-items {
 	display: none;
 	position: absolute;

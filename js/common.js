@@ -44,6 +44,46 @@ $(document).ready(function() {
         }
     });
 
+    $(".newsBlock-slider").owlCarousel({
+        loop: true,
+        margin: 33,
+        responsiveClass: true,
+        nav: true,
+        autoplay: false,
+        smartSpeed: 1000,
+        center: false, //если нужны обрезаные края
+        navText: ['<span class="nav-left"></span>', '<span class="nav-right"></span>'],
+        responsive: {
+            320: {
+                items: 1
+            },
+            600: {
+                items: 2
+            },
+            768: {
+                items: 3
+            },
+            1000: {
+                items: 4
+            }
+        }
+    });
+
+    (function() {
+        var boxes = [],
+            els, i, l;
+        if (document.querySelectorAll) {
+            els = document.querySelectorAll('a[rel=simplebox]');
+            Box.getStyles('libs/simplebox/simplebox_css', 'libs/simplebox/simplebox.css');
+            Box.getScripts('libs/simplebox/simplebox_js', 'libs/simplebox/simplebox.js', function() {
+                simplebox.init();
+                for (i = 0, l = els.length; i < l; ++i)
+                    simplebox.start(els[i]);
+                simplebox.start('a[rel=simplebox_group]');
+            });
+        }
+    })();
+
     // var swiper = new Swiper('.letters-slider', {
     //     slidesPerView: 4,
     //     spaceBetween: 68,
