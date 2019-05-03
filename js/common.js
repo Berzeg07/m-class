@@ -1,5 +1,11 @@
 $(document).ready(function() {
 
+    // $('.video-slider_item p').mousemove(function(e) {
+    //     var rXP = (e.pageX - this.offsetLeft - $(this).width() / 2);
+    //     var rYP = (e.pageY - this.offsetTop - $(this).height() / 2);
+    //     $('.video-slider_item p').css('text-shadow', +rYP / 10 + 'px ' + rXP / 80 + 'px rgba(227,6,19,.8), ' + rYP / 8 + 'px ' + rXP / 30 + 'px rgba(255,237,0,1), ' + rXP / 35 + 'px ' + rYP / 12 + 'px rgba(0,159,227,.7)');
+    // });
+
     $('.transmission-num').hover(function() {
 
         $('.transmission-num').removeClass('active');
@@ -70,6 +76,39 @@ $(document).ready(function() {
                 $('.header-fixed').removeAttr('style');
             }
         });
+    });
+
+    $(".schedule-slider").owlCarousel({
+        loop: true,
+        margin: 20,
+        responsiveClass: true,
+        nav: true,
+        autoplay: false,
+        smartSpeed: 1000,
+        center: false, //если нужны обрезаные края
+        navText: ['<span class="nav-left"></span>', '<span class="nav-right"></span>'],
+        responsive: {
+            320: {
+                items: 1
+            }
+        }
+    });
+
+    $(".video-slider").owlCarousel({
+        loop: true,
+        margin: 20,
+        animateOut: 'fadeOut',
+        responsiveClass: true,
+        nav: true,
+        autoplay: true,
+        smartSpeed: 1000,
+        center: false, //если нужны обрезаные края
+        navText: ['<span class="nav-left"></span>', '<span class="nav-right"></span>'],
+        responsive: {
+            320: {
+                items: 1
+            }
+        }
     });
 
     $(".letters-slider").owlCarousel({
