@@ -1370,11 +1370,35 @@ nav a {
   font-family: "Gilroy-ExtraBold";
 }
 
+.aboutUs {
+  position: relative;
+  overflow: hidden;
+}
+
+.aboutUs-smokeBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../img/smoke.png") no-repeat right center;
+  z-index: 20;
+}
+
+.aboutUs-imgBg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
+
 .aboutUs-inner {
   max-width: 1253px;
   width: 100%;
   margin: 0 auto;
   padding: 0 10px;
+  position: relative;
+  z-index: 21;
 }
 
 .aboutUs-title {
@@ -1443,6 +1467,9 @@ nav a {
     margin-bottom: 50px;
     padding-left: 120px;
   }
+}
+
+@media (min-width: 1280px) {
   .aboutUs-list ol li:first-child:before {
     width: 268px;
     height: 84px;
@@ -1525,6 +1552,207 @@ nav a {
     width: 80px;
     height: 71px;
   }
+}
+
+.transmission-wrap {
+  background: black;
+  padding: 25px 0;
+}
+
+.transmission {
+  width: 960px;
+  height: 160px;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.transmission-article {
+  color: white;
+  padding-left: 26px;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.transmission-article p,
+.transmission-article span {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.transmission-article p {
+  font-family: "Gilroy-ExtraBold";
+}
+
+.transmission-article a,
+.transmission-article span {
+  font-family: "Gilroy-Light";
+}
+
+.transmission-article_links {
+  margin-top: 14px;
+}
+
+.transmission-article_links a {
+  display: inline-block;
+  font-size: 12px;
+  text-decoration: none;
+  color: #ff553a;
+}
+
+.transmission-article_links a:first-child {
+  position: relative;
+  padding-right: 13px;
+}
+
+.transmission-article_links a:first-child:after {
+  content: "";
+  position: absolute;
+  right: 3px;
+  top: 0;
+  width: 1px;
+  height: 12px;
+  background: #ff553a;
+}
+
+.transmission-num {
+  font-family: "Gilroy-ExtraBold";
+  position: absolute;
+  text-align: center;
+  color: white;
+  font-size: 36px;
+  z-index: 20;
+}
+
+.transmission-num_pb {
+  width: 100%;
+  height: 100%;
+  background: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.transmission-num_pb:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  transition: 0.1s;
+  background: #2B2D32;
+}
+
+.transmission-num_number {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.transmission-num_number:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-radius: 10em;
+  opacity: 0;
+  border: 1px solid white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s;
+}
+
+.transmission-num_item {
+  position: relative;
+  height: 100%;
+}
+
+.transmission-num_line {
+  position: absolute;
+  bottom: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 18px;
+  width: 2px;
+  background: #2C2E33;
+  z-index: 1;
+}
+
+.transmission-item {
+  position: relative;
+  width: 33.3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.transmission-line {
+  position: absolute;
+  top: 50%;
+  width: 75.2%;
+  height: 2px;
+  background: #2C2E33;
+  z-index: 21;
+}
+
+.transmission-line_inner {
+  position: relative;
+}
+
+.transmission-line_inner #tr-progressBar {
+  position: absolute;
+  transition: 0.6s linear;
+  width: 0;
+  height: 2px;
+  background: white;
+}
+
+.transmission-article.active {
+  opacity: 1;
+}
+
+.transmission-num.active .transmission-num_number {
+  color: #DE4E37;
+}
+
+.transmission-num.active .transmission-num_number:after {
+  opacity: 1;
+  width: 64px;
+  height: 64px;
+}
+
+.transmission-num_pb.active:after {
+  transition: 0.5s linear 0.6s;
+  top: -30px;
+}
+
+.num-pos-1 {
+  top: -3.3%;
+  left: -31px;
+}
+
+.num-pos-2 {
+  right: -32px;
+  bottom: -10px;
+}
+
+.num-pos-2 .transmission-num_line {
+  top: -24px;
+}
+
+.num-pos-2 .transmission-num_pb.active:after {
+  top: 20px;
+}
+
+.num-pos-3 {
+  top: -3.3%;
+  right: -32px;
 }
 
 /*======================================

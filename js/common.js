@@ -1,5 +1,55 @@
 $(document).ready(function() {
 
+    $('.transmission-num').hover(function() {
+
+        $('.transmission-num').removeClass('active');
+        $(this).addClass('active');
+        $('.transmission-article').removeClass('active');
+        // $(this).parents('.transmission-item').find('.transmission-article').addClass('active');
+
+        $('.transmission-num_pb').removeClass('active');
+        var smallLine = $(this).find('.transmission-num_pb');
+
+        function showLine() {
+            $(smallLine).addClass('active');
+        }
+
+        var id = $(this).attr('id');
+        console.log(id);
+        if (id == 'num-1') {
+            $('#tr-progressBar').css('width', '0%');
+            $('#article-1').addClass('active');
+            showLine();
+        }
+        if (id == 'num-2' || id == 'num-3') {
+            $('#tr-progressBar').css('width', '33.4%');
+            showLine();
+            if (id == 'num-2') {
+                $('#article-2').addClass('active');
+            }
+            if (id == 'num-3') {
+                $('#article-3').addClass('active');
+            }
+        }
+        if (id == 'num-4' || id == 'num-5') {
+            $('#tr-progressBar').css('width', '66.7%');
+            showLine();
+            if (id == 'num-4') {
+                $('#article-4').addClass('active');
+            }
+            if (id == 'num-5') {
+                $('#article-5').addClass('active');
+            }
+        }
+        if (id == 'num-6') {
+            $('#tr-progressBar').css('width', '99.9%');
+            showLine();
+            $('#article-6').addClass('active');
+        }
+
+    });
+
+
     // wow animate
     new WOW().init();
 

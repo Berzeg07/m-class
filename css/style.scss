@@ -93,7 +93,6 @@ video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-
 article,
 aside,
 details,
@@ -1256,11 +1255,33 @@ nav {
 }
 
 .aboutUs {
+	position: relative;
+	overflow: hidden;
+
+	&-smokeBg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: url("../img/smoke.png") no-repeat right center;
+		z-index: 20;
+	}
+
+	&-imgBg {
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 10;
+	}
+
 	&-inner {
 		max-width: 1253px;
 		width: 100%;
 		margin: 0 auto;
 		padding: 0 10px;
+		position: relative;
+		z-index: 21;
 	}
 
 	&-title {
@@ -1308,6 +1329,7 @@ nav {
 		&:hover:after {
 			border: 1px solid #373737;
 		}
+
 		&:hover:before {
 			opacity: 1;
 		}
@@ -1315,7 +1337,8 @@ nav {
 			padding-bottom: 50px;
 			margin-bottom: 50px;
 			padding-left: 120px;
-
+		}
+		@media(min-width: 1280px) {
 			&:first-child:before {
 				width: 268px;
 				height: 84px;
@@ -1398,6 +1421,217 @@ nav {
 		}
 	}
 }
+
+.transmission-wrap {
+	background: black;
+	padding: 25px 0;
+}
+
+.transmission {
+	width: 960px;
+	height: 160px;
+	position: relative;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+
+	&-article {
+		color: white;
+		padding-left: 26px;
+		transition: 0.5s;
+		opacity: 0;
+
+		p,
+		span {
+			font-size: 14px;
+			text-transform: uppercase;
+		}
+
+		p {
+			font-family: "Gilroy-ExtraBold";
+		}
+
+		a,
+		span {
+			font-family: "Gilroy-Light";
+		}
+
+		&_links {
+			margin-top: 14px;
+
+			a {
+				display: inline-block;
+				font-size: 12px;
+				text-decoration: none;
+				color: #ff553a;
+
+				&:first-child {
+					position: relative;
+					padding-right: 13px;
+
+					&:after {
+						content: "";
+						position: absolute;
+						right: 3px;
+						top: 0;
+						width: 1px;
+						height: 12px;
+						background: #ff553a;
+					}
+				}
+			}
+		}
+	}
+
+	&-num {
+		font-family: "Gilroy-ExtraBold";
+		position: absolute;
+		text-align: center;
+		// outline: 1px solid red;
+		color: white;
+		font-size: 36px;
+		z-index: 20;
+
+		&_pb {
+			width: 100%;
+			height: 100%;
+			background: white;
+			position: relative;
+			overflow: hidden;
+
+			&:after {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 2px;
+				height: 100%;
+				// transition: 0.1s linear 0s;
+				transition: 0.1s;
+				background: #2B2D32;
+			}
+		}
+
+		&_number {
+			position: relative;
+			width: 64px;
+			height: 64px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			&:after {
+				content: "";
+				position: absolute;
+				width: 0;
+				height: 0;
+				border-radius: 10em;
+				opacity: 0;
+				border: 1px solid white;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+				transition: 0.5s;
+			}
+		}
+
+		&_item {
+			position: relative;
+			height: 100%;
+		}
+
+		&_line {
+			position: absolute;
+			bottom: -22px;
+			left: 50%;
+			transform: translateX(-50%);
+			height: 18px;
+			width: 2px;
+			background: #2C2E33;
+			z-index: 1;
+		}
+	}
+
+	&-item {
+		position: relative;
+		// outline: 1px solid blue;
+		width: 33.3%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&-line {
+		position: absolute;
+		top: 50%;
+		width: 75.2%;
+		height: 2px;
+		background: #2C2E33;
+		z-index: 21;
+
+		&_inner {
+			position: relative;
+
+			#tr-progressBar {
+				position: absolute;
+				transition: 0.6s linear;
+				width: 0;
+				height: 2px;
+				background: white;
+			}
+		}
+	}
+}
+
+.transmission-article.active {
+	opacity: 1;
+}
+
+.transmission-num.active {
+	.transmission-num_number {
+		color: #DE4E37;
+	}
+
+	.transmission-num_number:after {
+		opacity: 1;
+		width: 64px;
+		height: 64px;
+	}
+}
+
+.transmission-num_pb.active {
+	&:after {
+		transition: 0.5s linear 0.6s;
+		top: -30px;
+	}
+}
+// Numbers position
+
+.num-pos-1 {
+	top: -3.3%;
+	left: -31px;
+}
+
+.num-pos-2 {
+	right: -32px;
+	bottom: -10px;
+
+	.transmission-num_line {
+		top: -24px;
+	}
+
+	.transmission-num_pb.active {
+		&:after {
+			top: 20px;
+		}
+	}
+}
+
+.num-pos-3 {
+	top: -3.3%;
+	right: -32px;
+}
 // .letters-slider .swiper-button-next,
 // .letters-slider .swiper-button-prev {
 // 	position: absolute;
@@ -1448,6 +1682,7 @@ nav {
 /*======================================
   Selectric
 ======================================*/
+
 .selectric-wrapper {
 	position: relative;
 	cursor: pointer;
@@ -1610,7 +1845,6 @@ nav {
 	display: block !important;
 }
 /* Items box */
-
 .selectric-items {
 	display: none;
 	position: absolute;
