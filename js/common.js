@@ -6,12 +6,31 @@ $(document).ready(function() {
     //     $('.video-slider_item p').css('text-shadow', +rYP / 10 + 'px ' + rXP / 80 + 'px rgba(227,6,19,.8), ' + rYP / 8 + 'px ' + rXP / 30 + 'px rgba(255,237,0,1), ' + rXP / 35 + 'px ' + rYP / 12 + 'px rgba(0,159,227,.7)');
     // });
 
+    $('.shedule-lessons li').click(function() {
+        $('.shedule-lessons li').removeClass('active');
+        $(this).addClass('active');
+    });
+
+    $('.schedule-selectCity p').click(function() {
+        $('.schedule-selectCity_dropDown').slideToggle();
+        $('.schedule-selectCity_dropDown li').click(function() {
+            var choosenCity = $(this).html();
+            $('.schedule-selectCity_dropDown').slideUp();
+            $('.schedule-selectCity p').html(choosenCity);
+        });
+    });
+
+    $(document).click(function(event) {
+        if ($(event.target).closest(".schedule-selectCity").length) return;
+        $(".schedule-selectCity_dropDown").slideUp();
+        event.stopPropagation();
+    });
+
     $('.transmission-num').hover(function() {
 
         $('.transmission-num').removeClass('active');
         $(this).addClass('active');
         $('.transmission-article').removeClass('active');
-        // $(this).parents('.transmission-item').find('.transmission-article').addClass('active');
 
         $('.transmission-num_pb').removeClass('active');
         var smallLine = $(this).find('.transmission-num_pb');
@@ -54,7 +73,6 @@ $(document).ready(function() {
         }
 
     });
-
 
     // wow animate
     new WOW().init();
