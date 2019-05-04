@@ -11,6 +11,20 @@ $(document).ready(function() {
         $(this).addClass('active');
     });
 
+    $(".schedule-timeBox_item").click(function() {
+        $(".schedule-timeBox_item").removeClass('active');
+        $(this).addClass('active');
+    });
+
+    $('.schedule-inp_input').focus(function() {
+        $('.schedule-inp label').removeClass('active');
+        $(this).parent().addClass('active');
+    });
+
+    $('.schedule-inp_input').blur(function() {
+        $('.schedule-inp label').removeClass('active');
+    });
+
     $('.schedule-selectCity p').click(function() {
         $('.schedule-selectCity_dropDown').slideToggle();
         $('.schedule-selectCity_dropDown li').click(function() {
@@ -76,6 +90,8 @@ $(document).ready(function() {
 
     // wow animate
     new WOW().init();
+
+    $(".schedule-inp_phone").mask("+ 7 (999) 999 - 99 - 99?");
 
     // Mobile menu =============================================================
     $(".burger").click(function() {
@@ -193,6 +209,49 @@ $(document).ready(function() {
             });
         }
     })();
+
+    var swiper = new Swiper('.advantages-slider', {
+        spaceBetween: 30,
+        // slidesPerView: 1,
+        fadeEffect: {
+            crossFade: true
+        },
+        effect: 'fade',
+        autoplay: {
+            delay: 3000,
+        },
+        loop: false
+    });
+
+    $('.calendar-inner_item a').click(function(e) {
+        e.preventDefault();
+        $('.calendar-inner_item a').removeClass('click-active');
+        var check = $(this).hasClass('free-active');
+
+        if (check) {
+            $(this).addClass('click-active');
+            var tab = $(this).attr('href');
+            $('.schedule-timeBox').not(tab).css({
+                'display': 'none'
+            });
+            $(tab).fadeIn(400);
+            $('.hiddenTab').fadeIn();
+        }
+        if (!check) {
+            $('.hiddenTab').fadeOut();
+        }
+    });
+
+    $('.calendar-inner_item a').click(function(e) {
+        e.preventDefault();
+        $('a').removeClass('active');
+        $(this).addClass('active');
+        var tab = $(this).attr('href');
+        $('.tab__box').not(tab).css({
+            'display': 'none'
+        });
+        $(tab).fadeIn(400);
+    });
 
     // var swiper = new Swiper('.letters-slider', {
     //     slidesPerView: 4,

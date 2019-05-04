@@ -1262,6 +1262,11 @@ nav {
 .aboutUs {
 	position: relative;
 	overflow: hidden;
+	padding-top: 35px;
+	box-shadow: -2px 1px 8px rgba(95, 95, 95, 0.36);
+	@media(min-width: 1280px){
+		padding-top: 102px;
+	}
 
 	&-smokeBg {
 		position: absolute;
@@ -1652,6 +1657,7 @@ nav {
 	// height: 100%;
 	video {
 		width: 100%;
+		// height: 100%;
 	}
 }
 
@@ -1713,18 +1719,24 @@ nav {
 	padding: 0 10px;
 	position: relative;
 	margin: 0 auto;
-	display: -webkit-flex;
-	display: -ms-flex;
-	display: flex;
+	@media(min-width: 1280px) {
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
 
-	&__item {
-		width: 50%;
+		&__item {
+			width: 50%;
+		}
 	}
 }
 
 .calendar {
-	width: 490px;
+	width: 300px;
+	margin: 0 auto;
 	position: relative;
+	@media(min-width: 768px) {
+		width: 490px;
+	}
 
 	&-line_1,
 	&-line_2,
@@ -1753,9 +1765,12 @@ nav {
 	}
 
 	&-line_4 {
-		right: 0;
+		right: 20px;
 		width: 1px;
 		height: 100%;
+		@media(min-width: 768px) {
+			right: 0;
+		}
 	}
 
 	.calendar-inner {
@@ -1796,7 +1811,7 @@ nav {
 					content: "";
 					position: absolute;
 					width: 77px;
-					height: 56px;
+					height: 59px;
 					box-shadow: -2px 3px 4px rgba(95, 95, 95, 0.64);
 					border: 1px solid #df4f38;
 					background-color: #df4f38;
@@ -1810,21 +1825,75 @@ nav {
 				font-weight: 800;
 				cursor: pointer;
 			}
+			@media(max-width: 767px) {
+				&:nth-child(4n+1) {
+					border-left: 1px solid black;
+				}
 
-			&:nth-child(7n+1) {
-				border-left: 1px solid black;
+				&:nth-child(-n + 4) {
+					border-top: 1px solid black;
+				}
 			}
+			@media(min-width: 768px) {
+				&:nth-child(7n+1) {
+					border-left: 1px solid black;
+				}
 
-			&:nth-child(-n + 7) {
-				border-top: 1px solid black;
+				&:nth-child(-n + 7) {
+					border-top: 1px solid black;
+				}
 			}
 		}
 	}
 }
 
+.hiddenTab{
+	display: none;
+}
+
 .schedule-slider {
+	max-width: 540px;
+	margin: 0 auto;
 	.owl-item {
 		padding: 10px;
+	}
+	.owl-dots{
+		display: none;
+	}
+	.owl-prev, .owl-next{
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 18px;
+		height: 35px;
+		transition: 0.5s;
+		&:hover{
+			opacity: 0.5;
+		}
+	}
+	.owl-prev{
+		left: 0;
+		@media(min-width: 1280px){
+			left: -35px;
+		}
+	}
+	.owl-next{
+		right: 0;
+		@media(min-width: 1280px){
+			right: -110%;
+		}
+	}
+	.nav-left{
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+		background: url(../img/arrow-left-2.png) no-repeat center;
+	}
+	.nav-right{
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+		background: url(../img/arrow-right-2.png) no-repeat center;
 	}
 
 	&_date {
@@ -1832,6 +1901,10 @@ nav {
 		text-transform: uppercase;
 		font-size: 18px;
 		margin-bottom: 25px;
+		text-align: center;
+		@media(min-width: 1280px) {
+			text-align: left;
+		}
 	}
 }
 
@@ -1839,7 +1912,12 @@ nav {
 	font-family: "Gilroy-Light";
 	font-size: 14px;
 	margin-bottom: 30px;
-	margin-top: 53px;
+	margin-top: 0px;
+	text-align: center;
+	@media(min-width: 1280px) {
+		margin-top: 53px;
+		text-align: left;
+	}
 }
 
 .schedule-timeBox {
@@ -1847,7 +1925,11 @@ nav {
 	justify-content: space-between;
 	flex-wrap: wrap;
 	max-width: 494px;
-	margin-bottom: 31px;
+	margin: 0 auto;
+	cursor: pointer;
+	@media(min-width: 1280px) {
+		margin: 0 0 31px;
+	}
 
 	&_item {
 		font-family: "Gilroy-Light";
@@ -1866,18 +1948,25 @@ nav {
 	display: -webkit-flex;
 	display: -ms-flex;
 	display: flex;
-	justify-content: space-between;
+	flex-direction: column;
+	align-items: center;
+	@media(min-width: 1280px) {
+		flex-direction: row;
+		justify-content: space-between;
+	}
 
 	label {
 		position: relative;
 		overflow: hidden;
 		display: block;
+		width: 100%;
+		margin-bottom: 10px;
 
 		&:after {
 			content: "";
 			position: absolute;
 			bottom: 0;
-			left: 0;
+			left: -100%;
 			width: 100%;
 			height: 1px;
 			background: #888A8D;
@@ -1910,13 +1999,19 @@ nav {
 		:-ms-input-placeholder {
 			color: #000000;
 		}
+		@media(min-width: 768px) {
+			&:first-child {
+				width: 49%;
+			}
 
-		&:first-child {
-			width: 49%;
+			&:last-child {
+				width: 49%;
+			}
 		}
-
-		&:last-child {
-			width: 49%;
+	}
+	label.active{
+		&:after{
+			left: 0%;
 		}
 	}
 }
@@ -1927,7 +2022,11 @@ nav {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	flex-direction: column;
 	margin-top: 23px;
+	@media(min-width: 1280px) {
+		flex-direction: row;
+	}
 
 	.schedule-btn {
 		background: #DE4E37;
@@ -1945,6 +2044,8 @@ nav {
 	}
 
 	&_item {
+		margin-bottom: 25px;
+
 		p {
 			font-family: 'Open Sans', sans-serif;
 			font-size: 14px;
@@ -2010,14 +2111,11 @@ nav {
 
 .schedule-selectCity {
 	font-family: "Gilroy-ExtraBold";
-	// margin-left: 15px;
 	position: relative;
-	// max-width: 340px;
-	// width: 100%;
+
 	p {
 		margin-bottom: 15px;
 		position: relative;
-		// padding-right: 33px;
 		padding-left: 20px;
 		display: inline-block;
 		cursor: pointer;
@@ -2043,7 +2141,6 @@ nav {
 	top: 100%;
 	background: white;
 	display: none;
-	// display: flex;
 	z-index: 26;
 	width: 280px;
 	padding: 10px 10px 10px 20px;
@@ -2072,6 +2169,7 @@ nav {
 	align-items: center;
 	flex-direction: column;
 	justify-content: center;
+
 	@media(min-width: 768px) {
 		flex-direction: row;
 	}
@@ -2165,6 +2263,16 @@ nav {
 		}
 	}
 }
+
+.advantages{
+	background: #F2F2F2;
+	padding: 20px 10px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+
 // .letters-slider .swiper-button-next,
 // .letters-slider .swiper-button-prev {
 // 	position: absolute;
