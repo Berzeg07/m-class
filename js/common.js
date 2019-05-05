@@ -6,6 +6,17 @@ $(document).ready(function() {
     //     $('.video-slider_item p').css('text-shadow', +rYP / 10 + 'px ' + rXP / 80 + 'px rgba(227,6,19,.8), ' + rYP / 8 + 'px ' + rXP / 30 + 'px rgba(255,237,0,1), ' + rXP / 35 + 'px ' + rYP / 12 + 'px rgba(0,159,227,.7)');
     // });
 
+    $(function(){
+        $(window).scroll(function() {
+            if($(this).scrollTop() >= 60) {
+                $('.header-fixed').addClass('stickytop');
+            }
+            else{
+                $('.header-fixed').removeClass('stickytop');
+            }
+        });
+    });
+
     $('.shedule-lessons li').click(function() {
         $('.shedule-lessons li').removeClass('active');
         $(this).addClass('active');
@@ -45,7 +56,6 @@ $(document).ready(function() {
         $('.transmission-num').removeClass('active');
         $(this).addClass('active');
         $('.transmission-article').removeClass('active');
-
         $('.transmission-num_pb').removeClass('active');
         var smallLine = $(this).find('.transmission-num_pb');
 
@@ -54,7 +64,7 @@ $(document).ready(function() {
         }
 
         var id = $(this).attr('id');
-        console.log(id);
+
         if (id == 'num-1') {
             $('#tr-progressBar').css('width', '0%');
             $('#article-1').addClass('active');

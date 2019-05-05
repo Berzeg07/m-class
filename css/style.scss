@@ -93,6 +93,7 @@ video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
+
 article,
 aside,
 details,
@@ -1444,6 +1445,16 @@ nav {
 	}
 }
 
+.header-fixed.stickytop {
+	@media(min-width: 992px) {
+		position: fixed;
+		width: 100%;
+		top: 0;
+		left: 0;
+		z-index: 20;
+	}
+}
+
 .transmission-mob {
 	display: -webkit-flex;
 	display: -ms-flex;
@@ -2399,7 +2410,6 @@ nav {
 /*======================================
   Selectric
 ======================================*/
-
 .selectric-wrapper {
 	position: relative;
 	cursor: pointer;
@@ -2562,6 +2572,7 @@ nav {
 	display: block !important;
 }
 /* Items box */
+
 .selectric-items {
 	display: none;
 	position: absolute;

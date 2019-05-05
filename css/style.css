@@ -1577,6 +1577,16 @@ nav a {
   }
 }
 
+@media (min-width: 992px) {
+  .header-fixed.stickytop {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 20;
+  }
+}
+
 .transmission-mob {
   display: -webkit-flex;
   display: -ms-flex;
