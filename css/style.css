@@ -1571,6 +1571,81 @@ nav a {
   padding: 25px 0;
 }
 
+@media (min-width: 1190px) {
+  .transmission-wrap {
+    padding-left: 200px;
+  }
+}
+
+.transmission-mob {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: center;
+  padding: 0 10px;
+  width: 100%;
+}
+
+@media (min-width: 1190px) {
+  .transmission-mob {
+    display: none;
+  }
+}
+
+.transmission-mob ol {
+  list-style-type: none;
+  counter-reset: num;
+}
+
+@media (min-width: 768px) {
+  .transmission-mob ol {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+
+.transmission-mob ol li {
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 55px;
+}
+
+.transmission-mob ol li:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "" counter(num);
+  counter-increment: num;
+  font-family: "Gilroy-ExtraBold";
+  font-size: 26px;
+  display: inline-block;
+  color: white;
+  border: 1px solid white;
+  border-radius: 10em;
+  background: none;
+  text-align: center;
+  line-height: 40px;
+  width: 40px;
+  height: 40px;
+}
+
+.transmission-mob .transmission-article_links {
+  margin-top: 5px;
+}
+
+.transmission-mob p {
+  color: white;
+  text-transform: uppercase;
+  font-family: "Gilroy-ExtraBold";
+  font-size: 15px;
+}
+
+.transmission-mob p span {
+  font-family: "Gilroy-Light";
+}
+
 .transmission {
   width: 960px;
   height: 160px;
@@ -1578,6 +1653,13 @@ nav a {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  display: none;
+}
+
+@media (min-width: 1190px) {
+  .transmission {
+    display: flex;
+  }
 }
 
 .transmission-article {
@@ -1985,7 +2067,8 @@ nav a {
   display: none;
 }
 
-.schedule-slider .owl-prev, .schedule-slider .owl-next {
+.schedule-slider .owl-next,
+.schedule-slider .owl-prev {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -1994,7 +2077,8 @@ nav a {
   transition: 0.5s;
 }
 
-.schedule-slider .owl-prev:hover, .schedule-slider .owl-next:hover {
+.schedule-slider .owl-next:hover,
+.schedule-slider .owl-prev:hover {
   opacity: 0.5;
 }
 
@@ -2022,14 +2106,14 @@ nav a {
   display: inline-block;
   width: 100%;
   height: 100%;
-  background: url(../img/arrow-left-2.png) no-repeat center;
+  background: url("../img/arrow-left-2.png") no-repeat center;
 }
 
 .schedule-slider .nav-right {
   display: inline-block;
   width: 100%;
   height: 100%;
-  background: url(../img/arrow-right-2.png) no-repeat center;
+  background: url("../img/arrow-right-2.png") no-repeat center;
 }
 
 .schedule-slider_date {
@@ -2050,7 +2134,7 @@ nav a {
   font-family: "Gilroy-Light";
   font-size: 14px;
   margin-bottom: 30px;
-  margin-top: 0px;
+  margin-top: 0;
   text-align: center;
 }
 
@@ -2159,7 +2243,7 @@ nav a {
 }
 
 .schedule-inp label.active:after {
-  left: 0%;
+  left: 0;
 }
 
 .schedule-btnBox {
