@@ -10,9 +10,12 @@ $(document).ready(function() {
         $(window).scroll(function() {
             if($(this).scrollTop() >= 60) {
                 $('.header-fixed').addClass('stickytop');
+                $('.header-logo img').addClass('logo-fixed');
+
             }
-            else{
+            if($(this).scrollTop() < 60){
                 $('.header-fixed').removeClass('stickytop');
+                $('.header-logo img').removeClass('logo-fixed');
             }
         });
     });

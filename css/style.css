@@ -580,6 +580,7 @@ textarea {
 }
 
 .header-logo .header-logo_img {
+  width: 46px;
   margin-right: 19px;
 }
 
@@ -602,6 +603,25 @@ textarea {
 
 .header-logo_item p span {
   font-family: "Gilroy-Light";
+}
+
+.header-logo img {
+  transition: 0.5s;
+}
+
+@media (min-width: 992px) {
+  .header-logo img.logo-fixed {
+    top: 2px;
+    position: fixed;
+  }
+}
+
+@media (min-width: 992px) {
+  .header-logo img {
+    top: 8px;
+    position: fixed;
+    z-index: 22;
+  }
 }
 
 .burger {
@@ -668,6 +688,7 @@ textarea {
   left: 0;
   top: 0;
   z-index: 10;
+  transition: 0.5s;
 }
 
 @media (min-width: 992px) {
@@ -1584,6 +1605,7 @@ nav a {
     top: 0;
     left: 0;
     z-index: 20;
+    padding-left: 80px;
   }
 }
 

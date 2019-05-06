@@ -514,6 +514,7 @@ textarea {
 		}
 
 		.header-logo_img {
+			width: 46px;
 			margin-right: 19px;
 		}
 
@@ -539,6 +540,25 @@ textarea {
 				}
 			}
 		}
+	}
+}
+
+.header-logo img{
+	transition: 0.5s;
+}
+
+.header-logo img.logo-fixed {
+	@media(min-width: 992px) {
+		top: 2px;
+		position: fixed;
+	}
+}
+
+.header-logo img {
+	@media(min-width: 992px) {
+		top: 8px;
+		position: fixed;
+		z-index: 22;
 	}
 }
 
@@ -603,6 +623,7 @@ textarea {
 	left: 0;
 	top: 0;
 	z-index: 10;
+	transition: 0.5s;
 	@media(min-width: 992px) {
 		position: unset;
 		display: block;
@@ -1452,6 +1473,7 @@ nav {
 		top: 0;
 		left: 0;
 		z-index: 20;
+		padding-left: 80px;
 	}
 }
 
