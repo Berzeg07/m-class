@@ -1,19 +1,128 @@
 $(document).ready(function() {
 
-    // $('.video-slider_item p').mousemove(function(e) {
-    //     var rXP = (e.pageX - this.offsetLeft - $(this).width() / 2);
-    //     var rYP = (e.pageY - this.offsetTop - $(this).height() / 2);
-    //     $('.video-slider_item p').css('text-shadow', +rYP / 10 + 'px ' + rXP / 80 + 'px rgba(227,6,19,.8), ' + rYP / 8 + 'px ' + rXP / 30 + 'px rgba(255,237,0,1), ' + rXP / 35 + 'px ' + rYP / 12 + 'px rgba(0,159,227,.7)');
-    // });
+    $('.article-title_arrow').click(function() {
+        function removeActive() {
+            $('.article-title_arrow').removeClass('active');
+            $('.news').removeClass('active');
+        }
 
-    $(function(){
+        function hideContent(block) {
+            $(block).find('.news-article_des').css('display', 'block');
+            $(block).find('.news-thumb').css('display', 'block');
+            $(block).find('.news-content_hidden').css('display', 'none');
+        }
+
+        removeActive();
+
+        $(this).addClass('active');
+        var parent = $(this).parents('.news');
+        $(parent).addClass('active');
+        var check = $(parent).hasClass('active');
+
+        hideContent('.news');
+
+        if (check) {
+            $(parent).find('.news-article_des').css('display', 'none');
+            $(parent).find('.news-thumb').css('display', 'none');
+            $(parent).find('.news-content_hidden').fadeIn();
+        }
+
+        $('.news-hide button').click(function() {
+            removeActive();
+            var parentBtn = $(this).parents('.news');
+            hideContent(parentBtn);
+        });
+    });
+
+    $('.pagination a').click(function(){
+        $('.pagination a').removeClass('active');
+        $(this).addClass('active');
+    });
+
+
+    $(function() {
+        var d = new Date(),
+            n = d.getMonth(),
+            day = d.getDate();
+
+        $('.calendar-inner_item a').removeClass('click-active');
+
+        $('.calendar-inner .calendar-inner_item').each(function() {
+            var dateNum = $(this).find('span').html();
+            $(this).attr('data', dateNum);
+            var checkAttr = $(this).attr("data");
+            if (checkAttr == day) {
+                $(this).find('a').addClass('click-active');
+            }
+        });
+
+        $(".schedule-slider").owlCarousel({
+            loop: true,
+            margin: 20,
+            responsiveClass: true,
+            nav: true,
+            autoplay: false,
+            smartSpeed: 1000,
+            center: false, //если нужны обрезаные края
+            navText: ['<span class="nav-left"></span>', '<span class="nav-right"></span>'],
+            URLhashListener: true,
+            autoplayHoverPause: true,
+            startPosition: n,
+            responsive: {
+                320: {
+                    items: 1
+                }
+            }
+        });
+
+        $('.calendar-inner_item a').each(function() {
+            var checkCalendar = $(this).hasClass('free-active');
+            if (!checkCalendar) {
+                $('.noLessons').addClass('dFlex');
+                $('.noLessons').fadeIn();
+                $('.hiddenTab').fadeOut();
+            }
+        });
+
+    });
+
+    $('.calendar-inner_item a').click(function(e) {
+        e.preventDefault();
+        $('.calendar-inner_item a').removeClass('click-active');
+        var check = $(this).hasClass('free-active');
+
+        if (check) {
+            $('.noLessons').fadeOut();
+            $(this).addClass('click-active');
+            var tab = $(this).attr('href');
+            $('.schedule-timeBox').not(tab).css({
+                'display': 'none'
+            });
+            $(tab).fadeIn(400);
+            $('.hiddenTab').fadeIn();
+        }
+        if (!check) {
+            $(this).addClass('click-active');
+            $('.noLessons').addClass('dFlex');
+            $('.noLessons').fadeIn();
+            $('.hiddenTab').fadeOut();
+        }
+    });
+
+    $('.video-slider_item p').mousemove(function(e) {
+        var rXP = (e.pageX - this.offsetLeft - $(this).width() / 2);
+        var rYP = (e.pageY - this.offsetTop - $(this).height() / 2);
+        $('.video-slider_item p').css('text-shadow', +rYP / 50 + 'px ' + rXP / 80 + 'px rgba(221,71,46,.6), ' + rXP / 70 + 'px ' + rYP / 112 + 'px rgba(66,17,20,.7)');
+    });
+
+    $(function() {
         $(window).scroll(function() {
-            if($(this).scrollTop() >= 60) {
+            if ($(this).scrollTop() >= 60) {
                 $('.header-fixed').addClass('stickytop');
                 $('.header-logo img').addClass('logo-fixed');
 
             }
-            if($(this).scrollTop() < 60){
+            if ($(this).scrollTop() < 60) {
                 $('.header-fixed').removeClass('stickytop');
                 $('.header-logo img').removeClass('logo-fixed');
             }
@@ -125,22 +234,6 @@ $(document).ready(function() {
         });
     });
 
-    $(".schedule-slider").owlCarousel({
-        loop: true,
-        margin: 20,
-        responsiveClass: true,
-        nav: true,
-        autoplay: false,
-        smartSpeed: 1000,
-        center: false, //если нужны обрезаные края
-        navText: ['<span class="nav-left"></span>', '<span class="nav-right"></span>'],
-        responsive: {
-            320: {
-                items: 1
-            }
-        }
-    });
-
     $(".video-slider").owlCarousel({
         loop: true,
         margin: 20,
@@ -236,35 +329,7 @@ $(document).ready(function() {
         loop: false
     });
 
-    $('.calendar-inner_item a').click(function(e) {
-        e.preventDefault();
-        $('.calendar-inner_item a').removeClass('click-active');
-        var check = $(this).hasClass('free-active');
 
-        if (check) {
-            $(this).addClass('click-active');
-            var tab = $(this).attr('href');
-            $('.schedule-timeBox').not(tab).css({
-                'display': 'none'
-            });
-            $(tab).fadeIn(400);
-            $('.hiddenTab').fadeIn();
-        }
-        if (!check) {
-            $('.hiddenTab').fadeOut();
-        }
-    });
-
-    $('.calendar-inner_item a').click(function(e) {
-        e.preventDefault();
-        $('a').removeClass('active');
-        $(this).addClass('active');
-        var tab = $(this).attr('href');
-        $('.tab__box').not(tab).css({
-            'display': 'none'
-        });
-        $(tab).fadeIn(400);
-    });
 
     // var swiper = new Swiper('.letters-slider', {
     //     slidesPerView: 4,

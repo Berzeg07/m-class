@@ -12,49 +12,8 @@
 
 
 	video(autoplay muted loop)
-		source(src="video/iceweb.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
-		//- source(src="video/drift3.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
-
+		source(src="video/drift.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
 	<div class="transmission-wrap">
-		.transmission-mob
-			ol
-				li 
-					p Габариты 
-						span и секреты парковки
-					.transmission-article_links    
-						a(href="#") Перейти
-						a(href="#") Другие программы
-				li 
-					p Габариты 
-						span и секреты парковки
-					.transmission-article_links    
-						a(href="#") Перейти
-						a(href="#") Другие программы
-				li 
-					p Габариты 
-						span и секреты парковки
-					.transmission-article_links    
-						a(href="#") Перейти
-						a(href="#") Другие программы
-				li 
-					p Габариты 
-						span и секреты парковки
-					.transmission-article_links    
-						a(href="#") Перейти
-						a(href="#") Другие программы
-				li 
-					p Габариты 
-						span и секреты парковки
-					.transmission-article_links    
-						a(href="#") Перейти
-						a(href="#") Другие программы
-				li 
-					p Габариты 
-						span и секреты парковки
-					.transmission-article_links    
-						a(href="#") Перейти
-						a(href="#") Другие программы                                
-
 
 		<div class="transmission">
 
@@ -190,6 +149,44 @@
 
 		</div>
 	</div>
+.transmission-mob
+	ol
+		li 
+			p Габариты 
+				span и секреты парковки
+			.transmission-article_links    
+				a(href="#") Перейти
+				a(href="#") Другие программы
+		li 
+			p Габариты 
+				span и секреты парковки
+			.transmission-article_links    
+				a(href="#") Перейти
+				a(href="#") Другие программы
+		li 
+			p Габариты 
+				span и секреты парковки
+			.transmission-article_links    
+				a(href="#") Перейти
+				a(href="#") Другие программы
+		li 
+			p Габариты 
+				span и секреты парковки
+			.transmission-article_links    
+				a(href="#") Перейти
+				a(href="#") Другие программы
+		li 
+			p Габариты 
+				span и секреты парковки
+			.transmission-article_links    
+				a(href="#") Перейти
+				a(href="#") Другие программы
+		li 
+			p Габариты 
+				span и секреты парковки
+			.transmission-article_links    
+				a(href="#") Перейти
+				a(href="#") Другие программы   
 
 .schedule
 	form
@@ -236,6 +233,7 @@
 
 		.schedule-slider_wrap
 			.schedule-slider_wrap__item
+
 				.schedule-slider.owl-carousel
 					.schedule-slider_item
 						<div class="schedule-slider_date">
@@ -429,7 +427,7 @@
 								<div class="calendar-inner_item"><a><span>12</span></a></div>
 								<div class="calendar-inner_item"><a><span>13</span></a></div>
 								<div class="calendar-inner_item"><a><span>14</span></a></div>
-								<div class="calendar-inner_item"><a><span>15</span></a></div>
+								<div class="calendar-inner_item"><a class="free-active" href="#jun-4"><span>15</span></a></div>
 								<div class="calendar-inner_item"><a><span>16</span></a></div>
 								<div class="calendar-inner_item"><a><span>17</span></a></div>
 								<div class="calendar-inner_item"><a><span>18</span></a></div>
@@ -749,6 +747,8 @@
 
 
 			.schedule-slider_wrap__item
+				.noLessons
+					|Свободного времени для записи нет, выберите другую дату
 				.schedule-slider_form.hiddenTab
 					p.schedule-timeFree Свободное время для записи
 					.schedule-timeBox#jun-4
@@ -847,7 +847,7 @@
 
 .newsBlock
 	.newsBlock-title
-		p новости и акции
+		p акции и новости
 	.newsBlock-slider.owl-carousel
 		.newsBlock-slider_item
 			a(href="#")
@@ -893,28 +893,4 @@
 
 
 
-.lettersBlock
-	.lettersBlock-title
-		p благодарственные 
-			span письма:
-	.letters-slider.owl-carousel
-		.letters-slider_item
-			p от ВС России
-			a(rel="simplebox" href="img/slide-2.jpg").letters-slider_img
-				img(src="img/slide-2.jpg")
-		.letters-slider_item
-			p от ВС России
-			a(rel="simplebox" href="img/slide-2.jpg").letters-slider_img
-				img(src="img/slide-2.jpg")
-		.letters-slider_item
-			p от ВС России
-			a(rel="simplebox" href="img/slide-2.jpg").letters-slider_img
-				img(src="img/slide-2.jpg")
-		.letters-slider_item
-			p от ВС России
-			a(rel="simplebox" href="img/slide-2.jpg").letters-slider_img
-				img(src="img/slide-2.jpg")
-		.letters-slider_item
-			p от ВС России
-			a(rel="simplebox" href="img/slide-2.jpg").letters-slider_img
-				img(src="img/slide-2.jpg")
+include letters.pug
