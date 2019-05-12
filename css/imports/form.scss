@@ -1,0 +1,107 @@
+.recallForm-wrap {
+    padding: 25px 10px;
+    @media(min-width: 992px) {
+        padding: 130px 10px;
+    }
+}
+
+.recallForm {
+    max-width: 733px;
+    width: 100%;
+    margin: 0 auto;
+
+    .article-title {
+        text-align: center;
+        margin-bottom: 25px;
+        @media(min-width: 992px) {
+            margin-bottom: 52px;
+        }
+    }
+
+    &-capcha {
+        margin-top: 17px;
+        @media(max-width: 767px) {
+            margin-bottom: 17px;
+        }
+        text-align: center;
+    }
+
+    &-btn {
+        cursor: pointer;
+        margin: 0 auto;
+        -webkit-box-shadow: 0 0 5px -1px rgba(0,0,0,0.71);
+        -moz-box-shadow: 0 0 5px -1px rgba(0,0,0,0.71);
+        box-shadow: 0 0 5px -1px rgba(0,0,0,0.71);
+    }
+
+    &-inner {
+        @media(min-width: 767px) {
+            display: -webkit-flex;
+            display: -ms-flex;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            resize: none;
+            height: 141px;
+            background: #F4F4F4;
+            text-transform: uppercase;
+            border: none;
+            font-size: 12px;
+            color: #434343;
+        }
+
+        textarea {
+            font-family: "Gilroy-Light";
+            padding-left: 14px;
+            padding-top: 19px;
+            color: #434343;
+        }
+
+        input {
+            width: 100%;
+            margin-bottom: 7px;
+            height: 42px;
+            padding: 0 14px;
+        }
+
+        input::-webkit-input-placeholder {
+            color: #434343;
+        }
+
+        input::-moz-placeholder {
+            color: #434343;
+        }
+
+        input:-ms-input-placeholder {
+            color: #434343;
+        }
+
+        input:-moz-placeholder {
+            color: #434343;
+        }
+
+        &_item {
+            &:first-child {
+                @media(min-width: 768px) {
+                    padding-right: 8px;
+                }
+            }
+
+            p {
+                font-size: 12px;
+                margin-top: 16px;
+                margin-bottom: 18px;
+                color: #828282;
+
+                a {
+                    text-decoration: underline;
+                    color: #828282;
+                }
+            }
+        }
+    }
+}
