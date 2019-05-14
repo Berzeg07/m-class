@@ -42,8 +42,24 @@
     background-size: cover;
     padding-top: 222px;
     padding-bottom: 30px;
+    video{
+        display: none;
+    }
     @media(min-width: 992px) {
-        padding-top: 350px;
+        padding-top: 0;
+        height: 268px;
+        overflow: hidden;
+        video{
+            margin-top: -366px;
+            display: block;
+        }
+    }
+}
+
+.main-title_news{
+    @media(min-width: 992px){
+        position: absolute;
+        top: 180px;
     }
 }
 

@@ -62,17 +62,18 @@ concat = require('gulp-concat'),
     svgSprite = require("gulp-svg-sprites"),
     //chmod = require('gulp-chmod'),
     browserSync = require('browser-sync').create(),
+    bulkSass = require('gulp-sass-bulk-import'),
     reload = browserSync.reload;
 
 //Компиляция SCSS в CSS
-gulp.task('sass_dev', function() {
-    return gulp.src('css/*.scss')
-        .pipe(sass())
-        .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {
-            cascade: true
-        })) // Создаем префиксы
-        .pipe(gulp.dest('css'))
-});
+// gulp.task('sass_dev', function() {
+//     return gulp.src('css/*.scss')
+//         .pipe(sass())
+//         .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {
+//             cascade: true
+//         })) // Создаем префиксы
+//         .pipe(gulp.dest('css'))
+// });
 
 // gulp.task('sprites', function () {
 //     return gulp.src('img/svg/*.svg')
@@ -105,7 +106,7 @@ gulp.task('sprites', function() {
 
 
 gulp.task('sass', function() {
-    return gulp.src('product/temp/*.scss')
+    return gulp.src('css/*.scss')
         .pipe(sass())
         .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {
             cascade: true
@@ -346,11 +347,11 @@ gulp.task('watch', function() {
     //gulp.watch("*.html").on("change", reload);
 
      gulp.watch('css/*.scss',  gulp.series('sass_dev')).on('change', function(file) {
-        
+
 
     });
 
-    
+
 
 });
 

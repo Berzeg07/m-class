@@ -1,65 +1,116 @@
 $(document).ready(function() {
 
-    (function() {
-        var a = document.querySelector('#airSticky'),
-            b = null,
-            P = 50; // если ноль заменить на число, то блок будет прилипать до того, как верхний край окна браузера дойдёт до верхнего края элемента. Может быть отрицательным числом
-        window.addEventListener('scroll', Ascroll, false);
-        document.body.addEventListener('scroll', Ascroll, false);
+    $(".programs-list_link").click(function() {
+        var $this = $(this);
+        var check = $(this).hasClass('active');
 
-        function Ascroll() {
-            if (b == null) {
-                var Sa = getComputedStyle(a, ''),
-                    s = '';
-                for (var i = 0; i < Sa.length; i++) {
-                    if (Sa[i].indexOf('overflow') == 0 || Sa[i].indexOf('padding') == 0 || Sa[i].indexOf('border') == 0 || Sa[i].indexOf('outline') == 0 || Sa[i].indexOf('box-shadow') == 0 || Sa[i].indexOf('background') == 0) {
-                        s += Sa[i] + ': ' + Sa.getPropertyValue(Sa[i]) + '; '
-                    }
-                }
-                b = document.createElement('div');
-                b.style.cssText = s + ' box-sizing: border-box; width: ' + a.offsetWidth + 'px;';
-                a.insertBefore(b, a.firstChild);
-                var l = a.childNodes.length;
-                for (var i = 1; i < l; i++) {
-                    b.appendChild(a.childNodes[1]);
-                }
-                a.style.height = b.getBoundingClientRect().height + 'px';
-                a.style.padding = '0';
-                a.style.border = '0';
-            }
-            var Ra = a.getBoundingClientRect(),
-                R = Math.round(Ra.top + b.getBoundingClientRect().height - document.querySelector('.lettersBlock').getBoundingClientRect().top + 50); // селектор блока, при достижении верхнего края которого нужно открепить прилипающий элемент;  Math.round() только для IE; если ноль заменить на число, то блок будет прилипать до того, как нижний край элемента дойдёт до футера
-            if ((Ra.top - P) <= 0) {
-                if ((Ra.top - P) <= R) {
-                    b.className = 'stop';
-                    b.style.top = -R + 'px';
-                } else {
-                    b.className = 'sticky';
-                    b.style.top = P + 'px';
-                }
-            } else {
-                b.className = '';
-                b.style.top = '';
-            }
-            window.addEventListener('resize', function() {
-                a.children[0].style.width = getComputedStyle(a, '').width
-            }, false);
+        $('.programs-list_link').removeClass('active');
+        $($this).toggleClass('active');
+
+        if (!check) {
+            $('.programs-about').css('display', 'none');
+            $($this).parents('li').find('.programs-about').fadeIn();
         }
-    })();
+        if (check) {
+            $($this).removeClass('active');
+            $($this).parents('li').find('.programs-about').fadeOut();
+        }
 
-    $('.contTabs a').click(function(e) {
+    });
+
+    var checkSticky = $("div").is("#airSticky");
+
+    if (checkSticky) {
+        (function() {
+            var a = document.querySelector('#airSticky'),
+                b = null,
+                P = 50; // если ноль заменить на число, то блок будет прилипать до того, как верхний край окна браузера дойдёт до верхнего края элемента. Может быть отрицательным числом
+            window.addEventListener('scroll', Ascroll, false);
+            document.body.addEventListener('scroll', Ascroll, false);
+
+            function Ascroll() {
+                if (b == null) {
+                    var Sa = getComputedStyle(a, ''),
+                        s = '';
+                    for (var i = 0; i < Sa.length; i++) {
+                        if (Sa[i].indexOf('overflow') == 0 || Sa[i].indexOf('padding') == 0 || Sa[i].indexOf('border') == 0 || Sa[i].indexOf('outline') == 0 || Sa[i].indexOf('box-shadow') == 0 || Sa[i].indexOf('background') == 0) {
+                            s += Sa[i] + ': ' + Sa.getPropertyValue(Sa[i]) + '; '
+                        }
+                    }
+                    b = document.createElement('div');
+                    b.style.cssText = s + ' box-sizing: border-box; width: ' + a.offsetWidth + 'px;';
+                    a.insertBefore(b, a.firstChild);
+                    var l = a.childNodes.length;
+                    for (var i = 1; i < l; i++) {
+                        b.appendChild(a.childNodes[1]);
+                    }
+                    a.style.height = b.getBoundingClientRect().height + 'px';
+                    a.style.padding = '0';
+                    a.style.border = '0';
+                }
+                var Ra = a.getBoundingClientRect(),
+                    R = Math.round(Ra.top + b.getBoundingClientRect().height - document.querySelector('.lettersBlock').getBoundingClientRect().top + 50); // селектор блока, при достижении верхнего края которого нужно открепить прилипающий элемент;  Math.round() только для IE; если ноль заменить на число, то блок будет прилипать до того, как нижний край элемента дойдёт до футера
+                if ((Ra.top - P) <= 0) {
+                    if ((Ra.top - P) <= R) {
+                        b.className = 'stop';
+                        b.style.top = -R + 'px';
+                    } else {
+                        b.className = 'sticky';
+                        b.style.top = P + 'px';
+                    }
+                } else {
+                    b.className = '';
+                    b.style.top = '';
+                }
+                window.addEventListener('resize', function() {
+                    a.children[0].style.width = getComputedStyle(a, '').width
+                }, false);
+            }
+        })();
+    }
+    $('.contTabs .contTabs-btn').click(function(e) {
         e.preventDefault();
-        $('.contTabs a').removeClass('active');
+        var checkSeason = $("div").is(".season-choose");
+        $('.contTabs .contTabs-btn').removeClass('active');
         $(this).addClass('active');
         var tab = $(this).attr('href');
+        if (checkSeason) {
+            $(".season-choose").css('display', 'none');
+            var next = $(this).next();
+            $(next).fadeIn();
+            $(next).find('.season-choose_first').click();
+        }
         $('.contTabs-cont').not(tab).css({
             'display': 'none'
         });
         $(tab).css('display', 'block');
     });
-    $('.contTabs a:last').click();
+    $('.contTabs a:first').click();
 
-    $('.programsArticle-tabs a').click(function(e) {
+    $('.season-choose a').click(function(e) {
+        e.preventDefault();
+        $('.season-choose a').removeClass('active');
+        $(this).addClass('active');
+        var tab = $(this).attr('href');
+        $('.programs-list').not(tab).css({
+            'display': 'none'
+        });
+        $(tab).fadeIn();
+    });
+
+    $('.season-choose a:first').click();
+
+    $('.calendarShow').click(function() {
+        $(this).css('display', 'none');
+        $(this).next().fadeIn();
+    });
+    $('.hideCalendar').click(function() {
+        var parent = $(this).parents('.programs-about_bottom');
+        $(parent).find('.programs-about_calendar').css('display', 'none');
+        $(parent).find('.btn').fadeIn();
+    });
+
+    $('#programsArticle-tabs a').click(function(e) {
         e.preventDefault();
         $('.programsArticle-tabs a').removeClass('active');
         $(this).addClass('active');
@@ -70,6 +121,18 @@ $(document).ready(function() {
         $(tab).css('display', 'block');
     });
     $('.programsArticle-tabs a:first').click();
+
+    $('.programs-about_tabsLink a').click(function(e) {
+        e.preventDefault();
+        $('.programs-about_tabsLink a').removeClass('active');
+        $(this).addClass('active');
+        var tab = $(this).attr('href');
+        $('.programs-about_tabs').not(tab).css({
+            'display': 'none'
+        });
+        $(tab).fadeIn();
+    });
+    $('.programs-about_tabsLink a:first').click();
 
     $('.article-title_arrow').click(function() {
         function removeActive() {
@@ -109,7 +172,6 @@ $(document).ready(function() {
         $('.pagination a').removeClass('active');
         $(this).addClass('active');
     });
-
 
     $(function() {
         var d = new Date(),

@@ -1,6 +1,8 @@
 .inner-top
+	video(autoplay muted loop)
+		source(src="video/drift.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
 	.inner-cont
-		h1.main-title.blog-title Блог 
+		h1.main-title.blog-title.main-title_news Блог 
 			span Мастер Класса
 
 .blog
@@ -33,7 +35,7 @@
 			.programsArticle
 				.programsArticle-inner
 					h2.article-title подробнее о программах
-					.programsArticle-tabs
+					.programsArticle-tabs#programsArticle-tabs
 						a(href="#programTab-1") Цель
 						a(href="#programTab-2") Для кого
 						a(href="#programTab-3") Длительность<br> занятий
@@ -195,10 +197,5 @@
 								li
 									a(href="#") #Заголовок	
 
-
-
-
-
-		.blog-pagination
-			include pagination.pug
+				include pagination.pug
 include letters.pug
