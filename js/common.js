@@ -1,23 +1,5 @@
 $(document).ready(function() {
 
-    $(".programs-list_link").click(function() {
-        var $this = $(this);
-        var check = $(this).hasClass('active');
-
-        $('.programs-list_link').removeClass('active');
-        $($this).toggleClass('active');
-
-        if (!check) {
-            $('.programs-about').css('display', 'none');
-            $($this).parents('li').find('.programs-about').fadeIn();
-        }
-        if (check) {
-            $($this).removeClass('active');
-            $($this).parents('li').find('.programs-about').fadeOut();
-        }
-
-    });
-
     var checkSticky = $("div").is("#airSticky");
 
     if (checkSticky) {
@@ -100,15 +82,34 @@ $(document).ready(function() {
 
     $('.season-choose a:first').click();
 
-    $('.calendarShow').click(function() {
-        $(this).css('display', 'none');
-        $(this).next().fadeIn();
+    $(".programs-list_link").click(function() {
+        var $this = $(this);
+        var check = $(this).hasClass('active');
+
+        $('.programs-list_link').removeClass('active');
+        $($this).toggleClass('active');
+
+        if (!check) {
+            $('.programs-about').css('display', 'none');
+            $($this).parents('li').find('.programs-about').fadeIn();
+        }
+        if (check) {
+            $($this).removeClass('active');
+            $($this).parents('li').find('.programs-about').fadeOut();
+        }
+
     });
-    $('.hideCalendar').click(function() {
-        var parent = $(this).parents('.programs-about_bottom');
-        $(parent).find('.programs-about_calendar').css('display', 'none');
-        $(parent).find('.btn').fadeIn();
-    });
+
+
+    // $('.calendarShow').click(function() {
+    //     $(this).css('display', 'none');
+    //     $(this).next().fadeIn();
+    // });
+    // $('.hideCalendar').click(function() {
+    //     var parent = $(this).parents('.programs-about_bottom');
+    //     $(parent).find('.programs-about_calendar').css('display', 'none');
+    //     $(parent).find('.btn').fadeIn();
+    // });
 
     $('#programsArticle-tabs a').click(function(e) {
         e.preventDefault();
@@ -124,7 +125,7 @@ $(document).ready(function() {
 
     $('.programs-about_tabsLink a').click(function(e) {
         e.preventDefault();
-        $('.programs-about_tabsLink a').removeClass('active');
+        $(this).parent().find('a').removeClass('active');
         $(this).addClass('active');
         var tab = $(this).attr('href');
         $('.programs-about_tabs').not(tab).css({
@@ -133,6 +134,8 @@ $(document).ready(function() {
         $(tab).fadeIn();
     });
     $('.programs-about_tabsLink a:first').click();
+    var elementList = document.querySelectorAll('div.programs-about_tabsLink');
+    $(elementList).find('a:first').addClass('active');
 
     $('.article-title_arrow').click(function() {
         function removeActive() {
