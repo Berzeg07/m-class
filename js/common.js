@@ -1,5 +1,86 @@
 $(document).ready(function() {
 
+    var checkMap = $("div").is("#contacts-map");
+
+    if (checkMap) {
+        ymaps.ready(init);
+
+        function init() {
+            var center = [55.745559, 37.796364];
+            var myMap = new ymaps.Map('contacts-map-1', {
+                center: center,
+                controls: [],
+                zoom: 16,
+                controls: ['smallMapDefaultSet']
+            }, {
+                searchControlProvider: 'yandex#search'
+
+            });
+
+            myMap.behaviors.disable('scrollZoom');
+
+            var myPlacemark = new ymaps.Placemark(center, {
+                // Свойства.
+                // Содержимое иконки, балуна и хинта.
+                balloonContent: 'ул.Перовская,д.61/2, стр.1',
+                hintContent: 'ул.Перовская,д.61/2, стр.1'
+            }, {
+                // Опции.
+                iconLayout: 'default#image',
+                iconImageHref: 'img/marker.png',
+                iconImageSize: [53, 63]
+                // preset: 'twirl#violetIcon'
+            });
+
+            myMap.geoObjects.add(myPlacemark);
+
+            var center2 = [55.745559, 37.796364];
+            var myMap2 = new ymaps.Map('contacts-map-2', {
+                center: center2,
+                controls: [],
+                zoom: 16
+            }, {
+                searchControlProvider: 'yandex#search'
+
+            });
+
+            myMap2.behaviors.disable('scrollZoom');
+
+            var myPlacemark2 = new ymaps.Placemark(center2, {
+                balloonContent: 'ул.Перовская,д.61/2, стр.1',
+                hintContent: 'ул.Перовская,д.61/2, стр.1'
+            }, {
+                iconLayout: 'default#image',
+                iconImageHref: 'img/marker.png',
+                iconImageSize: [53, 63]
+            });
+
+            myMap2.geoObjects.add(myPlacemark2);
+            var center3 = [55.745559, 37.796364];
+            var myMap3 = new ymaps.Map('contacts-map-3', {
+                center: center3,
+                controls: [],
+                zoom: 16
+            }, {
+                searchControlProvider: 'yandex#search'
+
+            });
+
+            myMap3.behaviors.disable('scrollZoom');
+
+            var myPlacemark3 = new ymaps.Placemark(center3, {
+                balloonContent: 'ул.Перовская,д.61/2, стр.1',
+                hintContent: 'ул.Перовская,д.61/2, стр.1'
+            }, {
+                iconLayout: 'default#image',
+                iconImageHref: 'img/marker.png',
+                iconImageSize: [53, 63]
+            });
+
+            myMap3.geoObjects.add(myPlacemark3);
+        }
+    }
+
     var checkSticky = $("div").is("#airSticky");
 
     if (checkSticky) {
@@ -79,8 +160,56 @@ $(document).ready(function() {
         });
         $(tab).fadeIn();
     });
-
     $('.season-choose a:first').click();
+
+    $('#cm-tabLink_1 a').click(function(e) {
+        e.preventDefault();
+        $('#cm-tabLink_1 a').removeClass('active');
+        $(this).addClass('active');
+        var tab = $(this).attr('href');
+        $('.cm-tabCont').not(tab).css({
+            'display': 'none'
+        });
+        $(tab).fadeIn();
+    });
+    $('#cm-tabLink_1 a:first').click();
+
+    $('#cm-tabLink_2 a').click(function(e) {
+        e.preventDefault();
+        $('#cm-tabLink_2 a').removeClass('active');
+        $(this).addClass('active');
+        var tab = $(this).attr('href');
+        $('.cm-tabCont-2').not(tab).css({
+            'display': 'none'
+        });
+        $(tab).fadeIn();
+    });
+    $('#cm-tabLink_2 a:first').click();
+
+    $('#cm-tabLink_3 a').click(function(e) {
+        e.preventDefault();
+        $('#cm-tabLink_3 a').removeClass('active');
+        $(this).addClass('active');
+        var tab = $(this).attr('href');
+        $('.cm-tabCont-3').not(tab).css({
+            'display': 'none'
+        });
+        $(tab).fadeIn();
+    });
+    $('#cm-tabLink_3 a:first').click();
+
+    $('.map-tabLink li a').click(function(e) {
+        e.preventDefault();
+        $('.map-tabLink li a').removeClass('active');
+        $(this).addClass('active');
+        var tab = $(this).attr('href');
+        $('.contacts-map_inner').not(tab).css({
+            'display': 'none'
+        });
+        $(tab).fadeIn();
+    });
+    $('.map-tabLink li:first a').click();
+
 
     $(".programs-list_link").click(function() {
         var $this = $(this);
