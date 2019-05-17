@@ -629,7 +629,6 @@ $(document).ready(function() {
                 cleanTnanks(this);
             }
         });
-
         return false;
     });
 
@@ -640,7 +639,25 @@ $(document).ready(function() {
         $('.modalThanks').addClass('active');
     };
 
+    $("#contentForm").submit(function() {
 
+        var form_data = $(this).serialize();
+        $.ajax({
+            type: "POST",
+            url: "/sendmessage.php",
+            data: form_data,
+            success: function() {
+                cleanTnanksCont(this);
+            }
+        });
+        return false;
+    });
+
+    function cleanTnanksCont(form) {
+        $('.overlay').fadeIn();
+        $('.modalThanks').fadeIn();
+        $('.modalThanks').addClass('active');
+    };
 
     // var swiper = new Swiper('.letters-slider', {
     //     slidesPerView: 4,
