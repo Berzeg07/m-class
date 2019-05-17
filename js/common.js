@@ -266,6 +266,15 @@ $(document).ready(function() {
     var elementList = document.querySelectorAll('div.programs-about_tabsLink');
     $(elementList).find('a:first').addClass('active');
 
+    var checkBlogPreview = $('.previews .news:first').addClass('active');
+    var activeArticle = $('.previews .active');
+    if (checkBlogPreview) {
+        $(activeArticle).find('.news-article_des').css('display', 'none');
+        $(activeArticle).find('.news-thumb').css('display', 'none');
+        $(activeArticle).find('.article-title_arrow').addClass('active');
+        $(activeArticle).find('.news-content_hidden').fadeIn();
+    }
+
     $('.article-title_arrow').click(function() {
         function removeActive() {
             $('.article-title_arrow').removeClass('active');
@@ -292,12 +301,6 @@ $(document).ready(function() {
             $(parent).find('.news-thumb').css('display', 'none');
             $(parent).find('.news-content_hidden').fadeIn();
         }
-
-        $('.news-hide button').click(function() {
-            removeActive();
-            var parentBtn = $(this).parents('.news');
-            hideContent(parentBtn);
-        });
     });
 
     $('.pagination a').click(function() {
@@ -615,6 +618,11 @@ $(document).ready(function() {
     });
     $('.overlay').click(function() {
         hideModals();
+    });
+    $('.modalThanks-item').click(function() {
+        $('.overlay').fadeOut();
+        $('.modal').fadeOut();
+        $('.modal').removeClass('active');
     });
 
     // send message ============================================================

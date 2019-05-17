@@ -5,27 +5,24 @@
     }
 }
 
+.article-link{
+    padding: 25px 0;
+    text-align: right;
+    @media(min-width: 992px) {
+        .btn{
+            margin: 0;
+        }
+        padding: 70px 55px;
+        display: -webkit-flex;
+        display: -ms-flex;
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
 .news {
     padding: 25px 10px;
     position: relative;
-
-    &-hide {
-        padding: 25px 0;
-        text-align: right;
-        @media(min-width: 992px) {
-            padding: 70px 55px;
-        }
-
-        button {
-            font-family: "Gilroy-ExtraBold";
-            font-size: 14px;
-            color: #979A9D;
-            text-transform: uppercase;
-            cursor: pointer;
-            background: none;
-            border: none;
-        }
-    }
 
     &-thumb {
         padding-bottom: 20px;
