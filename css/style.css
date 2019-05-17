@@ -2967,6 +2967,153 @@ nav a {
   color: #828282;
 }
 
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 50;
+  display: none;
+}
+
+.modalForm {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  display: none;
+}
+
+.modalForm-item {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.modalForm-inner {
+  max-width: 803px;
+  width: 100%;
+  background: white;
+  padding: 55px 0 0;
+  transform: rotate(5deg);
+  transition: 0.5s;
+}
+
+@media (min-width: 768px) {
+  .modalForm-inner {
+    height: 430px;
+  }
+}
+
+.modalForm form {
+  position: relative;
+  padding: 0 33px 31px;
+}
+
+.modalForm form:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 7px;
+  height: 295px;
+  background: #e2543c;
+}
+
+.modalForm.active .modalForm-inner {
+  transform: rotate(0deg);
+}
+
+.close-modal {
+  width: 23px;
+  height: 23px;
+  position: absolute;
+  cursor: pointer;
+  top: -41px;
+  right: 17px;
+  background: url("../img/close-modal.png") no-repeat center;
+}
+
+.modalThanks {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  display: none;
+}
+
+.modalThanks-item {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.modalThanks-inner {
+  position: relative;
+  background: white;
+  max-width: 647px;
+  width: 100%;
+  height: 358px;
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  transform: rotate(5deg);
+}
+
+@media (max-width: 767px) {
+  .modalThanks-inner_item {
+    padding: 0 60px;
+  }
+}
+
+.modalThanks-inner p {
+  font-size: 14px;
+  margin-top: 17px;
+}
+
+.modalThanks-inner:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 7px;
+  height: 100%;
+  background: #e2543c;
+}
+
+.modalThanks-inner .close-modal {
+  top: 16px;
+  right: 16px;
+}
+
+.modalThanks.active {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+}
+
+.modalThanks.active .modalThanks-inner {
+  transform: rotate(0deg);
+}
+
 .blog {
   padding-top: 16px;
 }
@@ -4148,149 +4295,135 @@ nav a {
   background: url("../img/route-icon-grey.png") no-repeat center;
 }
 
-.overlay {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 50;
-  display: none;
+.breadcrumbs {
+  margin-bottom: 15px;
 }
 
-.modalForm {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  z-index: 100;
-  display: none;
+.breadcrumbs a {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  display: inline-block;
+  position: relative;
+  padding-right: 24px;
 }
 
-.modalForm-item {
+.breadcrumbs a:not(:last-child):after {
+  content: '/';
+  position: absolute;
+  right: 9px;
+  top: 1px;
+}
+
+.breadcrumbs a:last-child {
+  color: white;
+}
+
+.page-date {
+  font-size: 30px;
+  color: white;
+}
+
+.page-title {
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+  flex-wrap: wrap;
+  align-items: baseline;
 }
 
-.modalForm-inner {
-  max-width: 803px;
-  width: 100%;
-  background: white;
-  padding: 55px 0 0;
-  transform: rotate(5deg);
-  transition: 0.5s;
+.page-title .main-title {
+  margin-right: 30px;
+}
+
+@media (min-width: 992px) {
+  .main-title_news__page {
+    position: absolute;
+    top: 160px;
+  }
+}
+
+.page {
+  padding-bottom: 25px;
+}
+
+@media (min-width: 992px) {
+  .page {
+    padding-bottom: 150px;
+  }
+}
+
+.page-hashteg {
+  padding: 30px 0;
+}
+
+.page-hashteg a {
+  color: #919294;
+  font-size: 14px;
+}
+
+.page-imgMin {
+  text-align: center;
 }
 
 @media (min-width: 768px) {
-  .modalForm-inner {
-    height: 430px;
+  .page-imgMin {
+    float: left;
+    margin-right: 32px;
+    margin-bottom: 19px;
   }
 }
 
-.modalForm form {
-  position: relative;
-  padding: 0 33px 31px;
-}
-
-.modalForm form:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 7px;
-  height: 295px;
-  background: #e2543c;
-}
-
-.modalForm.active .modalForm-inner {
-  transform: rotate(0deg);
-}
-
-.close-modal {
-  width: 23px;
-  height: 23px;
-  position: absolute;
-  cursor: pointer;
-  top: -41px;
-  right: 17px;
-  background: url("../img/close-modal.png") no-repeat center;
-}
-
-.modalThanks {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 100;
-  display: none;
-}
-
-.modalThanks-item {
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.modalThanks-inner {
-  position: relative;
-  background: white;
-  max-width: 647px;
-  width: 100%;
-  height: 358px;
-  width: 100%;
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.5s;
-  transform: rotate(5deg);
-}
-
-@media (max-width: 767px) {
-  .modalThanks-inner_item {
-    padding: 0 60px;
-  }
-}
-
-.modalThanks-inner p {
+.page-imgCont_article {
+  margin: 16px 0 25px;
+  text-align: center;
   font-size: 14px;
-  margin-top: 17px;
+  color: #14161a;
 }
 
-.modalThanks-inner:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 7px;
-  height: 100%;
-  background: #e2543c;
+.page .article-title {
+  margin-bottom: 25px;
 }
 
-.modalThanks-inner .close-modal {
-  top: 16px;
-  right: 16px;
+@media (min-width: 992px) {
+  .page .article-title {
+    margin-bottom: 30px;
+  }
 }
 
-.modalThanks.active {
+.page-inner {
+  padding-bottom: 58px;
+  border-bottom: 1px solid #CECFD0;
+  margin-bottom: 24px;
+}
+
+.page-social {
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
-.modalThanks.active .modalThanks-inner {
-  transform: rotate(0deg);
+.page-social span {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  .page-social {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .page-social .recallForm-btn {
+    margin: 0;
+  }
+}
+
+.page-social .social {
+  margin: 10px 0px;
+}
+
+@media (min-width: 768px) {
+  .page-social .social {
+    margin: 0 25px;
+  }
 }
