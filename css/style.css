@@ -4150,3 +4150,150 @@ nav a {
   height: 16px;
   background: url("../img/route-icon-grey.png") no-repeat center;
 }
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 50;
+  display: none;
+}
+
+.modalForm {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  display: none;
+}
+
+.modalForm-item {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.modalForm-inner {
+  max-width: 803px;
+  width: 100%;
+  background: white;
+  padding: 55px 0 0;
+  transform: rotate(5deg);
+  transition: 0.5s;
+}
+
+@media (min-width: 768px) {
+  .modalForm-inner {
+    height: 430px;
+  }
+}
+
+.modalForm form {
+  position: relative;
+  padding: 0 33px 31px;
+}
+
+.modalForm form:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 7px;
+  height: 295px;
+  background: #e2543c;
+}
+
+.modalForm.active .modalForm-inner {
+  transform: rotate(0deg);
+}
+
+.close-modal {
+  width: 23px;
+  height: 23px;
+  position: absolute;
+  cursor: pointer;
+  top: -41px;
+  right: 17px;
+  background: url("../img/close-modal.png") no-repeat center;
+}
+
+.modalThanks {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  display: none;
+}
+
+.modalThanks-item {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.modalThanks-inner {
+  position: relative;
+  background: white;
+  max-width: 647px;
+  width: 100%;
+  height: 358px;
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  transform: rotate(5deg);
+}
+
+@media (max-width: 767px) {
+  .modalThanks-inner_item {
+    padding: 0 60px;
+  }
+}
+
+.modalThanks-inner p {
+  font-size: 14px;
+  margin-top: 17px;
+}
+
+.modalThanks-inner:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 7px;
+  height: 100%;
+  background: #e2543c;
+}
+
+.modalThanks-inner .close-modal {
+  top: 16px;
+  right: 16px;
+}
+
+.modalThanks.active {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+}
+
+.modalThanks.active .modalThanks-inner {
+  transform: rotate(0deg);
+}

@@ -1,7 +1,11 @@
 <?php
 $to = "test@yandex.ru";
-$inp1 = $_POST['inp-1'];
-$inp2 = $_POST['inp-2'];
+$name = $_POST['m-uname'];
+$phone = $_POST['m-phone'];
+$email = $_POST['m-email'];
+$text = $_POST['m-text'];
+
+
 
 
 // Формирование заголовка письма
@@ -13,8 +17,11 @@ $headers .= "Content-Type: text/html;charset=utf-8 \r\n";
 // Формирование тела письма
 $msg  = "<html><body>";
 $msg .= "<h2>Новое сообщение</h2>\r\n";
-$msg .= "<p><strong>dsdffg:</strong> ".$inp1."</p>\r\n";
-$msg .= "<p><strong>dffg:</strong> ".$inp2."</p>\r\n";
+$msg .= "<p><strong>dsdffg:</strong> ".$name."</p>\r\n";
+$msg .= "<p><strong>dffg:</strong> ".$phone."</p>\r\n";
+$msg .= "<p><strong>dffg:</strong> ".$email."</p>\r\n";
+$msg .= "<p><strong>dffg:</strong> ".$text."</p>\r\n";
+
 $msg .= "</body></html>";
 
 

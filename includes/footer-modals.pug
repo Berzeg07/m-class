@@ -1,5 +1,31 @@
 .overlay
-.modal-form
-	
-.modal-thanks
-                       
+
+.recallForm.modalForm.modal
+	.modalForm-item
+		.modalForm-inner
+			form#modalForm(action="#" method="post")
+				.close-modal
+				h2.article-title Задать вопрос
+				.recallForm-inner
+					.recallForm-inner_item
+						input(placeholder="Введите имя*" name="m-uname" required)
+						input(placeholder="Номер телефона*" name="m-phone" required).recallForm-phone
+						input(placeholder="E-mail" type="email" name="m-email")
+						.recallForm-capcha
+							img(src="img/capcha.jpg")
+
+					.recallForm-inner_item
+						textarea(placeholder="Комментарий" name="m-text")
+						p Нажав на кнопку «Отправить» Вы соглашаетесь с условиями 
+							a(href="#") публичной оферты 
+							|и с условиями Политики обработки 
+							a(href="#") персональных данных
+						button.btn.recallForm-btn(type="submit") Отправить
+
+.modalThanks.modal
+	.modalThanks-item
+		.modalThanks-inner
+			.close-modal
+			.modalThanks-inner_item
+				h3.article-title благодарим за заявку!
+				p Наш специалист перезвонит Вам в течении суток<br> для подтверждения заявки

@@ -1935,7 +1935,7 @@
                 <li><a href="tel:+79852337751">+7 (985) <span>
                        233-77-51</span></a></li>
               </ul>
-            </div><a class="btn footer-btn" href="#">Перезвонить мне	</a>
+            </div><a class="btn footer-btn modal-show" href="#">Перезвонить мне	</a>
           </div>
         </div>
         <div class="footer-item_bottom">
@@ -1956,8 +1956,40 @@
       </div>
     </div>
     <div class="overlay"></div>
-    <div class="modal-form"></div>
-    <div class="modal-thanks"></div>
+    <div class="recallForm modalForm modal">
+      <div class="modalForm-item">
+        <div class="modalForm-inner">
+          <form id="modalForm" action="#" method="post">
+            <div class="close-modal"></div>
+            <h2 class="article-title">Задать вопрос</h2>
+            <div class="recallForm-inner">
+              <div class="recallForm-inner_item">
+                <input placeholder="Введите имя*" name="m-uname" required>
+                <input class="recallForm-phone" placeholder="Номер телефона*" name="m-phone" required>
+                <input placeholder="E-mail" type="email" name="m-email">
+                <div class="recallForm-capcha"><img src="img/capcha.jpg"></div>
+              </div>
+              <div class="recallForm-inner_item">
+                <textarea placeholder="Комментарий" name="m-text"></textarea>
+                <p>Нажав на кнопку «Отправить» Вы соглашаетесь с условиями <a href="#">публичной оферты </a>и с условиями Политики обработки <a href="#">персональных данных</a></p>
+                <button class="btn recallForm-btn" type="submit">Отправить</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="modalThanks modal">
+      <div class="modalThanks-item">
+        <div class="modalThanks-inner">
+          <div class="close-modal"></div>
+          <div class="modalThanks-inner_item">
+            <h3 class="article-title">благодарим за заявку!</h3>
+            <p>Наш специалист перезвонит Вам в течении суток<br> для подтверждения заявки</p>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="https://api-maps.yandex.ru/2.1/?lang=tr_TR"></script>
     <script src="libs/jquery/jquery.min.js"></script>
     <script src="libs/parallax/parallax.min.js"></script>
