@@ -1,5 +1,23 @@
 $(document).ready(function() {
 
+    // $('#rights-n').click(function(){
+    //     var ch = $(this).prop("checked");
+    //     console.log(ch);
+    // });
+
+    $('.num-inp').on('keydown', function(e) {
+        if (e.key.length == 1 && e.key.match(/[^0-9'".]/)) {
+            return false;
+        };
+    })
+
+    $('.focus-animate input').focus(function(){
+        $(this).parent().addClass('active');
+    });
+    $('.focus-animate input').blur(function(){
+        $(this).parent().removeClass('active');
+    });
+
     var checkMap = $("div").is("#contacts-map");
 
     if (checkMap) {

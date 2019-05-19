@@ -1,0 +1,71 @@
+.inner-top
+	//- video(autoplay muted loop)
+	//- 	source(src="video/drift.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
+	.inner-cont
+		h1.main-title.main-title_news Заявка на обучение
+
+.request
+	.inner-cont
+		.contTabs
+			a.contTabs-btn(href="#tab-cont_1") Физическим лицам
+			a.contTabs-btn(href="#tab-cont_2") Юридическим лицам
+
+		.contTabs-cont#tab-cont_1
+			h2.article-title.request-mainTitle Форма заявки
+			form.request-form
+				.present-course
+					span.request-title Подарить курс
+				.request-formData
+					.request-formData_item
+						label.focus-animate
+							input(type="text" placeholder="Фамилия")
+						label.focus-animate
+							input(type="text" placeholder="Имя*" required)
+						label.focus-animate
+							input(type="text" placeholder="Отчество")
+
+					.request-formData_item.request-personalData
+						p.request-title персональные данные
+						.request-formData_item__inner
+							span Возраст
+							label
+								input(type="number").num-inp
+						.request-formData_item__inner
+							span дата <br> Рождения
+							label
+								input(type="date")
+					.request-formData_item.request-personalData
+						p.request-title Контактные данные
+						.request-formData_item__inner
+							label
+								input(type="text" placeholder="e-mail 1")
+							label
+								input(type="text" placeholder="Телефон*" required).recallForm-phone
+						.request-formData_item__inner
+							label
+								input(type="text" placeholder="e-mail 2")
+							label
+								input(type="text" placeholder="Телефон").recallForm-phone
+				.request-aboutUs
+					p Наш почти 30ти летний опыт работы говорит о том, что очень часто будущие ученики либо значительно занижают, либо наоборот завышают свои реальные навыки по управлению автомобилем. Самокритика хороша, но НЕ в случае обучения приемам выживания на дороге при управлении автомобилем! Нам и Вам нужна объективная информация. Для того, что мы во время телефонного разговора задавали меньше уточняющих вопросов и смогли предложить Вам наиболее подходящую по содержанию, стоимости и срокам учебно-тренировочную программу, пожалуйста, заполните поля формы, которую Вы видите ниже этого текста, по возможности полнее.
+					p Если этого не сделать, то нам все равно придется задать эти же вопросы, но уже при разговоре по телефону, а Вам ответить на них. Иначе нам будет сложно понять, что же Вам подойдет наилучшим образом из тех программ, которые мы разработали для Вас		
+				.request-rights
+					p.request-title Наличие водительского удостоверения
+					.request-rights_item
+						.request-rights_item__inner
+							input(type="radio" name="rights").radioBtn#rights-y
+							label(for="rights-y") да
+						.request-rights_item__inner
+							input(type="radio" name="rights").radioBtn#rights-n
+							label(for="rights-n") нет	
+
+
+
+
+
+
+
+
+		.contTabs-cont#tab-cont_2
+
+include letters.pug
