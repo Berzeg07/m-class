@@ -5,6 +5,8 @@ $(document).ready(function() {
     //     console.log(ch);
     // });
 
+    $('.filter').selectmenu();
+
     $('.num-inp').on('keydown', function(e) {
         if (e.key.length == 1 && e.key.match(/[^0-9'".]/)) {
             return false;

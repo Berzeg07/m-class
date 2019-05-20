@@ -58,6 +58,131 @@
 						.request-rights_item__inner
 							input(type="radio" name="rights").radioBtn#rights-n
 							label(for="rights-n") нет	
+				.request-hidden
+					.request-hidden_top
+						.request-hidden_top__item
+							p.request-title
+								span Ваш ВОДИТЕЛЬСКИЙ СТАЖ 
+								|по водительскому удостоверению
+							label
+								input(type="text" placeholder="30 лет").border-inp
+						.request-hidden_top__item
+							p.request-title
+								span Ваш 
+								|реальный ВОДИТЕЛЬСКИЙ СТАЖ
+							label
+								input(type="text" placeholder="40 лет").border-inp
+					.request-hidden_bottom
+						.request-hidden_bottom__item
+							p.request-title 
+								span Открытые 
+								|ОСНОВНЫЕ категории<br> 
+								span водительского удостоверения
+							ul
+								li
+									input(type="checkbox" name="rights-a").radioBtn#rights-a
+									label(for="rights-a") A
+								li
+									input(type="checkbox" name="rights-b").radioBtn#rights-b
+									label(for="rights-b") B
+								li
+									input(type="checkbox" name="rights-c").radioBtn#rights-c
+									label(for="rights-c") C
+								li
+									input(type="checkbox" name="rights-d").radioBtn#rights-d
+									label(for="rights-d") D									
+						.request-hidden_bottom__item
+							p.request-title Марка 
+								span личного автомобиля
+								ul
+									li
+										input(type="checkbox" name="has-car").radioBtn#has-car_y
+										label(for="has-car_y") Есть
+										input(type="checkbox" name="has-car").radioBtn#has-car_n
+										label(for="has-car_n") Нет
+									li
+										.request-select
+											select.filter
+												option автомобиль мужа
+												option автомобиль мужа
+												option автомобиль мужа
+												option автомобиль мужа
+
+						.request-hidden_bottom__item
+							p.request-title Тип коробки передач
+							ul
+								li
+									.request-select
+										select.filter
+											option Ручная
+											option Автомат
+								li
+									input(type="checkbox" name="type-tr").radioBtn#type-tr
+									label(for="type-tr") Не знаю
+
+						.request-hidden_bottom__item
+							p.request-title Тип привода 
+								span ведущих колес
+							ul
+								li
+									.request-select
+										select.filter
+											option Передний
+											option Задний
+								li
+									input(type="checkbox" name="driveUnit").radioBtn#driveUnit
+									label(for="driveUnit") Не знаю
+					.request-questions
+						.request-questions_top
+							p.request-title дополнительные вопросы
+							span пропустить
+						.request-questions_hidden
+							.request-questions_item
+								ol
+									li
+										.request-questions_list
+											p.request-title Марка автомобиля мужа/жены, 
+												span которым Вы иногда будете управлять
+											.request-questions_inner
+												.request-questions_inner__item
+													input(type="radio" name="car-type").radioBtn#car-type_y
+													label(for="car-type_y") Есть
+													input(type="radio" name="car-type").radioBtn#car-type_n
+													label(for="car-type_n") Нет
+												.request-questions_inner__item
+													input(type="text" placeholder="Audi A7 Sportback II").border-inp
+									li
+										.request-questions_list
+											p.request-title Как часто 
+												span вы управляете автомобилем по дорогам города?
+											.request-questions_inner
+												.request-select
+													select.filter
+														option давно не управлял
+														option давно не управлял 	 
+														option давно не управлял
+									li
+										.request-questions_list
+											p.request-title
+												span Как предполагаете 
+												|использовать 
+												span автомобиль?
+											.request-questions_inner
+												.request-select
+													select.filter
+														option Езжу на дачу
+														option Езжу на дачу 	 
+														option Езжу на дачу
+									li
+										.request-questions_list
+											p.request-title
+												span Чему хотите научиться ?
+											.request-questions_inner
+												.request-select
+													select.filter
+														option не попасть в аварии зимой
+														option не попасть в аварии зимой 	 
+														option не попасть в аварии зимой			
 
 
 
