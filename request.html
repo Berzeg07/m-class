@@ -290,6 +290,74 @@
                 </div>
               </div>
             </div>
+            <div class="request-lessons">
+              <p class="request-title request-lessons_title">тип занятий</p>
+              <div class="request-lessons_inner">
+                <div class="request-lessons_item">
+                  <p class="request-title"> <span>выберите подходящий для вас <br>тип занятий</span></p>
+                  <ul>
+                    <li>
+                      <input class="radioBtn" type="radio" name="lesson" id="lesson-group">
+                      <label for="lesson-group">В группе</label>
+                    </li>
+                    <li>
+                      <input class="radioBtn" type="radio" name="lesson" id="lesson-personal">
+                      <label for="lesson-personal">индивидуально</label>
+                    </li>
+                  </ul>
+                </div>
+                <div class="request-lessons_item">
+                  <p class="request-title"> <span>Ваши </span>пожелания по срокам<br> <span>занятий</span>
+                    <div class="request-select">
+                      <select class="filter">
+                        <option>Побыстрее</option>
+                        <option>Медленнее	 </option>
+                        <option>Побыстрее</option>
+                      </select>
+                    </div>
+                  </p>
+                </div>
+                <div class="request-lessons_item">
+                  <p class="request-title"> <span>На каком автомобиле планируете<br> заниматься?</span></p>
+                  <ul>
+                    <li>
+                      <input class="radioBtn" type="radio" name="which-car" id="personal-car">
+                      <label for="personal-car">личный автомобиль</label>
+                    </li>
+                    <li>
+                      <input class="radioBtn" type="radio" name="which-car" id="renta-car">
+                      <label for="renta-car">прокат автомобиля <span>(Потребуется дополнительная оплата)</span></label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="request-dtpInfo">
+              <ul>
+                <li>
+                  <p class="request-title">Количество ДТП, в которых Вам пришлось побывать <span>в качестве водителя?</span></p>
+                  <label>
+                    <input class="num-inp border-inp" type="number" placeholder="0">
+                  </label>
+                </li>
+                <li>
+                  <p class="request-title">Количество ДТП, в которых Вам пришлось побывать <span>в качестве пассажира?</span></p>
+                  <label>
+                    <input class="num-inp border-inp" type="number" placeholder="0">
+                  </label>
+                </li>
+                <li>
+                  <p class="request-title"> <span>Есть ли у Вас какие либо </span>физиологические особенности, <span>которые тренеру необходимо учесть во время занятий?</span></p>
+                  <input class="radioBtn" type="checkbox" name="comment" id="comment">
+                  <label for="comment">Да</label>
+                </li>
+                <li>
+                  <div class="request-dtpInfo_hidden">
+                    <input class="border-inp" type="text" placeholder="Подробности">
+                  </div>
+                </li>
+              </ul>
+            </div>
           </form>
         </div>
         <div class="contTabs-cont" id="tab-cont_2"></div>

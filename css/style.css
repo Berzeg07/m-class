@@ -5090,6 +5090,12 @@ nav a {
   color: white;
 }
 
+@media (max-width: 992px) {
+  .request-questions_item ol li:after {
+    display: none;
+  }
+}
+
 @media (min-width: 1280px) {
   .request-questions_item ol li:after {
     right: 130px;
@@ -5136,4 +5142,186 @@ nav a {
   height: 38px;
   padding: 0;
   text-transform: uppercase;
+}
+
+@media (min-width: 992px) {
+  .request-lessons {
+    padding: 0 0 0 30px;
+  }
+}
+
+.request-lessons_inner {
+  border-bottom: 4px solid #F4F4F4;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  .request-lessons_inner {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+  }
+}
+
+.request-lessons_title {
+  padding: 25px 0;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .request-lessons_title {
+    text-align: left;
+  }
+}
+
+@media (min-width: 992px) {
+  .request-lessons_title {
+    padding: 35px 0;
+  }
+}
+
+.request-lessons_item {
+  margin-bottom: 25px;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.request-lessons_item:first-child {
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .request-lessons_item:first-child {
+    padding-right: 20px;
+    margin-right: 32px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .request-lessons_item:first-child {
+    padding-right: 78px;
+  }
+}
+
+.request-lessons_item:first-child:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 4px;
+  height: 100%;
+  background: #F4F4F4;
+}
+
+@media (min-width: 768px) {
+  .request-lessons_item:nth-child(2) {
+    margin-right: 38px;
+  }
+}
+
+.request-lessons_item:last-child label span {
+  font-family: "Gilroy-Light";
+  text-transform: none;
+}
+
+@media (min-width: 768px) {
+  .request-lessons_item {
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 0;
+    padding-bottom: 18px;
+  }
+}
+
+.request-lessons_item .request-title {
+  margin-bottom: 23px;
+}
+
+.request-lessons_item ul li {
+  margin-bottom: 17px;
+}
+
+.request-dtpInfo .request-title {
+  font-size: 12px;
+}
+
+.request-dtpInfo ul li {
+  margin-bottom: 13px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .request-dtpInfo ul li {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    text-align: left;
+    justify-content: space-between;
+  }
+}
+
+.request-dtpInfo ul li label {
+  width: 55px;
+  display: inline-block;
+}
+
+.request-dtpInfo ul li label input {
+  padding-left: 22px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .request-dtpInfo ul li:nth-child(1), .request-dtpInfo ul li:nth-child(2) {
+    max-width: 588px;
+    width: 100%;
+  }
+  .request-dtpInfo ul li:nth-child(1) p, .request-dtpInfo ul li:nth-child(2) p {
+    padding-top: 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .request-dtpInfo ul li:nth-child(3) {
+    max-width: 840px;
+    width: 100%;
+  }
+  .request-dtpInfo ul li:nth-child(3) p {
+    padding-top: 15px;
+  }
+}
+
+.request-dtpInfo ul li:nth-child(3) label {
+  display: inline-block;
+  padding-left: 35px;
+  height: 37px;
+}
+
+.request-dtpInfo ul li:nth-child(3) label:before {
+  width: 19px;
+  height: 19px;
+  top: 16px;
+}
+
+.request-dtpInfo ul li:nth-child(3) label:after {
+  width: 13px;
+  height: 12px;
+  left: 3px;
+  top: 14px;
+}
+
+.request-dtpInfo ul li:last-child input {
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .request-dtpInfo {
+    padding: 0 0 0 30px;
+  }
+}
+
+.request-dtpInfo_hidden {
+  width: 100%;
 }

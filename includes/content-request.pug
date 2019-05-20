@@ -183,6 +183,64 @@
 														option не попасть в аварии зимой
 														option не попасть в аварии зимой 	 
 														option не попасть в аварии зимой			
+				.request-lessons
+					p.request-title.request-lessons_title тип занятий
+					.request-lessons_inner
+						.request-lessons_item
+							p.request-title 
+								span выберите подходящий для вас <br>тип занятий
+							ul
+								li
+									input(type="radio" name="lesson").radioBtn#lesson-group
+									label(for="lesson-group") В группе
+								li
+									input(type="radio" name="lesson").radioBtn#lesson-personal
+									label(for="lesson-personal") индивидуально
+						.request-lessons_item
+							p.request-title 
+								span Ваши 
+								|пожелания по срокам<br> 
+								span занятий
+								.request-select
+									select.filter
+										option Побыстрее
+										option Медленнее	 
+										option Побыстрее
+						.request-lessons_item
+							p.request-title 
+								span На каком автомобиле планируете<br> заниматься?
+							ul
+								li
+									input(type="radio" name="which-car").radioBtn#personal-car
+									label(for="personal-car") личный автомобиль
+								li
+									input(type="radio" name="which-car").radioBtn#renta-car
+									label(for="renta-car") прокат автомобиля 
+										span (Потребуется дополнительная оплата)
+				.request-dtpInfo
+					ul
+						li
+							p.request-title Количество ДТП, в которых Вам пришлось побывать 
+								span в качестве водителя?
+							label
+								input(type="number" placeholder="0").num-inp.border-inp
+						li
+							p.request-title Количество ДТП, в которых Вам пришлось побывать 
+								span в качестве пассажира?
+							label
+								input(type="number" placeholder="0").num-inp.border-inp
+						li
+							p.request-title 
+								span Есть ли у Вас какие либо 
+								|физиологические особенности, 
+								span которые тренеру необходимо учесть во время занятий?
+							input(type="checkbox" name="comment").radioBtn#comment
+							label(for="comment") Да
+						li
+							.request-dtpInfo_hidden
+								input(type="text" placeholder="Подробности").border-inp 
+
+
 
 
 

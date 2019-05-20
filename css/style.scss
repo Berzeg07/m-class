@@ -635,11 +635,13 @@
     ol {
         list-style-type: none;
         counter-reset: num;
+
         li {
             text-align: center;
             padding: 14px 10px 16px;
             background: #E8E8E8;
             position: relative;
+
             &:after {
                 font-family: "Gilroy-ExtraBold";
                 position: absolute;
@@ -650,11 +652,15 @@
                 counter-increment: num;
                 font-size: 48px;
                 color: white;
-                @media(min-width: 1280px){
+                @media(max-width: 992px) {
+                    display: none;
+                }
+                @media(min-width: 1280px) {
                     right: 130px;
                 }
             }
-            &:first-child{
+
+            &:first-child {
                 border-bottom: 4px solid white;
             }
             @media(min-width: 768px) {
@@ -700,4 +706,178 @@
             }
         }
     }
+}
+
+.request-lessons {
+    @media(min-width: 992px) {
+        padding: 0 0 0 30px;
+    }
+
+    &_inner {
+        border-bottom: 4px solid #F4F4F4;
+        margin-bottom: 20px;
+        @media(min-width: 768px) {
+            display: -webkit-flex;
+            display: -ms-flex;
+            display: flex;
+        }
+    }
+
+    &_title {
+        padding: 25px 0;
+        text-align: center;
+        @media(min-width: 768px) {
+            text-align: left;
+        }
+        @media(min-width: 992px) {
+            padding: 35px 0;
+        }
+    }
+
+    &_item {
+        margin-bottom: 25px;
+        display: -webkit-flex;
+        display: -ms-flex;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &:first-child {
+            position: relative;
+            @media(min-width: 768px) {
+                padding-right: 20px;
+                margin-right: 32px;
+            }
+            @media(min-width: 1280px) {
+                padding-right: 78px;
+            }
+
+            &:after {
+                content: "";
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 4px;
+                height: 100%;
+                background: #F4F4F4;
+            }
+        }
+
+        &:nth-child(2) {
+            @media(min-width: 768px) {
+                margin-right: 38px;
+            }
+        }
+
+        &:last-child {
+            label {
+                span {
+                    font-family: "Gilroy-Light";
+                    text-transform: none;
+                }
+            }
+        }
+        @media(min-width: 768px) {
+            align-items: flex-start;
+            text-align: left;
+            margin-bottom: 0;
+            padding-bottom: 18px;
+        }
+
+        .request-title {
+            margin-bottom: 23px;
+        }
+
+        ul {
+            li {
+                margin-bottom: 17px;
+            }
+        }
+    }
+}
+
+.request-dtpInfo {
+    .request-title {
+        font-size: 12px;
+    }
+
+    ul {
+        li {
+            margin-bottom: 13px;
+            text-align: center;
+            @media(min-width: 768px) {
+                display: -webkit-flex;
+                display: -ms-flex;
+                display: flex;
+                text-align: left;
+                justify-content: space-between;
+                // align-items: end;
+            }
+
+            label {
+                width: 55px;
+                display: inline-block;
+
+                input {
+                    padding-left: 22px;
+                    width: 100%;
+                }
+            }
+
+            &:nth-child(1),
+            &:nth-child(2) {
+                @media(min-width: 768px) {
+                    max-width: 588px;
+                    width: 100%;
+
+                    p {
+                        padding-top: 16px;
+                    }
+                }
+            }
+
+            &:nth-child(3) {
+                @media(min-width: 768px) {
+                    max-width: 840px;
+                    width: 100%;
+
+                    p {
+                        padding-top: 15px;
+                    }
+                }
+
+                label {
+                    display: inline-block;
+                    padding-left: 35px;
+                    height: 37px;
+
+                    &:before {
+                        width: 19px;
+                        height: 19px;
+                        top: 16px;
+                    }
+
+                    &:after {
+                        width: 13px;
+                        height: 12px;
+                        left: 3px;
+                        top: 14px;
+                    }
+                }
+            }
+
+            &:last-child {
+                input {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    @media(min-width: 992px) {
+        padding: 0 0 0 30px;
+    }
+}
+
+.request-dtpInfo_hidden {
+    width: 100%;
 }
