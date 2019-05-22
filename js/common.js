@@ -1,9 +1,166 @@
 $(document).ready(function() {
 
-    // $('#rights-n').click(function(){
-    //     var ch = $(this).prop("checked");
-    //     console.log(ch);
-    // });
+    // var arr = new Array();
+
+    $('.request-programs_list__link').click(function() {
+        var $this = $(this);
+        var price = parseInt($(this).parents('li').find('.priceGroup').html());
+        var total = parseInt($('#totalPrice').html());
+        var ch = $(this).hasClass('active');
+        if (!ch) {
+            alert(1);
+            var sum = parseInt($(this).parents('li').find('.priceActive span').html());
+            var totalNew = total - sum;
+            $('#totalPrice').html(totalNew);
+            // $('.programs-about').slideUp();
+            // $('.request-programs_list__link').removeClass('active');
+            // $('.programs-about_group').removeClass('active');
+        }
+        // var price = $(this).parents('li').find('.price span').html();
+
+        $(this).toggleClass('active');
+        $(this).parents('li').find('.programs-about').slideToggle();
+        $(this).parents('li').find('.programs-about_group').toggleClass('active');
+        $(this).parents('li').find('.price').toggleClass('priceActive');
+
+        var totalNew = price + total;
+        $('#totalPrice').html(totalNew);
+
+        // $('.priceActive span').each(function() {
+        //     arr.push(this.innerHTML);
+        //     console.log(arr);
+        // });
+        // var sum = 0;
+        // for (var i = 0; i < arr.length; i++) {
+        //     sum = sum + parseInt(arr[i]);
+        // }
+
+    });
+
+    $('.ourPrice').click(function() {
+
+        var arr = new Array();
+
+        $(this).parents('.programs-about_info').find('.ourPrice').removeClass('active');
+        $(this).addClass('active');
+        var price = parseInt($(this).find('span').html());
+        var info = $(this).find('em').html();
+        var totalProgramPrice = $(this).parents('li').find('.price').find('span');
+        $(totalProgramPrice).html(price);
+        $('.priceActive span').each(function() {
+            arr.push(this.innerHTML);
+        });
+        var sum = 0;
+        for (var i = 0; i < arr.length; i++) {
+            sum = sum + parseInt(arr[i]);
+        }
+        $('#totalPrice').html(sum);
+
+        if (info == 'в группе') {
+            $(this).parents('li').find('.about-price').html('цена ' + info);
+        } else {
+            $(this).parents('li').find('.about-price').html(info);
+        }
+    });
+
+    $('#show-options').click(function() {
+        $(this).toggleClass('active');
+        $('.request-questions_hidden').slideToggle();
+    });
+
+    $('#hide-options').click(function() {
+        $('.request-questions_hidden').slideUp();
+        $('#show-options').removeClass('active');
+    });
+
+    if ($('#rights-y').prop("checked")) {
+        $('.request-hidden').addClass('active');
+    }
+    if ($('#rights-n').prop("checked")) {
+        $('.request-hiddenr').removeClass('active');
+    }
+
+    $('#rights-y').click(function() {
+        var checkInp = $(this).prop("checked");
+        if (checkInp) {
+            $('.request-hidden').slideDown();
+        }
+    });
+
+    $('#rights-n').click(function() {
+        var checkInp = $(this).prop("checked");
+        if (checkInp) {
+            $('.request-hidden').slideUp();
+        }
+    });
+
+    if ($('#has-car_y').prop("checked")) {
+        $('#has-car').addClass('active');
+    }
+    if ($('#has-car_n').prop("checked")) {
+        $('#has-car').removeClass('active');
+    }
+
+    $('#has-car_y').click(function() {
+        var checkInp = $(this).prop("checked");
+        if (checkInp) {
+            $('#has-car').addClass('active');
+        }
+    });
+
+    $('#has-car_n').click(function() {
+        var checkInp = $(this).prop("checked");
+        if (checkInp) {
+            $('#has-car').removeClass('active');
+        }
+    });
+
+    if ($('#car-type_y').prop("checked")) {
+        $('#car-type_inp').addClass('active');
+    }
+    if ($('#car-type_n').prop("checked")) {
+        $('#car-type_inp').removeClass('active');
+    }
+
+    $('#car-type_y').click(function() {
+        var checkInp = $(this).prop("checked");
+        if (checkInp) {
+            $('#car-type_inp').addClass('active');
+        }
+    });
+
+    $('#car-type_n').click(function() {
+        var checkInp = $(this).prop("checked");
+        if (checkInp) {
+            $('#car-type_inp').removeClass('active');
+        }
+    });
+
+    if ($('#type-tr').prop("checked")) {
+        $('#type-tr_select').addClass('select-disable');
+    }
+    $('#type-tr').click(function() {
+        var checkInp = $(this).prop("checked");
+        if (checkInp) {
+            $('#type-tr_select').addClass('select-disable');
+        }
+        if (!checkInp) {
+            $('#type-tr_select').removeClass('select-disable');
+        }
+    });
+
+    if ($('#driveUnit').prop("checked")) {
+        $('#driveUnit_select').addClass('select-disable');
+    }
+    $('#driveUnit').click(function() {
+        var checkInp = $(this).prop("checked");
+        if (checkInp) {
+            $('#driveUnit_select').addClass('select-disable');
+        }
+        if (!checkInp) {
+            $('#driveUnit_select').removeClass('select-disable');
+        }
+    });
 
     $('.filter').selectmenu();
 
@@ -13,10 +170,10 @@ $(document).ready(function() {
         };
     })
 
-    $('.focus-animate input').focus(function(){
+    $('.focus-animate input').focus(function() {
         $(this).parent().addClass('active');
     });
-    $('.focus-animate input').blur(function(){
+    $('.focus-animate input').blur(function() {
         $(this).parent().removeClass('active');
     });
 

@@ -10,9 +10,10 @@
 			a.contTabs-btn(href="#tab-cont_1") Физическим лицам
 			a.contTabs-btn(href="#tab-cont_2") Юридическим лицам
 
-		.contTabs-cont#tab-cont_1
-			h2.article-title.request-mainTitle Форма заявки
-			form.request-form
+	.contTabs-cont#tab-cont_1
+		h2.article-title.request-mainTitle Форма заявки
+		form.request-form
+			.inner-cont
 				.present-course
 					span.request-title Подарить курс
 				.request-formData
@@ -56,7 +57,7 @@
 							input(type="radio" name="rights").radioBtn#rights-y
 							label(for="rights-y") да
 						.request-rights_item__inner
-							input(type="radio" name="rights").radioBtn#rights-n
+							input(type="radio" name="rights" checked).radioBtn#rights-n
 							label(for="rights-n") нет	
 				.request-hidden
 					.request-hidden_top
@@ -96,13 +97,13 @@
 								span личного автомобиля
 								ul
 									li
-										input(type="checkbox" name="has-car").radioBtn#has-car_y
+										input(type="radio" name="has-car").radioBtn#has-car_y
 										label(for="has-car_y") Есть
-										input(type="checkbox" name="has-car").radioBtn#has-car_n
+										input(type="radio" name="has-car" checked).radioBtn#has-car_n
 										label(for="has-car_n") Нет
 									li
-										.request-select
-											select.filter
+										.request-select#has-car
+											select#has-car_select.filter
 												option автомобиль мужа
 												option автомобиль мужа
 												option автомобиль мужа
@@ -112,7 +113,7 @@
 							p.request-title Тип коробки передач
 							ul
 								li
-									.request-select
+									.request-select#type-tr_select
 										select.filter
 											option Ручная
 											option Автомат
@@ -125,7 +126,7 @@
 								span ведущих колес
 							ul
 								li
-									.request-select
+									.request-select#driveUnit_select
 										select.filter
 											option Передний
 											option Задний
@@ -134,8 +135,8 @@
 									label(for="driveUnit") Не знаю
 					.request-questions
 						.request-questions_top
-							p.request-title дополнительные вопросы
-							span пропустить
+							p.request-title#show-options.active дополнительные вопросы
+							span#hide-options пропустить
 						.request-questions_hidden
 							.request-questions_item
 								ol
@@ -150,7 +151,7 @@
 													input(type="radio" name="car-type").radioBtn#car-type_n
 													label(for="car-type_n") Нет
 												.request-questions_inner__item
-													input(type="text" placeholder="Audi A7 Sportback II").border-inp
+													input(type="text" placeholder="Audi A7 Sportback II").border-inp#car-type_inp
 									li
 										.request-questions_list
 											p.request-title Как часто 
@@ -239,7 +240,201 @@
 						li
 							.request-dtpInfo_hidden
 								input(type="text" placeholder="Подробности").border-inp 
+				.request-programs
+					p.article-title выберите программы 
+					.request-programs_inner
+						ul.request-programs_list
+							li
+								.request-programs_list__item
+									.request-programs_list__inner
+										span.request-programs_list__link безопасный стиль управления
+										b подробнее
+									.request-programs_list__inner
+										.price 
+											span 12900  
+											b  руб
+										p.about-price цена в группе		
 
+								.programs-about
+									.programs-about_top
+										.programs-about_info
+											.programs-about_info__item.programs-about_time
+												b ~6 часов<br>
+												span 2 дня по 3 - 4 часа
+											.programs-about_info__item.programs-about_group.ourPrice
+												b 
+													span.priceGroup 12900  
+													<i>р.</i> 
+													em в группе
+											.programs-about_info__item.programs-about_personal.ourPrice
+												b 
+													span.pricePersonal 34900  
+													<i>р.</i> 
+													em индивидуально
+
+										.programsArticle-tabs.programs-about_tabsLink
+											a(href=".programs-about_tabs__1") Цель
+											a(href=".programs-about_tabs__2") Для кого
+											a(href=".programs-about_tabs__3") Длительность<br> занятий
+											a(href=".programs-about_tabs__4") Автомобиль<br> для занятий
+											a(href=".programs-about_tabs__5") Место<br> проведения
+											a(href=".programs-about_tabs__6") Способы <br>оплаты
+
+									.programs-about_bottom
+										.news-article.programs-about_tabs.programs-about_tabs__1
+											p (тест таб-1) Программа «Безопасный стиль управления» разработана специально для водителей неуверенно чувствующих себя в городе. 
+											P Не важно, новичок вы за рулем или у вас был долгий перерыв в вождении — после завершения этого курса вы сможете безопасно передвигаться по городу.
+										.news-article.programs-about_tabs.programs-about_tabs__2
+											p (тест таб-2) Программа «Безопасный стиль управления» разработана специально для водителей неуверенно чувствующих себя в городе. 
+											P Не важно, новичок вы за рулем или у вас был долгий перерыв в вождении — после завершения этого курса вы сможете безопасно передвигаться по городу.
+										.news-article.programs-about_tabs.programs-about_tabs__3
+											p (тест таб-3) Программа «Безопасный стиль управления» разработана специально для водителей неуверенно чувствующих себя в городе. 
+											P Не важно, новичок вы за рулем или у вас был долгий перерыв в вождении — после завершения этого курса вы сможете безопасно передвигаться по городу.
+										.news-article.programs-about_tabs.programs-about_tabs__4
+											p (тест таб-4) Программа «Безопасный стиль управления» разработана специально для водителей неуверенно чувствующих себя в городе. 
+											P Не важно, новичок вы за рулем или у вас был долгий перерыв в вождении — после завершения этого курса вы сможете безопасно передвигаться по городу.
+										.news-article.programs-about_tabs.programs-about_tabs__5
+											p (тест таб-5) Программа «Безопасный стиль управления» разработана специально для водителей неуверенно чувствующих себя в городе. 
+											P Не важно, новичок вы за рулем или у вас был долгий перерыв в вождении — после завершения этого курса вы сможете безопасно передвигаться по городу.
+										.news-article.programs-about_tabs.programs-about_tabs__6
+											p (тест таб-6) Программа «Безопасный стиль управления» разработана специально для водителей неуверенно чувствующих себя в городе. 
+											P Не важно, новичок вы за рулем или у вас был долгий перерыв в вождении — после завершения этого курса вы сможете безопасно передвигаться по городу.
+
+							li
+								.request-programs_list__item
+									.request-programs_list__inner
+										span.request-programs_list__link безопасный стиль управления
+										b подробнее
+									.request-programs_list__inner
+										.price 
+											span 12900  
+											b  руб
+										p.about-price цена в группе
+								.programs-about
+									.programs-about_top
+										.programs-about_info
+											.programs-about_info__item.programs-about_time
+												b ~6 часов<br>
+												span 2 дня по 3 - 4 часа
+											.programs-about_info__item.programs-about_group.ourPrice
+												b 
+													span.priceGroup 12900  
+													<i>р.</i> 
+													em в группе
+											.programs-about_info__item.programs-about_personal.ourPrice
+												b 
+													span.pricePersonal 34900  
+													<i>р.</i> 
+													em индивидуально
+
+										.programsArticle-tabs.programs-about_tabsLink
+											a(href=".programs-about_tabs__1") Цель
+											a(href=".programs-about_tabs__2") Для кого
+											a(href=".programs-about_tabs__3") Длительность<br> занятий
+											a(href=".programs-about_tabs__4") Автомобиль<br> для занятий
+											a(href=".programs-about_tabs__5") Место<br> проведения
+											a(href=".programs-about_tabs__6") Способы <br>оплаты
+
+									.programs-about_bottom
+										.news-article.programs-about_tabs.programs-about_tabs__1
+											p (тест таб-1) Программа «Безопасный стиль управления» разработана специально для водителей неуверенно чувствующих себя в городе. 
+											P Не важно, новичок вы за рулем или у вас был долгий перерыв в вождении — после завершения этого курса вы сможете безопасно передвигаться по городу.
+										.news-article.programs-about_tabs.programs-about_tabs__2
+											p (тест таб-2) Программа «Безопасный стиль управления» разработана специально для водителей неуверенно чувствующих себя в городе. 
+											P Не важно, новичок вы за рулем или у вас был долгий перерыв в вождении — после завершения этого курса вы сможете безопасно передвигаться по городу.
+										.news-article.programs-about_tabs.programs-about_tabs__3
+											p (тест таб-3) Программа «Безопасный стиль управления» разработана специально для водителей неуверенно чувствующих себя в городе. 
+											P Не важно, новичок вы за рулем или у вас был долгий перерыв в вождении — после завершения этого курса вы сможете безопасно передвигаться по городу.
+										.news-article.programs-about_tabs.programs-about_tabs__4
+											p (тест таб-4) Программа «Безопасный стиль управления» разработана специально для водителей неуверенно чувствующих себя в городе. 
+											P Не важно, новичок вы за рулем или у вас был долгий перерыв в вождении — после завершения этого курса вы сможете безопасно передвигаться по городу.
+										.news-article.programs-about_tabs.programs-about_tabs__5
+											p (тест таб-5) Программа «Безопасный стиль управления» разработана специально для водителей неуверенно чувствующих себя в городе. 
+											P Не важно, новичок вы за рулем или у вас был долгий перерыв в вождении — после завершения этого курса вы сможете безопасно передвигаться по городу.
+										.news-article.programs-about_tabs.programs-about_tabs__6
+											p (тест таб-6) Программа «Безопасный стиль управления» разработана специально для водителей неуверенно чувствующих себя в городе. 
+											P Не важно, новичок вы за рулем или у вас был долгий перерыв в вождении — после завершения этого курса вы сможете безопасно передвигаться по городу.				
+							li
+								.request-programs_list__item
+									.request-programs_list__inner
+										span.request-programs_list__link безопасный стиль управления
+										b подробнее
+									.request-programs_list__inner
+										.price 
+											span 12900
+											b  руб
+										p.about-price цена в группе
+								.programs-about
+									.programs-about_top
+										.programs-about_info
+											.programs-about_info__item.programs-about_time
+												b ~6 часов<br>
+												span 2 дня по 3 - 4 часа
+											.programs-about_info__item.programs-about_group.ourPrice
+												b 
+													span.priceGroup 12900  
+													<i>р.</i> 
+													em в группе
+											.programs-about_info__item.programs-about_personal.ourPrice
+												b 
+													span.pricePersonal 34900  
+													<i>р.</i> 
+													em индивидуально
+
+										.programsArticle-tabs.programs-about_tabsLink
+											a(href=".programs-about_tabs__1") Цель
+											a(href=".programs-about_tabs__2") Для кого
+											a(href=".programs-about_tabs__3") Длительность<br> занятий
+											a(href=".programs-about_tabs__4") Автомобиль<br> для занятий
+											a(href=".programs-about_tabs__5") Место<br> проведения
+											a(href=".programs-about_tabs__6") Способы <br>оплаты
+
+									.programs-about_bottom
+										.news-article.programs-about_tabs.programs-about_tabs__1
+											p (тест таб-1) Программа «Безопасный стиль управления» разработана специально для водителей неуверенно чувствующих себя в городе. 
+											P Не важно, новичок вы за рулем или у вас был долгий перерыв в вождении — после завершения этого курса вы сможете безопасно передвигаться по городу.
+										.news-article.programs-about_tabs.programs-about_tabs__2
+											p (тест таб-2) Программа «Безопасный стиль управления» разработана специально для водителей неуверенно чувствующих себя в городе. 
+											P Не важно, новичок вы за рулем или у вас был долгий перерыв в вождении — после завершения этого курса вы сможете безопасно передвигаться по городу.
+										.news-article.programs-about_tabs.programs-about_tabs__3
+											p (тест таб-3) Программа «Безопасный стиль управления» разработана специально для водителей неуверенно чувствующих себя в городе. 
+											P Не важно, новичок вы за рулем или у вас был долгий перерыв в вождении — после завершения этого курса вы сможете безопасно передвигаться по городу.
+										.news-article.programs-about_tabs.programs-about_tabs__4
+											p (тест таб-4) Программа «Безопасный стиль управления» разработана специально для водителей неуверенно чувствующих себя в городе. 
+											P Не важно, новичок вы за рулем или у вас был долгий перерыв в вождении — после завершения этого курса вы сможете безопасно передвигаться по городу.
+										.news-article.programs-about_tabs.programs-about_tabs__5
+											p (тест таб-5) Программа «Безопасный стиль управления» разработана специально для водителей неуверенно чувствующих себя в городе. 
+											P Не важно, новичок вы за рулем или у вас был долгий перерыв в вождении — после завершения этого курса вы сможете безопасно передвигаться по городу.
+										.news-article.programs-about_tabs.programs-about_tabs__6
+											p (тест таб-6) Программа «Безопасный стиль управления» разработана специально для водителей неуверенно чувствующих себя в городе. 
+											P Не важно, новичок вы за рулем или у вас был долгий перерыв в вождении — после завершения этого курса вы сможете безопасно передвигаться по городу.						
+					.request-programs_totalPrice
+						span Итого: 
+						span#totalPrice 0 
+						span  Руб
+					.request-programs_comment
+						p.request-title Добавить комментарий
+						textarea(placeholder="В поле комментарии  пишите только, то, что не отражено в предыдущих записях. Мы постараемся обработать Ваше сообщение максимально быстро и тут же свяжемся с Вами. Обычно это происходит в этот же день, если это не выходной. Но в любом случае мы не оставим Ваше сообщение без внимания! ")
+			.request-submit
+				.request-submit_item
+					.request-submit_inner
+						ul
+							li
+								.capcha
+									img(src="img/capcha.jpg")
+							li
+								p.privacy-text Нажав на кнопку «Отправить заявку» Вы соглашаетесь с условиями 
+									a(href="#") публичной оферты 
+									|и с условиями 
+									a(href="#") Политики обработки персональных данных
+
+					.request-submit_inner
+						ul
+							li
+								a(href="#").btn.recallForm-btn Оплата на сайте
+							li
+								button(type="submit").btn.programsArticle-btn Отправить заявку
+				p.request-form_article Вы можете оплатить программы на сайте или оставить заявку и  мы свяжемся с Вами			
 
 
 

@@ -60,9 +60,11 @@
     <div class="request">
       <div class="inner-cont">
         <div class="contTabs"><a class="contTabs-btn" href="#tab-cont_1">Физическим лицам</a><a class="contTabs-btn" href="#tab-cont_2">Юридическим лицам</a></div>
-        <div class="contTabs-cont" id="tab-cont_1">
-          <h2 class="article-title request-mainTitle">Форма заявки</h2>
-          <form class="request-form">
+      </div>
+      <div class="contTabs-cont" id="tab-cont_1">
+        <h2 class="article-title request-mainTitle">Форма заявки</h2>
+        <form class="request-form">
+          <div class="inner-cont">
             <div class="present-course"><span class="request-title">Подарить курс</span></div>
             <div class="request-formData">
               <div class="request-formData_item">
@@ -121,7 +123,7 @@
                   <label for="rights-y">да</label>
                 </div>
                 <div class="request-rights_item__inner">
-                  <input class="radioBtn" type="radio" name="rights" id="rights-n">
+                  <input class="radioBtn" type="radio" name="rights" checked id="rights-n">
                   <label for="rights-n">нет	</label>
                 </div>
               </div>
@@ -167,14 +169,14 @@
                   <p class="request-title">Марка <span>личного автомобиля</span>
                     <ul>
                       <li>
-                        <input class="radioBtn" type="checkbox" name="has-car" id="has-car_y">
+                        <input class="radioBtn" type="radio" name="has-car" id="has-car_y">
                         <label for="has-car_y">Есть</label>
-                        <input class="radioBtn" type="checkbox" name="has-car" id="has-car_n">
+                        <input class="radioBtn" type="radio" name="has-car" checked id="has-car_n">
                         <label for="has-car_n">Нет</label>
                       </li>
                       <li>
-                        <div class="request-select">
-                          <select class="filter">
+                        <div class="request-select" id="has-car">
+                          <select class="filter" id="has-car_select">
                             <option>автомобиль мужа</option>
                             <option>автомобиль мужа</option>
                             <option>автомобиль мужа</option>
@@ -189,7 +191,7 @@
                   <p class="request-title">Тип коробки передач</p>
                   <ul>
                     <li>
-                      <div class="request-select">
+                      <div class="request-select" id="type-tr_select">
                         <select class="filter">
                           <option>Ручная</option>
                           <option>Автомат</option>
@@ -206,7 +208,7 @@
                   <p class="request-title">Тип привода <span>ведущих колес</span></p>
                   <ul>
                     <li>
-                      <div class="request-select">
+                      <div class="request-select" id="driveUnit_select">
                         <select class="filter">
                           <option>Передний</option>
                           <option>Задний</option>
@@ -222,7 +224,7 @@
               </div>
               <div class="request-questions">
                 <div class="request-questions_top">
-                  <p class="request-title">дополнительные вопросы</p><span>пропустить</span>
+                  <p class="request-title active" id="show-options">дополнительные вопросы</p><span id="hide-options">пропустить</span>
                 </div>
                 <div class="request-questions_hidden">
                   <div class="request-questions_item">
@@ -238,7 +240,7 @@
                               <label for="car-type_n">Нет</label>
                             </div>
                             <div class="request-questions_inner__item">
-                              <input class="border-inp" type="text" placeholder="Audi A7 Sportback II">
+                              <input class="border-inp" type="text" placeholder="Audi A7 Sportback II" id="car-type_inp">
                             </div>
                           </div>
                         </div>
@@ -358,8 +360,178 @@
                 </li>
               </ul>
             </div>
-          </form>
-        </div>
+            <div class="request-programs">
+              <p class="article-title">выберите программы </p>
+              <div class="request-programs_inner">
+                <ul class="request-programs_list">
+                  <li>
+                    <div class="request-programs_list__item">
+                      <div class="request-programs_list__inner"><span class="request-programs_list__link">безопасный стиль управления</span><b>подробнее</b></div>
+                      <div class="request-programs_list__inner">
+                        <div class="price"> <span>12900  </span><b> руб</b></div>
+                        <p class="about-price">цена в группе		</p>
+                      </div>
+                    </div>
+                    <div class="programs-about">
+                      <div class="programs-about_top">
+                        <div class="programs-about_info">
+                          <div class="programs-about_info__item programs-about_time"><b>~6 часов<br></b><span>2 дня по 3 - 4 часа</span></div>
+                          <div class="programs-about_info__item programs-about_group ourPrice"><b> <span class="priceGroup">12900  </span><i>р.</i> <em>в группе</em></b></div>
+                          <div class="programs-about_info__item programs-about_personal ourPrice"><b> <span class="pricePersonal">34900  </span><i>р.</i> <em>индивидуально</em></b></div>
+                        </div>
+                        <div class="programsArticle-tabs programs-about_tabsLink"><a href=".programs-about_tabs__1">Цель</a><a href=".programs-about_tabs__2">Для кого</a><a href=".programs-about_tabs__3">Длительность<br> занятий</a><a href=".programs-about_tabs__4">Автомобиль<br> для занятий</a><a href=".programs-about_tabs__5">Место<br> проведения</a><a href=".programs-about_tabs__6">Способы <br>оплаты</a></div>
+                      </div>
+                      <div class="programs-about_bottom">
+                        <div class="news-article programs-about_tabs programs-about_tabs__1">
+                          <p>(тест таб-1) Программа «Безопасный стиль управления» разработана специально для водителей неуверенно чувствующих себя в городе. </p>
+                          <P>Не важно, новичок вы за рулем или у вас был долгий перерыв в вождении — после завершения этого курса вы сможете безопасно передвигаться по городу.</P>
+                        </div>
+                        <div class="news-article programs-about_tabs programs-about_tabs__2">
+                          <p>(тест таб-2) Программа «Безопасный стиль управления» разработана специально для водителей неуверенно чувствующих себя в городе. </p>
+                          <P>Не важно, новичок вы за рулем или у вас был долгий перерыв в вождении — после завершения этого курса вы сможете безопасно передвигаться по городу.</P>
+                        </div>
+                        <div class="news-article programs-about_tabs programs-about_tabs__3">
+                          <p>(тест таб-3) Программа «Безопасный стиль управления» разработана специально для водителей неуверенно чувствующих себя в городе. </p>
+                          <P>Не важно, новичок вы за рулем или у вас был долгий перерыв в вождении — после завершения этого курса вы сможете безопасно передвигаться по городу.</P>
+                        </div>
+                        <div class="news-article programs-about_tabs programs-about_tabs__4">
+                          <p>(тест таб-4) Программа «Безопасный стиль управления» разработана специально для водителей неуверенно чувствующих себя в городе. </p>
+                          <P>Не важно, новичок вы за рулем или у вас был долгий перерыв в вождении — после завершения этого курса вы сможете безопасно передвигаться по городу.</P>
+                        </div>
+                        <div class="news-article programs-about_tabs programs-about_tabs__5">
+                          <p>(тест таб-5) Программа «Безопасный стиль управления» разработана специально для водителей неуверенно чувствующих себя в городе. </p>
+                          <P>Не важно, новичок вы за рулем или у вас был долгий перерыв в вождении — после завершения этого курса вы сможете безопасно передвигаться по городу.</P>
+                        </div>
+                        <div class="news-article programs-about_tabs programs-about_tabs__6">
+                          <p>(тест таб-6) Программа «Безопасный стиль управления» разработана специально для водителей неуверенно чувствующих себя в городе. </p>
+                          <P>Не важно, новичок вы за рулем или у вас был долгий перерыв в вождении — после завершения этого курса вы сможете безопасно передвигаться по городу.</P>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="request-programs_list__item">
+                      <div class="request-programs_list__inner"><span class="request-programs_list__link">безопасный стиль управления</span><b>подробнее</b></div>
+                      <div class="request-programs_list__inner">
+                        <div class="price"> <span>12900  </span><b> руб</b></div>
+                        <p class="about-price">цена в группе</p>
+                      </div>
+                    </div>
+                    <div class="programs-about">
+                      <div class="programs-about_top">
+                        <div class="programs-about_info">
+                          <div class="programs-about_info__item programs-about_time"><b>~6 часов<br></b><span>2 дня по 3 - 4 часа</span></div>
+                          <div class="programs-about_info__item programs-about_group ourPrice"><b> <span class="priceGroup">12900  </span><i>р.</i> <em>в группе</em></b></div>
+                          <div class="programs-about_info__item programs-about_personal ourPrice"><b> <span class="pricePersonal">34900  </span><i>р.</i> <em>индивидуально</em></b></div>
+                        </div>
+                        <div class="programsArticle-tabs programs-about_tabsLink"><a href=".programs-about_tabs__1">Цель</a><a href=".programs-about_tabs__2">Для кого</a><a href=".programs-about_tabs__3">Длительность<br> занятий</a><a href=".programs-about_tabs__4">Автомобиль<br> для занятий</a><a href=".programs-about_tabs__5">Место<br> проведения</a><a href=".programs-about_tabs__6">Способы <br>оплаты</a></div>
+                      </div>
+                      <div class="programs-about_bottom">
+                        <div class="news-article programs-about_tabs programs-about_tabs__1">
+                          <p>(тест таб-1) Программа «Безопасный стиль управления» разработана специально для водителей неуверенно чувствующих себя в городе. </p>
+                          <P>Не важно, новичок вы за рулем или у вас был долгий перерыв в вождении — после завершения этого курса вы сможете безопасно передвигаться по городу.</P>
+                        </div>
+                        <div class="news-article programs-about_tabs programs-about_tabs__2">
+                          <p>(тест таб-2) Программа «Безопасный стиль управления» разработана специально для водителей неуверенно чувствующих себя в городе. </p>
+                          <P>Не важно, новичок вы за рулем или у вас был долгий перерыв в вождении — после завершения этого курса вы сможете безопасно передвигаться по городу.</P>
+                        </div>
+                        <div class="news-article programs-about_tabs programs-about_tabs__3">
+                          <p>(тест таб-3) Программа «Безопасный стиль управления» разработана специально для водителей неуверенно чувствующих себя в городе. </p>
+                          <P>Не важно, новичок вы за рулем или у вас был долгий перерыв в вождении — после завершения этого курса вы сможете безопасно передвигаться по городу.</P>
+                        </div>
+                        <div class="news-article programs-about_tabs programs-about_tabs__4">
+                          <p>(тест таб-4) Программа «Безопасный стиль управления» разработана специально для водителей неуверенно чувствующих себя в городе. </p>
+                          <P>Не важно, новичок вы за рулем или у вас был долгий перерыв в вождении — после завершения этого курса вы сможете безопасно передвигаться по городу.</P>
+                        </div>
+                        <div class="news-article programs-about_tabs programs-about_tabs__5">
+                          <p>(тест таб-5) Программа «Безопасный стиль управления» разработана специально для водителей неуверенно чувствующих себя в городе. </p>
+                          <P>Не важно, новичок вы за рулем или у вас был долгий перерыв в вождении — после завершения этого курса вы сможете безопасно передвигаться по городу.</P>
+                        </div>
+                        <div class="news-article programs-about_tabs programs-about_tabs__6">
+                          <p>(тест таб-6) Программа «Безопасный стиль управления» разработана специально для водителей неуверенно чувствующих себя в городе. </p>
+                          <P>Не важно, новичок вы за рулем или у вас был долгий перерыв в вождении — после завершения этого курса вы сможете безопасно передвигаться по городу.				</P>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="request-programs_list__item">
+                      <div class="request-programs_list__inner"><span class="request-programs_list__link">безопасный стиль управления</span><b>подробнее</b></div>
+                      <div class="request-programs_list__inner">
+                        <div class="price"> <span>12900</span><b> руб</b></div>
+                        <p class="about-price">цена в группе</p>
+                      </div>
+                    </div>
+                    <div class="programs-about">
+                      <div class="programs-about_top">
+                        <div class="programs-about_info">
+                          <div class="programs-about_info__item programs-about_time"><b>~6 часов<br></b><span>2 дня по 3 - 4 часа</span></div>
+                          <div class="programs-about_info__item programs-about_group ourPrice"><b> <span class="priceGroup">12900  </span><i>р.</i> <em>в группе</em></b></div>
+                          <div class="programs-about_info__item programs-about_personal ourPrice"><b> <span class="pricePersonal">34900  </span><i>р.</i> <em>индивидуально</em></b></div>
+                        </div>
+                        <div class="programsArticle-tabs programs-about_tabsLink"><a href=".programs-about_tabs__1">Цель</a><a href=".programs-about_tabs__2">Для кого</a><a href=".programs-about_tabs__3">Длительность<br> занятий</a><a href=".programs-about_tabs__4">Автомобиль<br> для занятий</a><a href=".programs-about_tabs__5">Место<br> проведения</a><a href=".programs-about_tabs__6">Способы <br>оплаты</a></div>
+                      </div>
+                      <div class="programs-about_bottom">
+                        <div class="news-article programs-about_tabs programs-about_tabs__1">
+                          <p>(тест таб-1) Программа «Безопасный стиль управления» разработана специально для водителей неуверенно чувствующих себя в городе. </p>
+                          <P>Не важно, новичок вы за рулем или у вас был долгий перерыв в вождении — после завершения этого курса вы сможете безопасно передвигаться по городу.</P>
+                        </div>
+                        <div class="news-article programs-about_tabs programs-about_tabs__2">
+                          <p>(тест таб-2) Программа «Безопасный стиль управления» разработана специально для водителей неуверенно чувствующих себя в городе. </p>
+                          <P>Не важно, новичок вы за рулем или у вас был долгий перерыв в вождении — после завершения этого курса вы сможете безопасно передвигаться по городу.</P>
+                        </div>
+                        <div class="news-article programs-about_tabs programs-about_tabs__3">
+                          <p>(тест таб-3) Программа «Безопасный стиль управления» разработана специально для водителей неуверенно чувствующих себя в городе. </p>
+                          <P>Не важно, новичок вы за рулем или у вас был долгий перерыв в вождении — после завершения этого курса вы сможете безопасно передвигаться по городу.</P>
+                        </div>
+                        <div class="news-article programs-about_tabs programs-about_tabs__4">
+                          <p>(тест таб-4) Программа «Безопасный стиль управления» разработана специально для водителей неуверенно чувствующих себя в городе. </p>
+                          <P>Не важно, новичок вы за рулем или у вас был долгий перерыв в вождении — после завершения этого курса вы сможете безопасно передвигаться по городу.</P>
+                        </div>
+                        <div class="news-article programs-about_tabs programs-about_tabs__5">
+                          <p>(тест таб-5) Программа «Безопасный стиль управления» разработана специально для водителей неуверенно чувствующих себя в городе. </p>
+                          <P>Не важно, новичок вы за рулем или у вас был долгий перерыв в вождении — после завершения этого курса вы сможете безопасно передвигаться по городу.</P>
+                        </div>
+                        <div class="news-article programs-about_tabs programs-about_tabs__6">
+                          <p>(тест таб-6) Программа «Безопасный стиль управления» разработана специально для водителей неуверенно чувствующих себя в городе. </p>
+                          <P>Не важно, новичок вы за рулем или у вас был долгий перерыв в вождении — после завершения этого курса вы сможете безопасно передвигаться по городу.						</P>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="request-programs_totalPrice"><span>Итого: </span><span id="totalPrice">0 </span><span> Руб</span></div>
+              <div class="request-programs_comment">
+                <p class="request-title">Добавить комментарий</p>
+                <textarea placeholder="В поле комментарии  пишите только, то, что не отражено в предыдущих записях. Мы постараемся обработать Ваше сообщение максимально быстро и тут же свяжемся с Вами. Обычно это происходит в этот же день, если это не выходной. Но в любом случае мы не оставим Ваше сообщение без внимания! "></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="request-submit">
+            <div class="request-submit_item">
+              <div class="request-submit_inner">
+                <ul>
+                  <li>
+                    <div class="capcha"><img src="img/capcha.jpg"></div>
+                  </li>
+                  <li>
+                    <p class="privacy-text">Нажав на кнопку «Отправить заявку» Вы соглашаетесь с условиями <a href="#">публичной оферты </a>и с условиями <a href="#">Политики обработки персональных данных</a></p>
+                  </li>
+                </ul>
+              </div>
+              <div class="request-submit_inner">
+                <ul>
+                  <li><a class="btn recallForm-btn" href="#">Оплата на сайте</a></li>
+                  <li>
+                    <button class="btn programsArticle-btn" type="submit">Отправить заявку</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <p class="request-form_article">Вы можете оплатить программы на сайте или оставить заявку и  мы свяжемся с Вами			</p>
+          </div>
+        </form>
         <div class="contTabs-cont" id="tab-cont_2"></div>
       </div>
     </div>
