@@ -8,7 +8,8 @@
 	.inner-cont
 		.contTabs
 			a.contTabs-btn(href="#tab-cont_1") Физическим лицам
-			a.contTabs-btn(href="#tab-cont_2") Юридическим лицам
+			a.contTabs-btn.contTabs-btn_entity(href="#tab-cont_2") 
+				span Юридическим лицам
 
 	.contTabs-cont#tab-cont_1
 		h2.article-title.request-mainTitle Форма заявки
@@ -190,11 +191,17 @@
 						.request-lessons_item
 							p.request-title 
 								span выберите подходящий для вас <br>тип занятий
-							ul
+							ul.request-lessons_list
 								li
+									.question-icon ?
+									.request-lessons_tooltip
+										p Длительность занятий 4 - 4.5 уч.часов в день. Занятия идут дольше индивидуальных более чем на 1 час.  С  группой будут работать до 4 тренеров. В группе может быть до 10 участников, хотя наш автодром позволяет заниматься одновременно 15 ученикам. Чтобы Вы лучше освоили изучаемые ситуации к Вам в автомобиль периодически будут подсаживаться наши тренеры.   Дешевле почти в 2 раза, чем ИНДИВИДУАЛЬНО. Но придется подождать комплектования группы и придти на занятия по нашему графику. Вы сможете сравнить и увидеть как ведут себя разные автомобили в одинаковых ситуациях. Ну и главное - Вы сможете пообщаться с другими учениками и обсудить то, что изучаете и как это понимают другие участники занятий. 
 									input(type="radio" name="lesson").radioBtn#lesson-group
 									label(for="lesson-group") В группе
 								li
+									.question-icon ?	
+									.request-lessons_tooltip
+										p Длительность занятий до 3х - 3.5 уч.часов. С Вами занимается персональный тренер, который может несколько расширить или наоборот - сузить содержание программы ради достижения конечной цели. Одновременно на площадке могут заниматься до 4х таких же учеников со своими персональными тренерами. Время подбирается тоже по графику, но все же более гибко. 
 									input(type="radio" name="lesson").radioBtn#lesson-personal
 									label(for="lesson-personal") индивидуально
 						.request-lessons_item
@@ -435,15 +442,53 @@
 							li
 								button(type="submit").btn.programsArticle-btn Отправить заявку
 				p.request-form_article Вы можете оплатить программы на сайте или оставить заявку и  мы свяжемся с Вами			
+	.contTabs-cont#tab-cont_2
+		.entity
+			form
+				h2.article-title.request-mainTitle Форма заявки <br> 
+					span для юридических лиц
+				.inner-cont
+					.request-formData
+						.request-formData_item
+							label.focus-animate
+								input(type="text" placeholder="Фамилия")
+							label.focus-animate
+								input(type="text" placeholder="Имя*" required)
+							label.focus-animate
+								input(type="text" placeholder="Отчество")
 
+						.request-formData_item.request-personalData
+							p.request-title Данные о компании
+							.request-formData_item__inner
+								label
+									input(type="text" placeholder="организация")
+							.request-formData_item__inner
+								label
+									input(type="text" placeholder="инн")
+						.request-formData_item.request-personalData
+							p.request-title Контактные данные		
+							label
+								input(type="text" placeholder="телефон*" required).recallForm-phone
+							label
+								input(type="text" placeholder="E-MAIL")
+					.request-programs_comment
+						p.request-title Добавить комментарий
+						textarea(placeholder="В поле комментарии  пишите только, то, что не отражено в предыдущих записях. Мы постараемся обработать Ваше сообщение максимально быстро и тут же свяжемся с Вами. Обычно это происходит в этот же день, если это не выходной. Но в любом случае мы не оставим Ваше сообщение без внимания! ")
+				.request-submit
+					.request-submit_item
+						.request-submit_inner
+							ul
+								li
+									.capcha
+										img(src="img/capcha.jpg")
+								li
+									p.privacy-text Нажав на кнопку «Отправить заявку» Вы соглашаетесь с условиями 
+										a(href="#") публичной оферты 
+										|и с условиями 
+										a(href="#") Политики обработки персональных данных
 
-
-
-
-
-
-
-
-		.contTabs-cont#tab-cont_2
+						.request-submit_inner
+							button(type="submit").btn.programsArticle-btn Отправить заявку
+									
 
 include letters.pug

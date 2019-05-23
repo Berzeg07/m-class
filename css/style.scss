@@ -15,10 +15,40 @@
 
     .contTabs {
         border-bottom: 1px solid #C5C6C8;
+        text-align: center;
     }
 
     .contTabs-cont {
         border-top: none;
+    }
+
+    .contTabs-btn {
+        @media(min-width: 768px) {
+            font-size: 16px;
+            width: 50%;
+        }
+        @media(min-width: 992px) {
+            font-size: 24px;
+        }
+    }
+
+    .contTabs-btn_entity.active {
+        span {
+            display: inline-block;
+            position: relative;
+            padding-left: 36px;
+
+            &:after {
+                content: "";
+                position: absolute;
+                left: 0px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 20px;
+                height: 18px;
+                background: url("../img/case.png") no-repeat center;
+            }
+        }
     }
 
     &-mainTitle {
@@ -146,7 +176,9 @@
             }
 
             &:not(:last-child) {
-                margin-right: 25px;
+                @media(min-width: 992px) {
+                    margin-right: 25px;
+                }
             }
         }
     }
@@ -798,11 +830,14 @@
             &:after {
                 content: "";
                 position: absolute;
-                right: 0;
+                right: -22px;
                 bottom: 0;
                 width: 4px;
                 height: 100%;
                 background: #F4F4F4;
+                @media(min-width: 1100px) {
+                    right: 0;
+                }
             }
         }
 
@@ -1103,7 +1138,8 @@
             }
 
             .price.priceActive {
-                span, b {
+                b,
+                span {
                     font-family: "Gilroy-ExtraBold";
                     color: #FE5238;
                 }
@@ -1117,7 +1153,7 @@
     }
 }
 
-.ourPrice{
+.ourPrice {
     cursor: pointer;
 }
 
@@ -1248,5 +1284,109 @@
     a {
         color: #828282;
         text-decoration: underline;
+    }
+}
+
+.request-lessons_list {
+    li {
+        position: relative;
+
+        .question-icon {
+            position: absolute;
+            right: 0;
+            cursor: pointer;
+            top: 11px;
+            width: 17px;
+            height: 17px;
+            line-height: 17px;
+            text-align: center;
+            border-radius: 10em;
+            background: #E8E8E8;
+            font-size: 12px;
+            color: #373b40;
+
+            &:hover {
+                background: #363A3F;
+                color: white;
+            }
+        }
+
+        .request-lessons_tooltip {
+            display: none;
+            position: absolute;
+            right: -62px;
+            top: 52px;
+            background: white;
+            padding: 14px;
+            box-shadow: 0 1px 8px rgba(95, 95, 95, 0.43);
+            width: 300px;
+            font-size: 12px;
+            z-index: 1;
+        }
+
+        &:first-child {
+            .question-icon {
+                right: 26px;
+            }
+
+            .request-lessons_tooltip {
+                @media(min-width: 768px) {
+                    right: -168%;
+                    top: -8px;
+                }
+            }
+        }
+
+        &:last-child {
+            .request-lessons_tooltip {
+                @media(min-width: 768px) {
+                    right: -206%;
+                    top: -8px;
+                }
+            }
+
+            .question-icon {
+                right: -32px;
+            }
+        }
+    }
+}
+
+.entity {
+    .request-submit {
+        box-shadow: 0 3px 7px rgba(0, 0, 0, 0.35);
+        padding-bottom: 30px;
+        @media(min-width: 992px) {
+            padding-bottom: 67px;
+        }
+    }
+
+    .request-mainTitle {
+        span {
+            font-family: "Gilroy-Light";
+            font-size: 14px;
+            letter-spacing: 0;
+        }
+    }
+
+    .programsArticle-btn {
+        @media(min-width: 768px) {
+            margin-right: 60px;
+        }
+    }
+
+    .request-formData_item {
+        @media(min-width: 768px) {
+            width: 33%;
+            margin: 0 auto;
+        }
+
+        .request-formData_item__inner {
+            width: 100%;
+
+            label {
+                width: 100%;
+            }
+        }
     }
 }

@@ -1,5 +1,12 @@
 $(document).ready(function() {
 
+    $('.question-icon').mouseenter(function() {
+        $(this).next().fadeIn();
+    });
+    $('.question-icon').mouseleave(function() {
+        $(this).next().fadeOut();
+    });
+
     $('.request-programs_list__link').click(function() {
         var ch = $(this).hasClass('active');
         if (!ch) {
@@ -7,11 +14,11 @@ $(document).ready(function() {
             var total = parseInt($('#totalPrice').html());
             var totalNew = price + total;
             $('#totalPrice').html(totalNew);
-        }else{
+        } else {
             var totalNew = parseInt($('#totalPrice').html());
             var sum = parseInt($(this).parents('li').find('.price span').html());
             var totalNew = totalNew - sum;
-            if(totalNew < 0){
+            if (totalNew < 0) {
                 totalNew = 0;
             }
             $('#totalPrice').html(totalNew);

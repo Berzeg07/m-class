@@ -59,7 +59,7 @@
     </div>
     <div class="request">
       <div class="inner-cont">
-        <div class="contTabs"><a class="contTabs-btn" href="#tab-cont_1">Физическим лицам</a><a class="contTabs-btn" href="#tab-cont_2">Юридическим лицам</a></div>
+        <div class="contTabs"><a class="contTabs-btn" href="#tab-cont_1">Физическим лицам</a><a class="contTabs-btn contTabs-btn_entity" href="#tab-cont_2"> <span>Юридическим лицам</span></a></div>
       </div>
       <div class="contTabs-cont" id="tab-cont_1">
         <h2 class="article-title request-mainTitle">Форма заявки</h2>
@@ -297,12 +297,20 @@
               <div class="request-lessons_inner">
                 <div class="request-lessons_item">
                   <p class="request-title"> <span>выберите подходящий для вас <br>тип занятий</span></p>
-                  <ul>
+                  <ul class="request-lessons_list">
                     <li>
+                      <div class="question-icon">?</div>
+                      <div class="request-lessons_tooltip">
+                        <p>Длительность занятий 4 - 4.5 уч.часов в день. Занятия идут дольше индивидуальных более чем на 1 час.  С  группой будут работать до 4 тренеров. В группе может быть до 10 участников, хотя наш автодром позволяет заниматься одновременно 15 ученикам. Чтобы Вы лучше освоили изучаемые ситуации к Вам в автомобиль периодически будут подсаживаться наши тренеры.   Дешевле почти в 2 раза, чем ИНДИВИДУАЛЬНО. Но придется подождать комплектования группы и придти на занятия по нашему графику. Вы сможете сравнить и увидеть как ведут себя разные автомобили в одинаковых ситуациях. Ну и главное - Вы сможете пообщаться с другими учениками и обсудить то, что изучаете и как это понимают другие участники занятий. </p>
+                      </div>
                       <input class="radioBtn" type="radio" name="lesson" id="lesson-group">
                       <label for="lesson-group">В группе</label>
                     </li>
                     <li>
+                      <div class="question-icon">?	</div>
+                      <div class="request-lessons_tooltip">
+                        <p>Длительность занятий до 3х - 3.5 уч.часов. С Вами занимается персональный тренер, который может несколько расширить или наоборот - сузить содержание программы ради достижения конечной цели. Одновременно на площадке могут заниматься до 4х таких же учеников со своими персональными тренерами. Время подбирается тоже по графику, но все же более гибко. </p>
+                      </div>
                       <input class="radioBtn" type="radio" name="lesson" id="lesson-personal">
                       <label for="lesson-personal">индивидуально</label>
                     </li>
@@ -532,7 +540,71 @@
             <p class="request-form_article">Вы можете оплатить программы на сайте или оставить заявку и  мы свяжемся с Вами			</p>
           </div>
         </form>
-        <div class="contTabs-cont" id="tab-cont_2"></div>
+      </div>
+      <div class="contTabs-cont" id="tab-cont_2">
+        <div class="entity">
+          <form>
+            <h2 class="article-title request-mainTitle">Форма заявки <br> <span>для юридических лиц</span></h2>
+            <div class="inner-cont">
+              <div class="request-formData">
+                <div class="request-formData_item">
+                  <label class="focus-animate">
+                    <input type="text" placeholder="Фамилия">
+                  </label>
+                  <label class="focus-animate">
+                    <input type="text" placeholder="Имя*" required>
+                  </label>
+                  <label class="focus-animate">
+                    <input type="text" placeholder="Отчество">
+                  </label>
+                </div>
+                <div class="request-formData_item request-personalData">
+                  <p class="request-title">Данные о компании</p>
+                  <div class="request-formData_item__inner">
+                    <label>
+                      <input type="text" placeholder="организация">
+                    </label>
+                  </div>
+                  <div class="request-formData_item__inner">
+                    <label>
+                      <input type="text" placeholder="инн">
+                    </label>
+                  </div>
+                </div>
+                <div class="request-formData_item request-personalData">
+                  <p class="request-title">Контактные данные		</p>
+                  <label>
+                    <input class="recallForm-phone" type="text" placeholder="телефон*" required>
+                  </label>
+                  <label>
+                    <input type="text" placeholder="E-MAIL">
+                  </label>
+                </div>
+              </div>
+              <div class="request-programs_comment">
+                <p class="request-title">Добавить комментарий</p>
+                <textarea placeholder="В поле комментарии  пишите только, то, что не отражено в предыдущих записях. Мы постараемся обработать Ваше сообщение максимально быстро и тут же свяжемся с Вами. Обычно это происходит в этот же день, если это не выходной. Но в любом случае мы не оставим Ваше сообщение без внимания! "></textarea>
+              </div>
+            </div>
+            <div class="request-submit">
+              <div class="request-submit_item">
+                <div class="request-submit_inner">
+                  <ul>
+                    <li>
+                      <div class="capcha"><img src="img/capcha.jpg"></div>
+                    </li>
+                    <li>
+                      <p class="privacy-text">Нажав на кнопку «Отправить заявку» Вы соглашаетесь с условиями <a href="#">публичной оферты </a>и с условиями <a href="#">Политики обработки персональных данных</a></p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="request-submit_inner">
+                  <button class="btn programsArticle-btn" type="submit">Отправить заявку</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
     <div class="lettersBlock">

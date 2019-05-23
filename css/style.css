@@ -4434,10 +4434,41 @@ nav a {
 
 .request .contTabs {
   border-bottom: 1px solid #C5C6C8;
+  text-align: center;
 }
 
 .request .contTabs-cont {
   border-top: none;
+}
+
+@media (min-width: 768px) {
+  .request .contTabs-btn {
+    font-size: 16px;
+    width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .request .contTabs-btn {
+    font-size: 24px;
+  }
+}
+
+.request .contTabs-btn_entity.active span {
+  display: inline-block;
+  position: relative;
+  padding-left: 36px;
+}
+
+.request .contTabs-btn_entity.active span:after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 18px;
+  background: url("../img/case.png") no-repeat center;
 }
 
 .request-mainTitle {
@@ -4582,8 +4613,10 @@ nav a {
   }
 }
 
-.request-formData_item:not(:last-child) {
-  margin-right: 25px;
+@media (min-width: 992px) {
+  .request-formData_item:not(:last-child) {
+    margin-right: 25px;
+  }
 }
 
 .request input::-webkit-input-placeholder {
@@ -5256,11 +5289,17 @@ nav a {
 .request-lessons_item:first-child:after {
   content: "";
   position: absolute;
-  right: 0;
+  right: -22px;
   bottom: 0;
   width: 4px;
   height: 100%;
   background: #F4F4F4;
+}
+
+@media (min-width: 1100px) {
+  .request-lessons_item:first-child:after {
+    right: 0;
+  }
 }
 
 @media (min-width: 768px) {
@@ -5562,7 +5601,8 @@ nav a {
   font-size: 16px;
 }
 
-.request-programs_list__item .request-programs_list__inner:last-child .price.priceActive span, .request-programs_list__item .request-programs_list__inner:last-child .price.priceActive b {
+.request-programs_list__item .request-programs_list__inner:last-child .price.priceActive b,
+.request-programs_list__item .request-programs_list__inner:last-child .price.priceActive span {
   font-family: "Gilroy-ExtraBold";
   color: #FE5238;
 }
@@ -5707,4 +5747,101 @@ nav a {
 .privacy-text a {
   color: #828282;
   text-decoration: underline;
+}
+
+.request-lessons_list li {
+  position: relative;
+}
+
+.request-lessons_list li .question-icon {
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  top: 11px;
+  width: 17px;
+  height: 17px;
+  line-height: 17px;
+  text-align: center;
+  border-radius: 10em;
+  background: #E8E8E8;
+  font-size: 12px;
+  color: #373b40;
+}
+
+.request-lessons_list li .question-icon:hover {
+  background: #363A3F;
+  color: white;
+}
+
+.request-lessons_list li .request-lessons_tooltip {
+  display: none;
+  position: absolute;
+  right: -62px;
+  top: 52px;
+  background: white;
+  padding: 14px;
+  box-shadow: 0 1px 8px rgba(95, 95, 95, 0.43);
+  width: 300px;
+  font-size: 12px;
+  z-index: 1;
+}
+
+.request-lessons_list li:first-child .question-icon {
+  right: 26px;
+}
+
+@media (min-width: 768px) {
+  .request-lessons_list li:first-child .request-lessons_tooltip {
+    right: -168%;
+    top: -8px;
+  }
+}
+
+@media (min-width: 768px) {
+  .request-lessons_list li:last-child .request-lessons_tooltip {
+    right: -206%;
+    top: -8px;
+  }
+}
+
+.request-lessons_list li:last-child .question-icon {
+  right: -32px;
+}
+
+.entity .request-submit {
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.35);
+  padding-bottom: 30px;
+}
+
+@media (min-width: 992px) {
+  .entity .request-submit {
+    padding-bottom: 67px;
+  }
+}
+
+.entity .request-mainTitle span {
+  font-family: "Gilroy-Light";
+  font-size: 14px;
+  letter-spacing: 0;
+}
+
+@media (min-width: 768px) {
+  .entity .programsArticle-btn {
+    margin-right: 60px;
+  }
+}
+
+@media (min-width: 768px) {
+  .entity .request-formData_item {
+    width: 33%;
+    margin: 0 auto;
+  }
+}
+
+.entity .request-formData_item .request-formData_item__inner {
+  width: 100%;
+}
+
+.entity .request-formData_item .request-formData_item__inner label {
+  width: 100%;
 }
