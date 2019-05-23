@@ -4428,6 +4428,304 @@ nav a {
   }
 }
 
+.aboutCompany-advantage {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.aboutCompany-advantage .programsArticle-btn {
+  margin-top: 0;
+}
+
+@media (min-width: 768px) {
+  .aboutCompany-advantage {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 992px) {
+  .aboutCompany-advantage {
+    margin-top: 104px;
+    margin-bottom: 68px;
+  }
+}
+
+.aboutCompany-advantage_item {
+  max-width: 294px;
+  width: 100%;
+  margin: 0 auto 25px;
+}
+
+@media (min-width: 768px) {
+  .aboutCompany-advantage_item {
+    margin: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .aboutCompany-advantage_item:nth-child(2) {
+    padding-top: 150px;
+  }
+}
+
+.aboutCompany-advantage_item p {
+  font-size: 14px;
+  margin-bottom: 21px;
+}
+
+.aboutCompany-advantage_item p b {
+  font-family: "Gilroy-ExtraBold";
+}
+
+.aboutCompany-advantage_img {
+  text-align: center;
+}
+
+.aboutCompany-advantage_title {
+  font-family: "Gilroy-ExtraBold";
+  font-size: 36px;
+  text-transform: uppercase;
+  margin: 25px 0;
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  .aboutCompany-advantage_title {
+    margin: 56px 0 32px;
+  }
+}
+
+.aboutCompany-phone {
+  margin: 28px 0 29px;
+}
+
+.aboutCompany-phone p {
+  font-size: 14px;
+  color: #b7b8b9;
+  margin-bottom: 9px;
+}
+
+.aboutCompany-phone a {
+  font-size: 24px;
+  color: #373b40;
+}
+
+.aboutCompany-phone a b {
+  font-family: "Gilroy-ExtraBold";
+}
+
+.aboutCompany-slider_wrap {
+  background: #E7E7E7;
+  padding: 25px 0 20px;
+}
+
+.aboutCompany-slider_wrap .article-title {
+  margin-bottom: 25px;
+}
+
+@media (min-width: 992px) {
+  .aboutCompany-slider_wrap .article-title {
+    margin-bottom: 40px;
+  }
+}
+
+@media (min-width: 992px) {
+  .aboutCompany-slider_wrap {
+    padding: 39px 0 25px;
+  }
+}
+
+.aboutCompany-slider_item .aboutCompany-slider_img {
+  margin-bottom: 16px;
+}
+
+.aboutCompany-slider_item span {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.aboutCompany-slider .owl-dots {
+  display: none;
+}
+
+.aboutCompany-slider .owl-nav.disabled {
+  display: flex;
+}
+
+.aboutCompany-slider .owl-nav {
+  position: absolute;
+  left: 48.6%;
+  transform: translateX(-50%);
+  bottom: -12px;
+  width: 32px;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (min-width: 1000px) {
+  .aboutCompany-slider .owl-nav {
+    left: 49%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .aboutCompany-slider .owl-nav {
+    right: -180px;
+    left: unset;
+    top: -190px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .aboutCompany-slider .owl-nav {
+    right: -90px;
+  }
+}
+
+.aboutCompany-slider .nav-left,
+.aboutCompany-slider .nav-right {
+  width: 18px;
+  height: 35px;
+  position: absolute;
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+.aboutCompany-slider .nav-left:hover,
+.aboutCompany-slider .nav-right:hover {
+  opacity: 1;
+}
+
+.aboutCompany-slider .nav-left {
+  background: url("../img/arrow-left-2.png") no-repeat center;
+}
+
+.aboutCompany-slider .nav-right {
+  background: url("../img/arrow-right-2.png") no-repeat center;
+}
+
+.aboutCompany-history {
+  padding: 26px 10px 30px;
+}
+
+.aboutCompany-history_title {
+  padding-bottom: 32px;
+  border-bottom: 2px solid #e2543c;
+  margin-bottom: 38px;
+}
+
+.aboutCompany-history_inner {
+  max-width: 1246px;
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.35);
+  padding: 15px 10px;
+}
+
+@media (min-width: 768px) {
+  .aboutCompany-history_inner .article-title {
+    padding-left: 31px;
+  }
+}
+
+@media (min-width: 992px) {
+  .aboutCompany-history_inner {
+    padding: 35px 122px 12px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .aboutCompany-history {
+    padding: 26px 0 121px;
+  }
+}
+
+.aboutCompany-history_list li {
+  margin-bottom: 30px;
+  border-bottom: 1px solid #CECFD0;
+  padding-bottom: 30px;
+}
+
+.aboutCompany-history_list li:nth-child(n+4) {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .aboutCompany-history_list li {
+    padding-left: 31px;
+  }
+}
+
+.aboutCompany-history_list li .aboutCompany-history_date {
+  font-family: "Gilroy-ExtraBold";
+  letter-spacing: 4.8px;
+  font-size: 24px;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  padding-right: 43px;
+}
+
+.aboutCompany-history_list li .aboutCompany-history_date:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 2px;
+  width: 12px;
+  height: 23px;
+  transition: 0.5s;
+  background: url("../img/arrow-right-min.png") no-repeat center;
+  opacity: 0.5;
+}
+
+.aboutCompany-history_list li .aboutCompany-history_date:hover:after {
+  opacity: 1;
+}
+
+.aboutCompany-history_list li .aboutCompany-history_date span {
+  font-size: 14px;
+}
+
+.aboutCompany-history_list li .aboutCompany-history_date.active:after {
+  transform: rotate(90deg);
+  opacity: 1;
+}
+
+.aboutCompany-history_btn {
+  text-align: center;
+}
+
+.aboutCompany-history_next {
+  text-align: center;
+  color: #A2A4A7;
+  text-transform: lowercase;
+  font-size: 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.aboutCompany-history_next:hover {
+  color: blue;
+}
+
+.aboutCompany-history_hidden {
+  padding: 21px 0 31px;
+  display: none;
+}
+
+.aboutCompany-history_hidden b {
+  display: inline-block;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding-bottom: 25px;
+}
+
 .request {
   margin-top: 16px;
 }
@@ -4463,7 +4761,7 @@ nav a {
 .request .contTabs-btn_entity.active span:after {
   content: "";
   position: absolute;
-  left: 0px;
+  left: 0;
   top: 50%;
   transform: translateY(-50%);
   width: 20px;
@@ -5806,6 +6104,32 @@ nav a {
 
 .request-lessons_list li:last-child .question-icon {
   right: -32px;
+}
+
+.entity .request-programs_comment {
+  border-top: 1px solid #F6F6F6;
+}
+
+.entity .request-programs_comment .inner-cont {
+  padding-top: 22px;
+  position: relative;
+}
+
+@media (min-width: 1280px) {
+  .entity .request-programs_comment .inner-cont {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.entity .request-programs_comment .inner-cont:after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #FF6047;
 }
 
 .entity .request-submit {

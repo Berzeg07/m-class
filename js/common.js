@@ -592,6 +592,24 @@ $(document).ready(function() {
         });
     });
 
+    $(".aboutCompany-history_date").click(function() {
+        var $this = $(this);
+
+        if (!$this.hasClass("active")) {
+            $(".aboutCompany-history_hidden").slideUp();
+            $(".aboutCompany-history_date").removeClass("active");
+        }
+
+        $this.toggleClass("active");
+        $this.next().slideToggle();
+
+    });
+    $(".aboutCompany-history_list li:first .aboutCompany-history_date").click();
+
+    $('.aboutCompany-history_next').click(function() {
+        $('.aboutCompany-history_list li:nth-child(n+4)').slideDown();
+    });
+
     $(document).click(function(event) {
         if ($(event.target).closest(".schedule-selectCity").length) return;
         $(".schedule-selectCity_dropDown").slideUp();
@@ -709,6 +727,31 @@ $(document).ready(function() {
             },
             1000: {
                 items: 4
+            }
+        }
+    });
+
+    $(".aboutCompany-slider").owlCarousel({
+        loop: true,
+        margin: 62,
+        responsiveClass: true,
+        nav: true,
+        autoplay: false,
+        smartSpeed: 1000,
+        center: false, //если нужны обрезаные края
+        navText: ['<span class="nav-left"></span>', '<span class="nav-right"></span>'],
+        responsive: {
+            320: {
+                items: 1
+            },
+            600: {
+                items: 2
+            },
+            768: {
+                items: 3
+            },
+            992: {
+                items: 5
             }
         }
     });
