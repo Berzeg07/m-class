@@ -1,46 +1,29 @@
 $(document).ready(function() {
 
-    // var arr = new Array();
-
     $('.request-programs_list__link').click(function() {
-        var $this = $(this);
-        var price = parseInt($(this).parents('li').find('.priceGroup').html());
-        var total = parseInt($('#totalPrice').html());
         var ch = $(this).hasClass('active');
         if (!ch) {
-            alert(1);
-            var sum = parseInt($(this).parents('li').find('.priceActive span').html());
-            var totalNew = total - sum;
+            var price = parseInt($(this).parents('li').find('.priceGroup').html());
+            var total = parseInt($('#totalPrice').html());
+            var totalNew = price + total;
             $('#totalPrice').html(totalNew);
-            // $('.programs-about').slideUp();
-            // $('.request-programs_list__link').removeClass('active');
-            // $('.programs-about_group').removeClass('active');
+        }else{
+            var totalNew = parseInt($('#totalPrice').html());
+            var sum = parseInt($(this).parents('li').find('.price span').html());
+            var totalNew = totalNew - sum;
+            if(totalNew < 0){
+                totalNew = 0;
+            }
+            $('#totalPrice').html(totalNew);
         }
-        // var price = $(this).parents('li').find('.price span').html();
-
         $(this).toggleClass('active');
         $(this).parents('li').find('.programs-about').slideToggle();
         $(this).parents('li').find('.programs-about_group').toggleClass('active');
         $(this).parents('li').find('.price').toggleClass('priceActive');
-
-        var totalNew = price + total;
-        $('#totalPrice').html(totalNew);
-
-        // $('.priceActive span').each(function() {
-        //     arr.push(this.innerHTML);
-        //     console.log(arr);
-        // });
-        // var sum = 0;
-        // for (var i = 0; i < arr.length; i++) {
-        //     sum = sum + parseInt(arr[i]);
-        // }
-
     });
 
     $('.ourPrice').click(function() {
-
         var arr = new Array();
-
         $(this).parents('.programs-about_info').find('.ourPrice').removeClass('active');
         $(this).addClass('active');
         var price = parseInt($(this).find('span').html());
