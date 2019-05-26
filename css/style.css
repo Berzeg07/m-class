@@ -384,7 +384,7 @@ textarea {
 }
 
 .footer-btn:hover {
-  background-color: white;
+  background-color: orange;
   color: #121418;
 }
 
@@ -754,6 +754,7 @@ textarea {
 
 @media (min-width: 1280px) {
   .header-logo img.logo-fixed {
+    width: 38px;
     top: 2px;
     position: fixed;
   }
@@ -862,7 +863,7 @@ textarea {
     display: flex;
     flex-direction: row;
     padding: 0 10px;
-    height: unset;
+    height: 41px;
   }
 }
 
@@ -896,7 +897,8 @@ textarea {
 .checkTypeInt a {
   position: relative;
   display: inline-block;
-  padding: 15px 0;
+  font-size: 12px;
+  padding: 13px 0;
   transition: 0.5s;
 }
 
@@ -913,16 +915,20 @@ textarea {
   background: rgba(52, 54, 60, 0.5);
 }
 
-.checkTypeInt a:first-child:hover {
-  background: rgba(255, 255, 255, 0.9);
-  color: #808080;
-}
-
 .checkTypeInt a:first-child:after {
   background: url("../img/check-1.png") no-repeat center;
   width: 13px;
   height: 15px;
   left: 12px;
+}
+
+.checkTypeInt a:first-child:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: #808080;
+}
+
+.checkTypeInt a:first-child:hover:after {
+  background: url("../img/check-1-2.png") no-repeat center;
 }
 
 .checkTypeInt a:first-child:before {
@@ -943,7 +949,7 @@ textarea {
 }
 
 .checkTypeInt a:last-child:hover {
-  background: rgba(255, 165, 0, 0.5);
+  background: #e2543c;
 }
 
 .checkTypeInt a:last-child:after {
@@ -990,10 +996,11 @@ textarea {
 .social a {
   display: inline-block;
   transition: 0.5s;
+  opacity: 0.5;
 }
 
 .social a:hover {
-  opacity: 0.5;
+  opacity: 1;
 }
 
 .social a:not(:last-child) {
@@ -1009,7 +1016,7 @@ textarea {
 }
 
 nav a {
-  padding: 17px 12px;
+  padding: 14px 12px;
   display: inline-block;
   font-size: 18px;
   transition: 0.5s;
@@ -1153,6 +1160,9 @@ nav a {
 
 .footer-item:first-child {
   margin-bottom: 20px;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
 }
 
 @media (min-width: 992px) {
@@ -1243,6 +1253,33 @@ nav a {
   background: url("../img/email-icon-2.png") no-repeat center;
 }
 
+.footer-logo {
+  position: relative;
+  display: inline-block;
+}
+
+@media (min-width: 992px) {
+  .footer-logo {
+    padding-left: 60px;
+  }
+}
+
+.footer-logo:after {
+  content: "";
+  position: absolute;
+  left: -55px;
+  top: -5px;
+  width: 45px;
+  height: 45px;
+  background: url("../img/footer-logo.png") no-repeat center;
+}
+
+@media (min-width: 992px) {
+  .footer-logo:after {
+    left: 0;
+  }
+}
+
 .footer-logo p {
   font-family: "Gilroy-ExtraBold";
   font-size: 18px;
@@ -1284,6 +1321,13 @@ nav a {
   text-decoration: underline;
   color: #40494f;
   display: block;
+}
+
+@media (min-width: 992px) {
+  .privacy-link {
+    display: inline-block;
+    padding-left: 60px;
+  }
 }
 
 .lettersBlock {
@@ -1373,6 +1417,12 @@ nav a {
   width: 18px;
   height: 35px;
   position: absolute;
+  opacity: 0.1;
+}
+
+.letters-slider .nav-left:hover,
+.letters-slider .nav-right:hover {
+  opacity: 1;
 }
 
 .letters-slider .nav-left {
@@ -1476,11 +1526,12 @@ nav a {
   height: 35px;
   transition: 0,5s;
   opacity: 1;
+  opacity: 0.5;
 }
 
 .newsBlock-slider .owl-nav .owl-next:hover,
 .newsBlock-slider .owl-nav .owl-prev:hover {
-  opacity: 0.5;
+  opacity: 1;
 }
 
 .newsBlock-slider .owl-nav .owl-prev {
@@ -2223,6 +2274,11 @@ nav a {
   border-right: 1px solid black;
 }
 
+.calendar .calendar-inner_item:nth-child(n+6) a {
+  background: #46525A;
+  color: white;
+}
+
 .calendar .calendar-inner_item a {
   font-family: 'Open Sans', sans-serif;
   color: #393d42;
@@ -2254,7 +2310,7 @@ nav a {
   box-shadow: -2px 3px 4px rgba(95, 95, 95, 0.64);
   border: 1px solid #df4f38;
   background-color: #df4f38;
-  border-radius: 5px;
+  border-radius: 2px;
   z-index: 10;
 }
 
@@ -2354,6 +2410,32 @@ nav a {
   font-size: 18px;
   margin-bottom: 25px;
   text-align: center;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .schedule-slider_date:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 9px;
+    width: 100%;
+    height: 1px;
+    background: #B9BBBD;
+  }
+}
+
+.schedule-slider_date span {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .schedule-slider_date span {
+    background: white;
+    padding-right: 20px;
+  }
 }
 
 @media (min-width: 1280px) {
@@ -2870,12 +2952,19 @@ nav a {
 
 .recallForm .article-title {
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
-@media (min-width: 992px) {
-  .recallForm .article-title {
-    margin-bottom: 52px;
+.recallForm .news-article {
+  padding-bottom: 25px;
+  max-width: 470px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  .recallForm .news-article {
+    padding-bottom: 42px;
   }
 }
 
@@ -3005,12 +3094,6 @@ nav a {
   padding: 55px 0 0;
   transform: rotate(5deg);
   transition: 0.5s;
-}
-
-@media (min-width: 768px) {
-  .modalForm-inner {
-    height: 430px;
-  }
 }
 
 .modalForm form {

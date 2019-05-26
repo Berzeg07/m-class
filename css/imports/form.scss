@@ -12,9 +12,17 @@
 
     .article-title {
         text-align: center;
-        margin-bottom: 25px;
-        @media(min-width: 992px) {
-            margin-bottom: 52px;
+        margin-bottom: 20px;
+
+    }
+
+    .news-article{
+        padding-bottom: 25px;
+        max-width: 470px;
+        width: 100%;
+        margin: 0 auto;
+        @media(max-width: 767px) {
+            padding-bottom: 42px;
         }
     }
 
@@ -142,9 +150,6 @@
         padding: 55px 0 0;
         transform: rotate(5deg);
         transition: 0.5s;
-        @media(min-width: 768px) {
-            height: 430px;
-        }
     }
 
     form {

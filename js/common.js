@@ -503,6 +503,8 @@ $(document).ready(function() {
         $(this).addClass('active');
     });
 
+
+
     $(function() {
         var d = new Date(),
             n = d.getMonth(),
@@ -511,7 +513,9 @@ $(document).ready(function() {
         $('.calendar-inner_item a').removeClass('click-active');
 
         $('.calendar-inner .calendar-inner_item').each(function() {
-            var dateNum = $(this).find('span').html();
+
+            var dateNum = parseInt($(this).find('span').html());
+
             $(this).attr('data', dateNum);
             var checkAttr = $(this).attr("data");
             if (checkAttr == day) {
