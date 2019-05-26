@@ -13,19 +13,18 @@
 
 	.contTabs-cont#tab-cont_1
 		h2.article-title.request-mainTitle Форма заявки
-		form.request-form
+		form.request-form#contentForm-2
 			.inner-cont
 				.present-course
-					span.request-title Подарить курс
-				.request-formData
+					span.request-title.givePresent Подарить курс
+				.request-formData.form-personal
 					.request-formData_item
 						label.focus-animate
-							input(type="text" placeholder="Фамилия")
+							input(type="text" placeholder="Фамилия").data-inp
 						label.focus-animate
-							input(type="text" placeholder="Имя*" required)
+							input(type="text" placeholder="Имя*").data-inp
 						label.focus-animate
-							input(type="text" placeholder="Отчество")
-
+							input(type="text" placeholder="Отчество").data-inp
 					.request-formData_item.request-personalData
 						p.request-title персональные данные
 						.request-formData_item__inner
@@ -42,12 +41,56 @@
 							label
 								input(type="text" placeholder="e-mail 1")
 							label
-								input(type="text" placeholder="Телефон*" required).recallForm-phone
+								input(type="text" placeholder="Телефон*").recallForm-phone
 						.request-formData_item__inner
 							label
 								input(type="text" placeholder="e-mail 2")
 							label
 								input(type="text" placeholder="Телефон").recallForm-phone
+
+				.request-formData.form-present
+					.request-formData_item.form-present_left
+						p.article-title Даритель
+						label.focus-animate
+							input(type="text" placeholder="Фамилия").data-inp
+						label.focus-animate
+							input(type="text" placeholder="Имя*").data-inp
+						label.focus-animate
+							input(type="text" placeholder="Отчество").data-inp
+						.request-personalData
+							label
+								input(type="text" placeholder="Телефон*").recallForm-phone
+							label
+								input(type="text" placeholder="e-mail")
+					.form-present_inner
+						.request-formData_item
+							p.article-title Подарок для
+							label.focus-animate
+								input(type="text" placeholder="Фамилия").data-inp
+							label.focus-animate
+								input(type="text" placeholder="Имя*").data-inp
+							label.focus-animate
+								input(type="text" placeholder="Отчество").data-inp
+						.request-formData_item.request-personalData
+							p.request-title Персональные данные
+							.request-formData_item__inner
+								span Возраст
+								label
+									input(type="number").num-inp
+							.request-formData_item__inner
+								span дата <br> Рождения
+								label
+									input(type="date")
+
+						.request-formData_item.request-personalData
+							p.request-title Контактные данные
+							.request-formData_item__inner
+								label
+									input(type="text" placeholder="Телефон*").recallForm-phone
+							.request-formData_item__inner
+								label
+									input(type="text" placeholder="e-mail")
+						p Впишите в поля выше, данные человека, которому хотите подарить курс<br> Текст,текст,текст				
 				.request-aboutUs
 					p Наш почти 30ти летний опыт работы говорит о том, что очень часто будущие ученики либо значительно занижают, либо наоборот завышают свои реальные навыки по управлению автомобилем. Самокритика хороша, но НЕ в случае обучения приемам выживания на дороге при управлении автомобилем! Нам и Вам нужна объективная информация. Для того, что мы во время телефонного разговора задавали меньше уточняющих вопросов и смогли предложить Вам наиболее подходящую по содержанию, стоимости и срокам учебно-тренировочную программу, пожалуйста, заполните поля формы, которую Вы видите ниже этого текста, по возможности полнее.
 					p Если этого не сделать, то нам все равно придется задать эти же вопросы, но уже при разговоре по телефону, а Вам ответить на них. Иначе нам будет сложно понять, что же Вам подойдет наилучшим образом из тех программ, которые мы разработали для Вас		
@@ -63,13 +106,13 @@
 				.request-hidden
 					.request-hidden_top
 						.request-hidden_top__item
-							p.request-title
+							p.request-title#text-replace_1
 								span Ваш ВОДИТЕЛЬСКИЙ СТАЖ 
 								|по водительскому удостоверению
 							label
 								input(type="text" placeholder="30 лет").border-inp
 						.request-hidden_top__item
-							p.request-title
+							p.request-title#text-replace_2
 								span Ваш 
 								|реальный ВОДИТЕЛЬСКИЙ СТАЖ
 							label
@@ -143,7 +186,7 @@
 								ol
 									li
 										.request-questions_list
-											p.request-title Марка автомобиля мужа/жены, 
+											p.request-title#text-replace_3 Марка автомобиля мужа/жены, 
 												span которым Вы иногда будете управлять
 											.request-questions_inner
 												.request-questions_inner__item
@@ -155,7 +198,7 @@
 													input(type="text" placeholder="Audi A7 Sportback II").border-inp#car-type_inp
 									li
 										.request-questions_list
-											p.request-title Как часто 
+											p.request-title#text-replace_4 Как часто 
 												span вы управляете автомобилем по дорогам города?
 											.request-questions_inner
 												.request-select
@@ -166,7 +209,7 @@
 									li
 										.request-questions_list
 											p.request-title
-												span Как предполагаете 
+												span Как предполагается
 												|использовать 
 												span автомобиль?
 											.request-questions_inner
@@ -177,7 +220,7 @@
 														option Езжу на дачу
 									li
 										.request-questions_list
-											p.request-title
+											p.request-title#text-replace_5
 												span Чему хотите научиться ?
 											.request-questions_inner
 												.request-select
@@ -215,7 +258,7 @@
 										option Медленнее	 
 										option Побыстрее
 						.request-lessons_item
-							p.request-title 
+							p.request-title#text-replace_6
 								span На каком автомобиле планируете<br> заниматься?
 							ul
 								li
@@ -440,22 +483,22 @@
 							li
 								a(href="#").btn.recallForm-btn Оплата на сайте
 							li
-								button(type="submit").btn.programsArticle-btn Отправить заявку
+								button(type="submit").btn.programsArticle-btn#request-btn Отправить заявку
 				p.request-form_article Вы можете оплатить программы на сайте или оставить заявку и  мы свяжемся с Вами			
 	.contTabs-cont#tab-cont_2
 		.entity
-			form
+			form#contentForm-3
 				h2.article-title.request-mainTitle Форма заявки <br> 
 					span для юридических лиц
 				.inner-cont
 					.request-formData
 						.request-formData_item
 							label.focus-animate
-								input(type="text" placeholder="Фамилия")
+								input(type="text" placeholder="Фамилия").data-inp
 							label.focus-animate
-								input(type="text" placeholder="Имя*" required)
+								input(type="text" placeholder="Имя*").data-inp
 							label.focus-animate
-								input(type="text" placeholder="Отчество")
+								input(type="text" placeholder="Отчество").data-inp
 
 						.request-formData_item.request-personalData
 							p.request-title Данные о компании
@@ -468,7 +511,7 @@
 						.request-formData_item.request-personalData
 							p.request-title Контактные данные		
 							label
-								input(type="text" placeholder="телефон*" required).recallForm-phone
+								input(type="text" placeholder="телефон*").recallForm-phone
 							label
 								input(type="text" placeholder="E-MAIL")
 				.request-programs_comment
@@ -490,6 +533,6 @@
 
 						.request-submit_inner
 							button(type="submit").btn.programsArticle-btn Отправить заявку
-									
+
 
 include letters.pug

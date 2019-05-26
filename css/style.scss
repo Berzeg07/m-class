@@ -199,12 +199,6 @@
     }
 }
 
-// .test{
-//     width: 500px;
-//     height: 294px;
-//     background: white;
-// }
-
 .aboutCompany-history_list {
     li {
         margin-bottom: 30px;
@@ -303,7 +297,7 @@
     .contTabs-btn {
         @media(min-width: 768px) {
             font-size: 16px;
-            width: 50%;
+            width: 49.8%;
         }
         @media(min-width: 992px) {
             font-size: 24px;
@@ -348,6 +342,16 @@
         span {
             font-family: "Gilroy-Light";
         }
+    }
+
+    .data-inp {
+        width: 100%;
+        height: 42px;
+        padding: 0 14px;
+        background: #F4F4F4;
+        text-transform: uppercase;
+        border: none;
+        font-size: 12px;
     }
 
     &-formData {
@@ -397,16 +401,6 @@
                     display: block;
                     height: 42px;
                     margin-bottom: 8px;
-
-                    input {
-                        width: 100%;
-                        height: 42px;
-                        padding: 0 14px;
-                        background: #F4F4F4;
-                        text-transform: uppercase;
-                        border: none;
-                        font-size: 12px;
-                    }
                 }
             }
 
@@ -509,6 +503,117 @@
     }
 }
 
+#request-btn.active{
+    padding-left: 37px;
+    &:after{
+        content: "";
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 26px;
+        height: 26px;
+        background: url(../img/present-icon_w.png) no-repeat center;
+    }
+}
+
+.form-present {
+    max-width: 1000px;
+    width: 100%;
+    display: none;
+
+    .article-title {
+        margin-bottom: 25px;
+        @media(min-width: 992px) {
+            margin-bottom: 38px;
+        }
+    }
+
+    &_left {
+        @media(min-width: 992px) {
+            position: relative;
+
+            &:after {
+                content: "";
+                position: absolute;
+                right: -13px;
+                bottom: 21px;
+                width: 1px;
+                height: 89%;
+                background: #D8D8D8;
+            }
+        }
+    }
+
+    &_inner {
+        @media(min-width: 992px) {
+            display: -webkit-flex;
+            display: -ms-flex;
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+
+            &:after {
+                content: "";
+                position: absolute;
+                left: -12px;
+                bottom: 21px;
+                width: 100%;
+                height: 1px;
+                background: #D8D8D8;
+            }
+        }
+
+        .request-formData_item {
+            &:nth-child(1) {
+                width: 100%;
+                @media(min-width: 992px) {
+                    max-width: 227px;
+                }
+
+                label {
+                    width: 100%;
+                    margin-bottom: 8px;
+                }
+            }
+
+            &:nth-child(2) {
+                @media(min-width: 992px) {
+                    padding-top: 63px;
+                }
+
+                .request-formData_item__inner {
+                    display: -webkit-flex;
+                    display: -ms-flex;
+                    display: flex;
+
+                    label {
+                        width: 118px;
+                    }
+
+                    span {
+                        width: 113px;
+                    }
+                }
+            }
+
+            &:nth-child(3) {
+                @media(min-width: 992px) {
+                    padding-top: 63px;
+                }
+            }
+        }
+    }
+
+    .request-formData_item {
+        &:first-child {
+            .request-personalData {
+                margin-top: 25px;
+            }
+        }
+    }
+}
+
 .focus-animate {
     position: relative;
     overflow: hidden;
@@ -547,11 +652,11 @@
         &:before {
             content: "";
             position: absolute;
-            left: 0;
+            left: -8px;
             top: 50%;
             transform: translateY(-50%);
-            width: 42px;
-            height: 42px;
+            width: 48px;
+            height: 46px;
             background: url("../img/present-icon.png") no-repeat center;
         }
 
@@ -1689,5 +1794,31 @@
                 width: 100%;
             }
         }
+    }
+}
+
+.givePresent {
+    @media(min-width: 768px) {
+        display: inline-block;
+        margin-bottom: 39px;
+    }
+}
+
+.givePresent.active {
+    &:after {
+        @media(min-width: 768px) {
+            display: block;
+            right: -210px;
+            top: -82px;
+            width: 124px;
+            height: 170px;
+            background: url("../img/present-icon.jpg") no-repeat center;
+        }
+    }
+
+    &:before {
+        width: 48px;
+        height: 46px;
+        background: url("../img/check-present.png") no-repeat center;
     }
 }

@@ -1,5 +1,33 @@
 $(document).ready(function() {
 
+    $('.givePresent').click(function() {
+        $(this).toggleClass('active');
+        var check = $(this).hasClass('active');
+        $('#request-btn').toggleClass('active');
+        if (check) {
+            $('.form-personal').css('display', 'none');
+            $('.form-present').fadeIn();
+            $('.form-present').css('display', 'flex');
+            $('#text-replace_1').html('<span>Водительский стаж получателя </span> по водительскому удостоверению');
+            $('#text-replace_2').html('Реальный водителський стаж получателя');
+            $('#text-replace_3').html('Марка автомобиля мужа/жены, <span>которым получатель иногда будет управлять</span>');
+            $('#text-replace_4').html('Как часто <span> получатель управляет автомобилем по дорогам города?</span>');
+            $('#text-replace_5').html('<span>Чему хочет научиться получатель?</span>');
+            $('#text-replace_6').html('<span>На каком автомобиле планирует заниматься получатель?</span>');
+
+        } else {
+            $('.form-present').css('display', 'none');
+            $('.form-personal').fadeIn();
+            $('.form-personal').css('display', 'flex');
+            $('#text-replace_1').html('<span>Ваш ВОДИТЕЛЬСКИЙ СТАЖ</span> по водительскому удостоверению');
+            $('#text-replace_2').html('<span>Ваш </span> реальный водителський стаж');
+            $('#text-replace_3').html('Марка автомобиля мужа/жены, <span>которым Вы иногда будете управлять</span>');
+            $('#text-replace_4').html('Как часто <span> вы управляете автомобилем по дорогам города?</span>');
+            $('#text-replace_5').html('<span>Чему хотите научиться?</span>');
+            $('#text-replace_6').html('<span>На каком автомобиле планируете заниматься?</span>');
+        }
+    });
+
     $('.question-icon').mouseenter(function() {
         $(this).next().fadeIn();
     });
@@ -594,15 +622,12 @@ $(document).ready(function() {
 
     $(".aboutCompany-history_date").click(function() {
         var $this = $(this);
-
         if (!$this.hasClass("active")) {
             $(".aboutCompany-history_hidden").slideUp();
             $(".aboutCompany-history_date").removeClass("active");
         }
-
         $this.toggleClass("active");
         $this.next().slideToggle();
-
     });
     $(".aboutCompany-history_list li:first .aboutCompany-history_date").click();
 
@@ -858,6 +883,34 @@ $(document).ready(function() {
     };
 
     $("#contentForm").submit(function() {
+
+        var form_data = $(this).serialize();
+        $.ajax({
+            type: "POST",
+            url: "/sendmessage.php",
+            data: form_data,
+            success: function() {
+                cleanTnanksCont(this);
+            }
+        });
+        return false;
+    });
+
+    $("#contentForm-2").submit(function() {
+
+        var form_data = $(this).serialize();
+        $.ajax({
+            type: "POST",
+            url: "/sendmessage.php",
+            data: form_data,
+            success: function() {
+                cleanTnanksCont(this);
+            }
+        });
+        return false;
+    });
+
+    $("#contentForm-3").submit(function() {
 
         var form_data = $(this).serialize();
         $.ajax({

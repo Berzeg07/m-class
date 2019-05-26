@@ -66,19 +66,19 @@
       </div>
       <div class="contTabs-cont" id="tab-cont_1">
         <h2 class="article-title request-mainTitle">Форма заявки</h2>
-        <form class="request-form">
+        <form class="request-form" id="contentForm-2">
           <div class="inner-cont">
-            <div class="present-course"><span class="request-title">Подарить курс</span></div>
-            <div class="request-formData">
+            <div class="present-course"><span class="request-title givePresent">Подарить курс</span></div>
+            <div class="request-formData form-personal">
               <div class="request-formData_item">
                 <label class="focus-animate">
-                  <input type="text" placeholder="Фамилия">
+                  <input class="data-inp" type="text" placeholder="Фамилия">
                 </label>
                 <label class="focus-animate">
-                  <input type="text" placeholder="Имя*" required>
+                  <input class="data-inp" type="text" placeholder="Имя*">
                 </label>
                 <label class="focus-animate">
-                  <input type="text" placeholder="Отчество">
+                  <input class="data-inp" type="text" placeholder="Отчество">
                 </label>
               </div>
               <div class="request-formData_item request-personalData">
@@ -101,7 +101,7 @@
                     <input type="text" placeholder="e-mail 1">
                   </label>
                   <label>
-                    <input class="recallForm-phone" type="text" placeholder="Телефон*" required>
+                    <input class="recallForm-phone" type="text" placeholder="Телефон*">
                   </label>
                 </div>
                 <div class="request-formData_item__inner">
@@ -112,6 +112,69 @@
                     <input class="recallForm-phone" type="text" placeholder="Телефон">
                   </label>
                 </div>
+              </div>
+            </div>
+            <div class="request-formData form-present">
+              <div class="request-formData_item form-present_left">
+                <p class="article-title">Даритель</p>
+                <label class="focus-animate">
+                  <input class="data-inp" type="text" placeholder="Фамилия">
+                </label>
+                <label class="focus-animate">
+                  <input class="data-inp" type="text" placeholder="Имя*">
+                </label>
+                <label class="focus-animate">
+                  <input class="data-inp" type="text" placeholder="Отчество">
+                </label>
+                <div class="request-personalData">
+                  <label>
+                    <input class="recallForm-phone" type="text" placeholder="Телефон*">
+                  </label>
+                  <label>
+                    <input type="text" placeholder="e-mail">
+                  </label>
+                </div>
+              </div>
+              <div class="form-present_inner">
+                <div class="request-formData_item">
+                  <p class="article-title">Подарок для</p>
+                  <label class="focus-animate">
+                    <input class="data-inp" type="text" placeholder="Фамилия">
+                  </label>
+                  <label class="focus-animate">
+                    <input class="data-inp" type="text" placeholder="Имя*">
+                  </label>
+                  <label class="focus-animate">
+                    <input class="data-inp" type="text" placeholder="Отчество">
+                  </label>
+                </div>
+                <div class="request-formData_item request-personalData">
+                  <p class="request-title">Персональные данные</p>
+                  <div class="request-formData_item__inner"><span>Возраст</span>
+                    <label>
+                      <input class="num-inp" type="number">
+                    </label>
+                  </div>
+                  <div class="request-formData_item__inner"><span>дата <br> Рождения</span>
+                    <label>
+                      <input type="date">
+                    </label>
+                  </div>
+                </div>
+                <div class="request-formData_item request-personalData">
+                  <p class="request-title">Контактные данные</p>
+                  <div class="request-formData_item__inner">
+                    <label>
+                      <input class="recallForm-phone" type="text" placeholder="Телефон*">
+                    </label>
+                  </div>
+                  <div class="request-formData_item__inner">
+                    <label>
+                      <input type="text" placeholder="e-mail">
+                    </label>
+                  </div>
+                </div>
+                <p>Впишите в поля выше, данные человека, которому хотите подарить курс<br> Текст,текст,текст				</p>
               </div>
             </div>
             <div class="request-aboutUs">
@@ -134,13 +197,13 @@
             <div class="request-hidden">
               <div class="request-hidden_top">
                 <div class="request-hidden_top__item">
-                  <p class="request-title"><span>Ваш ВОДИТЕЛЬСКИЙ СТАЖ </span>по водительскому удостоверению</p>
+                  <p class="request-title" id="text-replace_1"><span>Ваш ВОДИТЕЛЬСКИЙ СТАЖ </span>по водительскому удостоверению</p>
                   <label>
                     <input class="border-inp" type="text" placeholder="30 лет">
                   </label>
                 </div>
                 <div class="request-hidden_top__item">
-                  <p class="request-title"><span>Ваш </span>реальный ВОДИТЕЛЬСКИЙ СТАЖ</p>
+                  <p class="request-title" id="text-replace_2"><span>Ваш </span>реальный ВОДИТЕЛЬСКИЙ СТАЖ</p>
                   <label>
                     <input class="border-inp" type="text" placeholder="40 лет">
                   </label>
@@ -234,7 +297,7 @@
                     <ol>
                       <li>
                         <div class="request-questions_list">
-                          <p class="request-title">Марка автомобиля мужа/жены, <span>которым Вы иногда будете управлять</span></p>
+                          <p class="request-title" id="text-replace_3">Марка автомобиля мужа/жены, <span>которым Вы иногда будете управлять</span></p>
                           <div class="request-questions_inner">
                             <div class="request-questions_inner__item">
                               <input class="radioBtn" type="radio" name="car-type" id="car-type_y">
@@ -250,7 +313,7 @@
                       </li>
                       <li>
                         <div class="request-questions_list">
-                          <p class="request-title">Как часто <span>вы управляете автомобилем по дорогам города?</span></p>
+                          <p class="request-title" id="text-replace_4">Как часто <span>вы управляете автомобилем по дорогам города?</span></p>
                           <div class="request-questions_inner">
                             <div class="request-select">
                               <select class="filter">
@@ -264,7 +327,7 @@
                       </li>
                       <li>
                         <div class="request-questions_list">
-                          <p class="request-title"><span>Как предполагаете </span>использовать <span>автомобиль?</span></p>
+                          <p class="request-title"><span>Как предполагается</span>использовать <span>автомобиль?</span></p>
                           <div class="request-questions_inner">
                             <div class="request-select">
                               <select class="filter">
@@ -278,7 +341,7 @@
                       </li>
                       <li>
                         <div class="request-questions_list">
-                          <p class="request-title"><span>Чему хотите научиться ?</span></p>
+                          <p class="request-title" id="text-replace_5"><span>Чему хотите научиться ?</span></p>
                           <div class="request-questions_inner">
                             <div class="request-select">
                               <select class="filter">
@@ -331,7 +394,7 @@
                   </p>
                 </div>
                 <div class="request-lessons_item">
-                  <p class="request-title"> <span>На каком автомобиле планируете<br> заниматься?</span></p>
+                  <p class="request-title" id="text-replace_6"><span>На каком автомобиле планируете<br> заниматься?</span></p>
                   <ul>
                     <li>
                       <input class="radioBtn" type="radio" name="which-car" id="personal-car">
@@ -535,7 +598,7 @@
                 <ul>
                   <li><a class="btn recallForm-btn" href="#">Оплата на сайте</a></li>
                   <li>
-                    <button class="btn programsArticle-btn" type="submit">Отправить заявку</button>
+                    <button class="btn programsArticle-btn" type="submit" id="request-btn">Отправить заявку</button>
                   </li>
                 </ul>
               </div>
@@ -546,19 +609,19 @@
       </div>
       <div class="contTabs-cont" id="tab-cont_2">
         <div class="entity">
-          <form>
+          <form id="contentForm-3">
             <h2 class="article-title request-mainTitle">Форма заявки <br> <span>для юридических лиц</span></h2>
             <div class="inner-cont">
               <div class="request-formData">
                 <div class="request-formData_item">
                   <label class="focus-animate">
-                    <input type="text" placeholder="Фамилия">
+                    <input class="data-inp" type="text" placeholder="Фамилия">
                   </label>
                   <label class="focus-animate">
-                    <input type="text" placeholder="Имя*" required>
+                    <input class="data-inp" type="text" placeholder="Имя*">
                   </label>
                   <label class="focus-animate">
-                    <input type="text" placeholder="Отчество">
+                    <input class="data-inp" type="text" placeholder="Отчество">
                   </label>
                 </div>
                 <div class="request-formData_item request-personalData">
@@ -577,7 +640,7 @@
                 <div class="request-formData_item request-personalData">
                   <p class="request-title">Контактные данные		</p>
                   <label>
-                    <input class="recallForm-phone" type="text" placeholder="телефон*" required>
+                    <input class="recallForm-phone" type="text" placeholder="телефон*">
                   </label>
                   <label>
                     <input type="text" placeholder="E-MAIL">
