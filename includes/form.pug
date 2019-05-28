@@ -4,9 +4,12 @@
 			h2.article-title Задать вопрос
 			.recallForm-inner
 				.recallForm-inner_item
-					input(placeholder="Введите имя*" required)
-					input(placeholder="Номер телефона*" required).recallForm-phone
-					input(placeholder="E-mail" type="email")
+					label.focus-animate
+						input(placeholder="Введите имя*" required)
+					label.focus-animate
+						input(placeholder="Номер телефона*" required).recallForm-phone
+					label.focus-animate
+						input(placeholder="E-mail" type="email")
 					.recallForm-capcha
 						img(src="img/capcha.jpg")
 

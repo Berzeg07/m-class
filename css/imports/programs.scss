@@ -108,17 +108,22 @@
 
 .programs-list_link {
     position: relative;
-    display: inline-block;
-    padding-right: 44px;
-    padding-left: 57px;
+    display: block;
+    padding-left: 30px;
     cursor: pointer;
+    font-size: 11px;
+    @media(min-width: 768px) {
+        font-size: 14px;
+        padding-left: 57px;
+        padding-right: 44px;
+        display: inline-block;
+    }
 
     &:after {
         content: "";
         position: absolute;
         right: 0;
-        top: 50%;
-        transform: translateY(-50%);
+        top: -4px;
         width: 12px;
         height: 23px;
         background: url("../img/arrow-right-min.png") no-repeat center;
@@ -157,15 +162,16 @@
 .programs-list_link.active:after {
     background: url("../img/arrow-w.png") no-repeat center;
     opacity: 1;
-    width: 23px;
-    height: 12px;
+    transform: rotate(-90deg);
+    // width: 23px;
+    // height: 12px;
 }
 
 .programs-list ol {
     list-style-type: none;
     counter-reset: num;
     margin-top: 25px;
-    @media(min-width: 992px){
+    @media(min-width: 1280px) {
         margin-top: 120px;
     }
 
@@ -178,7 +184,7 @@
         transition: 0.5s;
 
         .inner-cont {
-            max-width: 400px;
+            max-width: 1260px;
             position: relative;
 
             &:after {
@@ -194,11 +200,10 @@
                 }
             }
             @media(min-width: 1280px) {
-                max-width: 1260px;
                 padding-left: 60px;
             }
         }
-        @media(min-width: 1280px) {
+        @media(min-width: 768px) {
             margin-bottom: 47px;
             // margin-top: 97px;
         }
@@ -213,8 +218,11 @@
 }
 
 .programs-about {
-    margin-top: -30px;
+    margin-top: -29px;
     display: none;
+    @media(min-width: 1280px) {
+        margin-top: -39px;
+    }
 
     &_calendar {
         background: white;
@@ -255,7 +263,7 @@
 
     &_top {
         background: #111317;
-        padding: 26px 10px;
+        padding: 35px 10px;
     }
 
     &_bottom {
@@ -286,7 +294,6 @@
         display: -ms-flex;
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
         color: white;
         @media(min-width: 1100px) {
             align-items: center;

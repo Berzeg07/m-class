@@ -7,7 +7,8 @@
 .request
 	.inner-cont
 		.contTabs
-			a.contTabs-btn(href="#tab-cont_1") Физическим лицам
+			a.contTabs-btn.contTabs-btn_entity(href="#tab-cont_1") 
+				span Физическим лицам
 			a.contTabs-btn.contTabs-btn_entity(href="#tab-cont_2") 
 				span Юридическим лицам
 
@@ -289,7 +290,8 @@
 							label(for="comment") Да
 						li
 							.request-dtpInfo_hidden
-								input(type="text" placeholder="Подробности").border-inp 
+								//- input(type="text" placeholder="Подробности").border-inp 
+								textarea(placeholder="Подробности")
 				.request-programs
 					p.article-title выберите программы 
 					.request-programs_inner
@@ -299,6 +301,7 @@
 									.request-programs_list__inner
 										span.request-programs_list__link безопасный стиль управления
 										b подробнее
+										.square
 									.request-programs_list__inner
 										.price 
 											span 12900  
@@ -311,7 +314,7 @@
 											.programs-about_info__item.programs-about_time
 												b ~6 часов<br>
 												span 2 дня по 3 - 4 часа
-											.programs-about_info__item.programs-about_group.ourPrice
+											.programs-about_info__item.programs-about_group.ourPrice.active
 												b 
 													span.priceGroup 12900  
 													<i>р.</i> 
@@ -355,6 +358,7 @@
 									.request-programs_list__inner
 										span.request-programs_list__link безопасный стиль управления
 										b подробнее
+										.square
 									.request-programs_list__inner
 										.price 
 											span 12900  
@@ -366,7 +370,7 @@
 											.programs-about_info__item.programs-about_time
 												b ~6 часов<br>
 												span 2 дня по 3 - 4 часа
-											.programs-about_info__item.programs-about_group.ourPrice
+											.programs-about_info__item.programs-about_group.ourPrice.active
 												b 
 													span.priceGroup 12900  
 													<i>р.</i> 
@@ -409,6 +413,7 @@
 									.request-programs_list__inner
 										span.request-programs_list__link безопасный стиль управления
 										b подробнее
+										.square
 									.request-programs_list__inner
 										.price 
 											span 12900
@@ -420,7 +425,7 @@
 											.programs-about_info__item.programs-about_time
 												b ~6 часов<br>
 												span 2 дня по 3 - 4 часа
-											.programs-about_info__item.programs-about_group.ourPrice
+											.programs-about_info__item.programs-about_group.ourPrice.active
 												b 
 													span.priceGroup 12900  
 													<i>р.</i> 

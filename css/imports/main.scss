@@ -343,8 +343,8 @@
 	width: 40px;
 	height: 20px;
 	position: fixed;
-	top: 16px;
-	right: 11px;
+	top: 18px;
+	right: 18px;
 	cursor: pointer;
 	z-index: 30;
 	display: flex;
@@ -382,6 +382,7 @@
 	-ms-transform: translateY(9px) rotate(45deg);
 	-o-transform: translateY(9px) rotate(45deg);
 	transform: translateY(9px) rotate(45deg);
+	height: 23px;
 }
 
 .burger.is-active span:nth-child(3) {
@@ -389,6 +390,7 @@
 	-ms-transform: translateY(-10px) rotate(-45deg);
 	-o-transform: translateY(-10px) rotate(-45deg);
 	transform: translateY(-10px) rotate(-45deg);
+	height: 23px;
 }
 
 .header-fixed {
@@ -1756,6 +1758,12 @@ nav {
 			width: 70px;
 			border-bottom: 1px solid black;
 			border-right: 1px solid black;
+			&:nth-child(7n), &:nth-child(6), &:nth-child(13), &:nth-child(20), &:nth-child(27), &:nth-child(34), &:nth-child(41){
+				background: #3B464E;
+				a{
+					color: white;
+				}
+			}
 
 			.weekend {
 				background: #46525A;
@@ -2045,12 +2053,12 @@ nav {
 		cursor: pointer;
 
 		&:before {
-			border: 2px solid orange;
+			border: 2px solid #e2543c;
 		}
 
 		&:hover {
 			background: white;
-			color: orange;
+			color: #e2543c;
 		}
 	}
 

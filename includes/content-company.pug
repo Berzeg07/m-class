@@ -1,12 +1,12 @@
 .inner-top
-	//- video(autoplay muted loop)
-	//- 	source(src="video/drift.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
+	video(autoplay muted loop)
+		source(src="video/drift.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
 .inner-cont
 	h1.main-title.main-title_news О компании
 .aboutCompany
 	.inner-cont
 		.aboutCompany-advantage
-			.aboutCompany-advantage_item
+			.aboutCompany-advantage_item.wow.fadeInDown(data-wow-delay="0.2s")#contParralax_1
 				.aboutCompany-advantage_img
 					img(src="img/car.png")
 				.aboutCompany-advantage_title
@@ -15,15 +15,15 @@
 				p Мы умеем работать не только с опытными и профессиональными водителями, но и 
 					b с абсолютными новичками.
 				a(href="#").btn.recallForm-btn Посмотреть программы	
-			.aboutCompany-advantage_item
+			.aboutCompany-advantage_item.wow.fadeInDown(data-wow-delay="0.4s")#contParralax_2
 				.aboutCompany-advantage_img
 					img(src="img/flag.png")
 				.aboutCompany-advantage_title
 					|собственный <br>автодром			
 				p Мы твердо убеждены, что заниматься необходимо на том автомобиле, на котором вы ездите. Но при необходимости наши партнеры предоставят 
 					b машину в аренду.
-				a(href="#").btn.programsArticle-btn Наши контакты
-			.aboutCompany-advantage_item
+				a(href="#").btn.recallForm-btn Наши контакты
+			.aboutCompany-advantage_item.wow.fadeInDown(data-wow-delay="0.6s")#contParralax_3
 				.aboutCompany-advantage_img
 					img(src="img/road.png")
 				.aboutCompany-advantage_title
@@ -49,41 +49,86 @@
 				.aboutCompany-slider_item
 					.aboutCompany-slider_img
 						img(src="img/master.jpg")
-					span Курсы:
-					ul
-						li - “Безопасный стиль управления”
-						li -  “Безопасный стиль управления”
+					p.master-name Корнак Александр
+					p.master-exp Стаж 15 лет
+					.master-article
+						.master-article_inner Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante
+						button(type="button").master-article_btn Подробнее
+					.master-courseList
+						p Преподаватель курсов
+						ul
+							li 
+								a(href="#") - “Безопасный стиль управления”
+							li 
+								a(href="#") -  “Безопасный стиль управления”
+							li 
+								a(href="#") - “Безопасный стиль управления”
+							li 
+								a(href="#") -  “Безопасный стиль управления”
+						button.master-courseList_btn(type="button") Еще курсы
 
 				.aboutCompany-slider_item
 					.aboutCompany-slider_img
 						img(src="img/master.jpg")
-					span Курсы:
-					ul
-						li - “Безопасный стиль управления”
-						li -  “Безопасный стиль управления”
-
+					p.master-name Корнак Александр
+					p.master-exp Стаж 15 лет
+					.master-article
+						.master-article_inner Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante
+						button(type="button").master-article_btn Подробнее
+					.master-courseList
+						p Преподаватель курсов
+						ul
+							li 
+								a(href="#") - “Безопасный стиль управления”
+							li 
+								a(href="#") -  “Безопасный стиль управления”
+							li 
+								a(href="#") - “Безопасный стиль управления”
+							li 
+								a(href="#") -  “Безопасный стиль управления”
+						button.master-courseList_btn(type="button") Еще курсы
+								
 				.aboutCompany-slider_item
 					.aboutCompany-slider_img
 						img(src="img/master.jpg")
-					span Курсы:
-					ul
-						li - “Безопасный стиль управления”
-						li -  “Безопасный стиль управления”
-
+					p.master-name Корнак Александр
+					p.master-exp Стаж 15 лет
+					.master-article
+						.master-article_inner Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante
+						button(type="button").master-article_btn Подробнее
+					.master-courseList
+						p Преподаватель курсов
+						ul
+							li 
+								a(href="#") - “Безопасный стиль управления”
+							li 
+								a(href="#") -  “Безопасный стиль управления”
+							li 
+								a(href="#") - “Безопасный стиль управления”
+							li 
+								a(href="#") -  “Безопасный стиль управления”
+						button.master-courseList_btn(type="button") Еще курсы
+										
 				.aboutCompany-slider_item
 					.aboutCompany-slider_img
 						img(src="img/master.jpg")
-					span Курсы:
-					ul
-						li - “Безопасный стиль управления”
-						li -  “Безопасный стиль управления”
-				.aboutCompany-slider_item
-					.aboutCompany-slider_img
-						img(src="img/master.jpg")
-					span Курсы:
-					ul
-						li - “Безопасный стиль управления”
-						li -  “Безопасный стиль управления”
+					p.master-name Корнак Александр
+					p.master-exp Стаж 15 лет
+					.master-article
+						.master-article_inner Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante
+						button(type="button").master-article_btn Подробнее
+					.master-courseList
+						p Преподаватель курсов
+						ul
+							li 
+								a(href="#") - “Безопасный стиль управления”
+							li 
+								a(href="#") -  “Безопасный стиль управления”
+							li 
+								a(href="#") - “Безопасный стиль управления”
+							li 
+								a(href="#") -  “Безопасный стиль управления”
+						button.master-courseList_btn(type="button") Еще курсы
 	.aboutCompany-history
 		.aboutCompany-history_inner
 			.aboutCompany-history_title

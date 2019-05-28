@@ -9,9 +9,12 @@
 				p.news-article Заполните заявку и наш специалист перезвонит<br> Вам в течении суток
 				.recallForm-inner
 					.recallForm-inner_item
-						input(placeholder="Введите имя*" name="m-uname" required)
-						input(placeholder="Номер телефона*" name="m-phone" required).recallForm-phone
-						input(placeholder="E-mail" type="email" name="m-email")
+						label.focus-animate
+							input(placeholder="Введите имя*" name="m-uname" required)
+						label.focus-animate
+							input(placeholder="Номер телефона*" name="m-phone" required).recallForm-phone
+						label.focus-animate
+							input(placeholder="E-mail" type="email" name="m-email")
 						.recallForm-capcha
 							img(src="img/capcha.jpg")
 

@@ -14,7 +14,38 @@
     z-index: 101;
 }
 
+#airSticky {
+    height: unset !important;
+}
+
+#airSticky > div {
+    width: 100% !important;
+    @media(min-width: 992px) {
+        width: 200px !important;
+    }
+}
+
 .blog-list {
+    li {
+        padding: 8px 10px;
+        border-bottom: 1px solid #E6E6E6;
+
+        &:first-child {
+            background: #E6E6E6;
+            text-align: center;
+        }
+
+        &:not(:first-child) {
+            &:hover {
+                background: #080808;
+
+                a {
+                    color: white;
+                }
+            }
+        }
+    }
+
     a {
         color: #818184;
         font-size: 12px;
@@ -23,25 +54,55 @@
     a.active {
         color: #080808;
     }
-    @media(min-width: 768px) {
-        padding-left: 40px;
+    @media(min-width: 992px) {
+        padding-left: 20px;
     }
 }
 
 .blog-content {
     &_item {
+        &:first-child {
+            @media(min-width: 992px) {
+                width: 80%;
+                margin-bottom: 40px;
+            }
+        }
+
         &:last-child {
-            width: 250px;
-            @media(min-width: 1280px) {
-                width: 180px;
+            position: relative;
+            width: 100%;
+            padding-bottom: 55px;
+            @media(min-width: 992px) {
+                width: 300px;
             }
         }
     }
-    @media(min-width: 768px) {
+    @media(min-width: 992px) {
         display: -webkit-flex;
         display: -ms-flex;
         display: flex;
         justify-content: space-between;
+    }
+}
+
+.blog-menu {
+    display: none;
+    @media(min-width: 992px) {
+        display: block;
+    }
+
+    b {
+        display: block;
+        text-align: center;
+        background: #ECECEC;
+        padding: 8px 0;
+    }
+}
+
+.blog-list_mob {
+    margin: 25px 0;
+    @media(min-width: 992px) {
+        display: none;
     }
 }
 
@@ -56,7 +117,8 @@
 
 .contTabs {
     position: relative;
-    &:after{
+
+    &:after {
         content: "";
         position: absolute;
         left: 0;
@@ -66,6 +128,7 @@
         background: #C5C6C8;
         z-index: 1;
     }
+
     input {
         display: none;
     }
@@ -98,7 +161,8 @@
         color: #40464B;
         border: 1px solid #C5C6C8;
         border-top: 1px solid #C5C6C8;
-        &:before{
+
+        &:before {
             content: "";
             position: absolute;
             left: 0;
@@ -109,7 +173,6 @@
             z-index: 10;
         }
         // border-bottom: 1px solid #fff;
-
         &:after {
             opacity: 1;
         }
@@ -167,6 +230,7 @@
 
     &-phone {
         margin-top: 25px;
+        margin-bottom: 20px;
 
         p {
             color: #b7b8b9;
