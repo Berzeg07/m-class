@@ -19,53 +19,8 @@
 				.present-course
 					span.request-title.givePresent Подарить курс
 				.request-formData.form-personal
-					.request-formData_item
-						label.focus-animate
-							input(type="text" placeholder="Фамилия").data-inp
-						label.focus-animate
-							input(type="text" placeholder="Имя*").data-inp
-						label.focus-animate
-							input(type="text" placeholder="Отчество").data-inp
-					.request-formData_item.request-personalData
-						p.request-title персональные данные
-						.request-formData_item__inner
-							span Возраст
-							label
-								input(type="number").num-inp
-						.request-formData_item__inner
-							span дата <br> Рождения
-							label
-								input(type="date")
-					.request-formData_item.request-personalData
-						p.request-title Контактные данные
-						.request-formData_item__inner
-							label
-								input(type="text" placeholder="e-mail 1")
-							label
-								input(type="text" placeholder="Телефон*").recallForm-phone
-						.request-formData_item__inner
-							label
-								input(type="text" placeholder="e-mail 2")
-							label
-								input(type="text" placeholder="Телефон").recallForm-phone
-
-				.request-formData.form-present
-					.request-formData_item.form-present_left
-						p.article-title Даритель
-						label.focus-animate
-							input(type="text" placeholder="Фамилия").data-inp
-						label.focus-animate
-							input(type="text" placeholder="Имя*").data-inp
-						label.focus-animate
-							input(type="text" placeholder="Отчество").data-inp
-						.request-personalData
-							label
-								input(type="text" placeholder="Телефон*").recallForm-phone
-							label
-								input(type="text" placeholder="e-mail")
-					.form-present_inner
+					.form-personal_inner
 						.request-formData_item
-							p.article-title Подарок для
 							label.focus-animate
 								input(type="text" placeholder="Фамилия").data-inp
 							label.focus-animate
@@ -73,7 +28,7 @@
 							label.focus-animate
 								input(type="text" placeholder="Отчество").data-inp
 						.request-formData_item.request-personalData
-							p.request-title Персональные данные
+							p.request-title персональные данные
 							.request-formData_item__inner
 								span Возраст
 								label
@@ -82,16 +37,63 @@
 								span дата <br> Рождения
 								label
 									input(type="date")
-
 						.request-formData_item.request-personalData
 							p.request-title Контактные данные
 							.request-formData_item__inner
 								label
+									input(type="text" placeholder="e-mail 1")
+								label
 									input(type="text" placeholder="Телефон*").recallForm-phone
 							.request-formData_item__inner
 								label
+									input(type="text" placeholder="e-mail 2")
+								label
+									input(type="text" placeholder="Телефон").recallForm-phone
+
+				.request-formData.form-present
+					.form-present_item
+						.request-formData_item.form-present_left
+							p.article-title Даритель
+							label.focus-animate
+								input(type="text" placeholder="Фамилия").data-inp
+							label.focus-animate
+								input(type="text" placeholder="Имя*").data-inp
+							label.focus-animate
+								input(type="text" placeholder="Отчество").data-inp
+							.request-personalData
+								label
+									input(type="text" placeholder="Телефон*").recallForm-phone
+								label
 									input(type="text" placeholder="e-mail")
-						p Впишите в поля выше, данные человека, которому хотите подарить курс<br> Текст,текст,текст				
+						.form-present_inner
+							.request-formData_item
+								p.article-title Подарок для
+								label.focus-animate
+									input(type="text" placeholder="Фамилия").data-inp
+								label.focus-animate
+									input(type="text" placeholder="Имя*").data-inp
+								label.focus-animate
+									input(type="text" placeholder="Отчество").data-inp
+							.request-formData_item.request-personalData
+								p.request-title Персональные данные
+								.request-formData_item__inner
+									span Возраст
+									label
+										input(type="number").num-inp
+								.request-formData_item__inner
+									span дата <br> Рождения
+									label
+										input(type="date")
+
+							.request-formData_item.request-personalData
+								p.request-title Контактные данные
+								.request-formData_item__inner
+									label
+										input(type="text" placeholder="Телефон*").recallForm-phone
+								.request-formData_item__inner
+									label
+										input(type="text" placeholder="e-mail")
+							p Впишите в поля выше, данные человека, которому хотите подарить курс<br> Текст,текст,текст				
 				.request-aboutUs
 					p Наш почти 30ти летний опыт работы говорит о том, что очень часто будущие ученики либо значительно занижают, либо наоборот завышают свои реальные навыки по управлению автомобилем. Самокритика хороша, но НЕ в случае обучения приемам выживания на дороге при управлении автомобилем! Нам и Вам нужна объективная информация. Для того, что мы во время телефонного разговора задавали меньше уточняющих вопросов и смогли предложить Вам наиболее подходящую по содержанию, стоимости и срокам учебно-тренировочную программу, пожалуйста, заполните поля формы, которую Вы видите ниже этого текста, по возможности полнее.
 					p Если этого не сделать, то нам все равно придется задать эти же вопросы, но уже при разговоре по телефону, а Вам ответить на них. Иначе нам будет сложно понять, что же Вам подойдет наилучшим образом из тех программ, которые мы разработали для Вас		

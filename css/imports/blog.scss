@@ -21,7 +21,7 @@
 #airSticky > div {
     width: 100% !important;
     @media(min-width: 992px) {
-        width: 200px !important;
+        width: 288px !important;
     }
 }
 
@@ -101,6 +101,8 @@
 
 .blog-list_mob {
     margin: 25px 0;
+    height: 290px;
+    overflow-y: auto;
     @media(min-width: 992px) {
         display: none;
     }
@@ -189,7 +191,7 @@
                 position: absolute;
                 left: 64px;
                 opacity: 0.4;
-                top: 5px;
+                top: 8px;
                 background: url("../img/headmaster-icon.png") no-repeat center;
                 width: 41px;
                 height: 41px;
@@ -253,10 +255,9 @@
     &-about {
         text-transform: uppercase;
         font-size: 14px;
+        margin-top: 15px;
         margin-bottom: 25px;
-        text-align: center;
         @media(min-width: 768px) {
-            text-align: left;
             margin-bottom: 50px;
         }
 

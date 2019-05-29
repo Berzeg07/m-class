@@ -18,12 +18,12 @@
 	}
 
 	&:before {
-		border: 2px solid orange;
+		border: 2px solid #DF543E;
 	}
 
 	&:hover {
-		background-color: orange;
-		color: #121418;
+		background-color: #DF543E;
+		color: white;
 	}
 }
 
@@ -360,7 +360,6 @@
 	width: 100%;
 	height: 3px;
 	background: black;
-	box-shadow: 1px 1px 4px 0 rgba(255, 255, 255, 255.4);
 	transition: all 0.3s ease-in-out;
 }
 
@@ -679,10 +678,12 @@ nav {
 	margin: 0 auto;
 	padding: 38px 10px 22px;
 	@media(min-width: 992px) {
+		&-inner{
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
 		justify-content: space-between;
+	}
 	}
 
 	&-item {
@@ -1650,6 +1651,7 @@ nav {
 
 		.owl-dot.active {
 			opacity: 1;
+			background: #e2543c;
 		}
 	}
 
@@ -1758,10 +1760,19 @@ nav {
 			width: 70px;
 			border-bottom: 1px solid black;
 			border-right: 1px solid black;
-			&:nth-child(7n), &:nth-child(6), &:nth-child(13), &:nth-child(20), &:nth-child(27), &:nth-child(34), &:nth-child(41){
-				background: #3B464E;
-				a{
-					color: white;
+			@media(min-width: 768px) {
+				&:nth-child(13),
+				&:nth-child(20),
+				&:nth-child(27),
+				&:nth-child(34),
+				&:nth-child(41),
+				&:nth-child(6),
+				&:nth-child(7n) {
+					background: #3B464E;
+
+					a {
+						color: white;
+					}
 				}
 			}
 

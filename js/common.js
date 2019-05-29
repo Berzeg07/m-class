@@ -1,73 +1,73 @@
 $(document).ready(function() {
 
-    if ($("div").is("#contParralax_1")) {
+    if ($("div").is("#contParralax")) {
 
-        const blockItem = contParralax_1.querySelector("img"),
-            maxMove = contParralax_1.offsetWidth / 30,
-            blockItemCenterX = blockItem.offsetLeft + (blockItem.offsetWidth / 2),
-            blockItemCenterY = blockItem.offsetTop + (blockItem.offsetHeight / 2),
+        const blockItem = contParralax.querySelector("img"),
+            maxMove = contParralax.offsetWidth / 10,
+            blockItemCenterX = blockItem.offsetLeft + (blockItem.offsetWidth / 10),
+            blockItemCenterY = blockItem.offsetTop + (blockItem.offsetHeight / 10),
             fluidblockItem = window.matchMedia("(min-width: 726px)");
 
         function getMousePos(xRef, yRef) {
 
-            let panelRect = contParralax_1.getBoundingClientRect();
+            let panelRect = contParralax.getBoundingClientRect();
             return {
-                x: Math.floor(xRef - panelRect.left) / (panelRect.right - panelRect.left) * contParralax_1.offsetWidth,
-                y: Math.floor(yRef - panelRect.top) / (panelRect.bottom - panelRect.top) * contParralax_1.offsetHeight
+                x: Math.floor(xRef - panelRect.left) / (panelRect.right - panelRect.left) * contParralax.offsetWidth,
+                y: Math.floor(yRef - panelRect.top) / (panelRect.bottom - panelRect.top) * contParralax.offsetHeight
             };
         }
 
-        contParralax_1.addEventListener("mousemove", function(e) {
+        document.body.addEventListener("mousemove", function(e) {
             let mousePos = getMousePos(e.clientX, e.clientY),
                 distX = mousePos.x - blockItemCenterX,
                 distY = mousePos.y - blockItemCenterY;
             if (Math.abs(distX) < 500 && distY < 200 && fluidblockItem.matches) {
                 blockItem.style.transform = "translate(" + (-1 * distX) / 12 + "px," + (-1 * distY) / 12 + "px)";
-                contParralax_1.style.backgroundPosition = `calc(50% + ${distX/50}px) calc(50% + ${distY/50}px)`;
+                contParralax.style.backgroundPosition = `calc(50% + ${distX/50}px) calc(50% + ${distY/50}px)`;
             }
         });
 
-        const blockItem_2 = contParralax_2.querySelector("img");
-
-        function getMousePos2(xRef, yRef) {
-
-            let panelRect = contParralax_2.getBoundingClientRect();
-            return {
-                x: Math.floor(xRef - panelRect.left) / (panelRect.right - panelRect.left) * contParralax_2.offsetWidth,
-                y: Math.floor(yRef - panelRect.top) / (panelRect.bottom - panelRect.top) * contParralax_2.offsetHeight
-            };
-        }
-
-        contParralax_2.addEventListener("mousemove", function(e) {
-            let mousePos = getMousePos2(e.clientX, e.clientY),
-                distX = mousePos.x - blockItemCenterX,
-                distY = mousePos.y - blockItemCenterY;
-            if (Math.abs(distX) < 500 && distY < 200 && fluidblockItem.matches) {
-                blockItem_2.style.transform = "translate(" + (-1 * distX) / 12 + "px," + (-1 * distY) / 12 + "px)";
-                contParralax_2.style.backgroundPosition = `calc(50% + ${distX/50}px) calc(50% + ${distY/50}px)`;
-            }
-        });
-
-        const blockItem_3 = contParralax_3.querySelector("img");
-
-        function getMousePos3(xRef, yRef) {
-
-            let panelRect = contParralax_3.getBoundingClientRect();
-            return {
-                x: Math.floor(xRef - panelRect.left) / (panelRect.right - panelRect.left) * contParralax_3.offsetWidth,
-                y: Math.floor(yRef - panelRect.top) / (panelRect.bottom - panelRect.top) * contParralax_3.offsetHeight
-            };
-        }
-
-        contParralax_3.addEventListener("mousemove", function(e) {
-            let mousePos = getMousePos3(e.clientX, e.clientY),
-                distX = mousePos.x - blockItemCenterX,
-                distY = mousePos.y - blockItemCenterY;
-            if (Math.abs(distX) < 500 && distY < 200 && fluidblockItem.matches) {
-                blockItem_3.style.transform = "translate(" + (-1 * distX) / 12 + "px," + (-1 * distY) / 12 + "px)";
-                contParralax_3.style.backgroundPosition = `calc(50% + ${distX/50}px) calc(50% + ${distY/50}px)`;
-            }
-        });
+        // const blockItem_2 = contParralax_2.querySelector("img");
+        //
+        // function getMousePos2(xRef, yRef) {
+        //
+        //     let panelRect = contParralax_2.getBoundingClientRect();
+        //     return {
+        //         x: Math.floor(xRef - panelRect.left) / (panelRect.right - panelRect.left) * contParralax_2.offsetWidth,
+        //         y: Math.floor(yRef - panelRect.top) / (panelRect.bottom - panelRect.top) * contParralax_2.offsetHeight
+        //     };
+        // }
+        //
+        // contParralax_2.addEventListener("mousemove", function(e) {
+        //     let mousePos = getMousePos2(e.clientX, e.clientY),
+        //         distX = mousePos.x - blockItemCenterX,
+        //         distY = mousePos.y - blockItemCenterY;
+        //     if (Math.abs(distX) < 500 && distY < 200 && fluidblockItem.matches) {
+        //         blockItem_2.style.transform = "translate(" + (-1 * distX) / 12 + "px," + (-1 * distY) / 12 + "px)";
+        //         contParralax_2.style.backgroundPosition = `calc(50% + ${distX/50}px) calc(50% + ${distY/50}px)`;
+        //     }
+        // });
+        //
+        // const blockItem_3 = contParralax_3.querySelector("img");
+        //
+        // function getMousePos3(xRef, yRef) {
+        //
+        //     let panelRect = contParralax_3.getBoundingClientRect();
+        //     return {
+        //         x: Math.floor(xRef - panelRect.left) / (panelRect.right - panelRect.left) * contParralax_3.offsetWidth,
+        //         y: Math.floor(yRef - panelRect.top) / (panelRect.bottom - panelRect.top) * contParralax_3.offsetHeight
+        //     };
+        // }
+        //
+        // contParralax_3.addEventListener("mousemove", function(e) {
+        //     let mousePos = getMousePos3(e.clientX, e.clientY),
+        //         distX = mousePos.x - blockItemCenterX,
+        //         distY = mousePos.y - blockItemCenterY;
+        //     if (Math.abs(distX) < 500 && distY < 200 && fluidblockItem.matches) {
+        //         blockItem_3.style.transform = "translate(" + (-1 * distX) / 12 + "px," + (-1 * distY) / 12 + "px)";
+        //         contParralax_3.style.backgroundPosition = `calc(50% + ${distX/50}px) calc(50% + ${distY/50}px)`;
+        //     }
+        // });
     }
 
     $('.givePresent').click(function() {
@@ -77,7 +77,6 @@ $(document).ready(function() {
         if (check) {
             $('.form-personal').css('display', 'none');
             $('.form-present').fadeIn();
-            $('.form-present').css('display', 'flex');
             $('#text-replace_1').html('<span>Водительский стаж получателя </span> по водительскому удостоверению');
             $('#text-replace_2').html('Реальный водителський стаж получателя');
             $('#text-replace_3').html('Марка автомобиля мужа/жены, <span>которым получатель иногда будет управлять</span>');
@@ -88,7 +87,7 @@ $(document).ready(function() {
         } else {
             $('.form-present').css('display', 'none');
             $('.form-personal').fadeIn();
-            $('.form-personal').css('display', 'flex');
+            // $('.form-personal').css('display', 'flex');
             $('#text-replace_1').html('<span>Ваш ВОДИТЕЛЬСКИЙ СТАЖ</span> по водительскому удостоверению');
             $('#text-replace_2').html('<span>Ваш </span> реальный водителський стаж');
             $('#text-replace_3').html('Марка автомобиля мужа/жены, <span>которым Вы иногда будете управлять</span>');
@@ -119,33 +118,21 @@ $(document).ready(function() {
         var ch = $(this).hasClass('active');
         var price = parseInt($(this).parents('li').find('.price span').html());
         var info = parseInt($(this).parents('li').find('.programs-about_group em').html());
-
         var block = $(this).parents('li').find('.programs-about_group');
-        // console.log(ch);
         if (!ch) {
-            // $(this).parents('li').find('.price span').html(price);
-            // $(block).addClass('active');
             var total = parseInt($('#totalPrice').html());
             var totalNew = price + total;
             $('#totalPrice').html(totalNew);
         } else {
-            // $(block).addClass('active');
-
             var totalNew = parseInt($('#totalPrice').html());
             var sum = parseInt($(this).parents('li').find('.price span').html());
             var totalNew = totalNew - sum;
-            // $(this).parents('li').find('.price span').html(price);
             if (totalNew < 0) {
                 totalNew = 0;
             }
             $('#totalPrice').html(totalNew);
         }
         $(this).toggleClass('active');
-        // $(this).parents('li').find('.programs-about').slideToggle();
-        // $(this).parents('li').find('.ourPrice').removeClass('active');
-        // $(block).toggleClass('active');
-        // $(priceInner).toggleClass('active');
-        // $(priceInner).click();
         $(this).parents('li').find('.price').toggleClass('priceActive');
     });
 
@@ -384,56 +371,8 @@ $(document).ready(function() {
         }
     }
 
-    var checkSticky = $("div").is("#airSticky");
 
-    if (checkSticky) {
-        (function() {
-            var a = document.querySelector('#airSticky'),
-                b = null,
-                P = 50; // если ноль заменить на число, то блок будет прилипать до того, как верхний край окна браузера дойдёт до верхнего края элемента. Может быть отрицательным числом
-            window.addEventListener('scroll', Ascroll, false);
-            document.body.addEventListener('scroll', Ascroll, false);
 
-            function Ascroll() {
-                if (b == null) {
-                    var Sa = getComputedStyle(a, ''),
-                        s = '';
-                    for (var i = 0; i < Sa.length; i++) {
-                        if (Sa[i].indexOf('overflow') == 0 || Sa[i].indexOf('padding') == 0 || Sa[i].indexOf('border') == 0 || Sa[i].indexOf('outline') == 0 || Sa[i].indexOf('box-shadow') == 0 || Sa[i].indexOf('background') == 0) {
-                            s += Sa[i] + ': ' + Sa.getPropertyValue(Sa[i]) + '; '
-                        }
-                    }
-                    b = document.createElement('div');
-                    b.style.cssText = s + ' box-sizing: border-box; width: ' + a.offsetWidth + 'px;';
-                    a.insertBefore(b, a.firstChild);
-                    var l = a.childNodes.length;
-                    for (var i = 1; i < l; i++) {
-                        b.appendChild(a.childNodes[1]);
-                    }
-                    a.style.height = b.getBoundingClientRect().height + 'px';
-                    a.style.padding = '0';
-                    a.style.border = '0';
-                }
-                var Ra = a.getBoundingClientRect(),
-                    R = Math.round(Ra.top + b.getBoundingClientRect().height - document.querySelector('.lettersBlock').getBoundingClientRect().top + 90); // селектор блока, при достижении верхнего края которого нужно открепить прилипающий элемент;  Math.round() только для IE; если ноль заменить на число, то блок будет прилипать до того, как нижний край элемента дойдёт до футера
-                if ((Ra.top - P) <= 0) {
-                    if ((Ra.top - P) <= R) {
-                        b.className = 'stop';
-                        b.style.top = -R + 'px';
-                    } else {
-                        b.className = 'sticky';
-                        b.style.top = P + 'px';
-                    }
-                } else {
-                    b.className = '';
-                    b.style.top = '';
-                }
-                window.addEventListener('resize', function() {
-                    a.children[0].style.width = getComputedStyle(a, '').width
-                }, false);
-            }
-        })();
-    }
     $('.contTabs .contTabs-btn').click(function(e) {
         e.preventDefault();
         var checkSeason = $("div").is(".season-choose");
@@ -452,6 +391,57 @@ $(document).ready(function() {
         $(tab).css('display', 'block');
     });
     $('.contTabs a:first').click();
+
+
+    // var checkSticky = $("div").is("#airSticky");
+    // if (checkSticky) {
+    //     (function() {
+    //         var a = document.querySelector('#airSticky'),
+    //             b = null,
+    //             P = 50; // если ноль заменить на число, то блок будет прилипать до того, как верхний край окна браузера дойдёт до верхнего края элемента. Может быть отрицательным числом
+    //         window.addEventListener('scroll', Ascroll, false);
+    //         document.body.addEventListener('scroll', Ascroll, false);
+    //
+    //         function Ascroll() {
+    //             if (b == null) {
+    //                 var Sa = getComputedStyle(a, ''),
+    //                     s = '';
+    //                 for (var i = 0; i < Sa.length; i++) {
+    //                     if (Sa[i].indexOf('overflow') == 0 || Sa[i].indexOf('padding') == 0 || Sa[i].indexOf('border') == 0 || Sa[i].indexOf('outline') == 0 || Sa[i].indexOf('box-shadow') == 0 || Sa[i].indexOf('background') == 0) {
+    //                         s += Sa[i] + ': ' + Sa.getPropertyValue(Sa[i]) + '; '
+    //                     }
+    //                 }
+    //                 b = document.createElement('div');
+    //                 b.style.cssText = s + ' box-sizing: border-box; width: ' + a.offsetWidth + 'px;';
+    //                 a.insertBefore(b, a.firstChild);
+    //                 var l = a.childNodes.length;
+    //                 for (var i = 1; i < l; i++) {
+    //                     b.appendChild(a.childNodes[1]);
+    //                 }
+    //                 a.style.height = b.getBoundingClientRect().height + 'px';
+    //                 a.style.padding = '0';
+    //                 a.style.border = '0';
+    //             }
+    //             var Ra = a.getBoundingClientRect(),
+    //                 R = Math.round(Ra.top + b.getBoundingClientRect().height - document.querySelector('.lettersBlock').getBoundingClientRect().top + 90); // селектор блока, при достижении верхнего края которого нужно открепить прилипающий элемент;  Math.round() только для IE; если ноль заменить на число, то блок будет прилипать до того, как нижний край элемента дойдёт до футера
+    //             if ((Ra.top - P) <= 0) {
+    //                 if ((Ra.top - P) <= R) {
+    //                     b.className = 'stop';
+    //                     b.style.top = -R + 'px';
+    //                 } else {
+    //                     b.className = 'sticky';
+    //                     b.style.top = P + 'px';
+    //                 }
+    //             } else {
+    //                 b.className = '';
+    //                 b.style.top = '';
+    //             }
+    //             window.addEventListener('resize', function() {
+    //                 a.children[0].style.width = getComputedStyle(a, '').width
+    //             }, false);
+    //         }
+    //     })();
+    // }
 
     $('.season-choose a').click(function(e) {
         e.preventDefault();

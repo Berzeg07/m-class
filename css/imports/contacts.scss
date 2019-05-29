@@ -206,6 +206,8 @@
 
                     &:after {
                         right: 46px;
+                        background: url("../img/icon-p.png") no-repeat center;
+
                         @media(min-width: 992px) {
                             right: 26px;
                         }
@@ -221,6 +223,7 @@
                     }
 
                     &:after {
+                        background: url("../img/bus.png") no-repeat center;
                         right: 27px;
                     }
                 }
@@ -232,7 +235,7 @@
                     transform: translateY(-50%);
                     width: 13px;
                     height: 12px;
-                    background: url("../img/icon-p.png") no-repeat center;
+                    // background: url("../img/icon-p.png") no-repeat center;
                     opacity: 0;
                 }
             }

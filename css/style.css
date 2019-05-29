@@ -392,12 +392,12 @@ textarea {
 }
 
 .footer-btn:before {
-  border: 2px solid orange;
+  border: 2px solid #DF543E;
 }
 
 .footer-btn:hover {
-  background-color: orange;
-  color: #121418;
+  background-color: #DF543E;
+  color: white;
 }
 
 .header {
@@ -804,7 +804,6 @@ textarea {
   width: 100%;
   height: 3px;
   background: black;
-  box-shadow: 1px 1px 4px 0 white;
   transition: all 0.3s ease-in-out;
 }
 
@@ -1137,7 +1136,7 @@ nav a {
 }
 
 @media (min-width: 992px) {
-  .footer {
+  .footer-inner {
     display: -webkit-flex;
     display: -ms-flex;
     display: flex;
@@ -2178,6 +2177,7 @@ nav a {
 
 .video-slider .owl-dots .owl-dot.active {
   opacity: 1;
+  background: #e2543c;
 }
 
 .video-slider_item {
@@ -2288,12 +2288,13 @@ nav a {
   border-right: 1px solid black;
 }
 
-.calendar .calendar-inner_item:nth-child(7n), .calendar .calendar-inner_item:nth-child(6), .calendar .calendar-inner_item:nth-child(13), .calendar .calendar-inner_item:nth-child(20), .calendar .calendar-inner_item:nth-child(27), .calendar .calendar-inner_item:nth-child(34), .calendar .calendar-inner_item:nth-child(41) {
-  background: #3B464E;
-}
-
-.calendar .calendar-inner_item:nth-child(7n) a, .calendar .calendar-inner_item:nth-child(6) a, .calendar .calendar-inner_item:nth-child(13) a, .calendar .calendar-inner_item:nth-child(20) a, .calendar .calendar-inner_item:nth-child(27) a, .calendar .calendar-inner_item:nth-child(34) a, .calendar .calendar-inner_item:nth-child(41) a {
-  color: white;
+@media (min-width: 768px) {
+  .calendar .calendar-inner_item:nth-child(13), .calendar .calendar-inner_item:nth-child(20), .calendar .calendar-inner_item:nth-child(27), .calendar .calendar-inner_item:nth-child(34), .calendar .calendar-inner_item:nth-child(41), .calendar .calendar-inner_item:nth-child(6), .calendar .calendar-inner_item:nth-child(7n) {
+    background: #3B464E;
+  }
+  .calendar .calendar-inner_item:nth-child(13) a, .calendar .calendar-inner_item:nth-child(20) a, .calendar .calendar-inner_item:nth-child(27) a, .calendar .calendar-inner_item:nth-child(34) a, .calendar .calendar-inner_item:nth-child(41) a, .calendar .calendar-inner_item:nth-child(6) a, .calendar .calendar-inner_item:nth-child(7n) a {
+    color: white;
+  }
 }
 
 .calendar .calendar-inner_item .weekend {
@@ -2882,7 +2883,7 @@ nav a {
 
 @media (min-width: 992px) {
   .article-link {
-    padding: 70px 55px;
+    padding: 30px 55px 25px;
     display: -webkit-flex;
     display: -ms-flex;
     display: flex;
@@ -3061,12 +3062,19 @@ nav a {
 .recallForm-inner textarea {
   width: 100%;
   resize: none;
-  height: 141px;
+  height: 80px;
   background: #F4F4F4;
   text-transform: uppercase;
   border: none;
   font-size: 12px;
   color: #434343;
+}
+
+@media (min-width: 768px) {
+  .recallForm-inner input,
+  .recallForm-inner textarea {
+    height: 141px;
+  }
 }
 
 .recallForm-inner textarea {
@@ -3135,8 +3143,15 @@ nav a {
   transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
+  overflow-y: auto;
   z-index: 100;
   display: none;
+}
+
+@media (min-width: 768px) {
+  .modalForm {
+    height: unset;
+  }
 }
 
 .modalForm-item {
@@ -3145,7 +3160,6 @@ nav a {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
 }
 
 .modalForm-inner {
@@ -3290,7 +3304,7 @@ nav a {
 
 @media (min-width: 992px) {
   #airSticky > div {
-    width: 200px !important;
+    width: 288px !important;
   }
 }
 
@@ -3374,6 +3388,8 @@ nav a {
 
 .blog-list_mob {
   margin: 25px 0;
+  height: 290px;
+  overflow-y: auto;
 }
 
 @media (min-width: 992px) {
@@ -3467,7 +3483,7 @@ nav a {
     position: absolute;
     left: 64px;
     opacity: 0.4;
-    top: 5px;
+    top: 8px;
     background: url("../img/headmaster-icon.png") no-repeat center;
     width: 41px;
     height: 41px;
@@ -3535,13 +3551,12 @@ nav a {
 .headmaster-about {
   text-transform: uppercase;
   font-size: 14px;
+  margin-top: 15px;
   margin-bottom: 25px;
-  text-align: center;
 }
 
 @media (min-width: 768px) {
   .headmaster-about {
-    text-align: left;
     margin-bottom: 50px;
   }
 }
@@ -4314,6 +4329,7 @@ nav a {
 
 .contacts-middle_tabLink a:first-child:after {
   right: 46px;
+  background: url("../img/icon-p.png") no-repeat center;
 }
 
 @media (min-width: 992px) {
@@ -4335,6 +4351,7 @@ nav a {
 }
 
 .contacts-middle_tabLink a:last-child:after {
+  background: url("../img/bus.png") no-repeat center;
   right: 27px;
 }
 
@@ -4345,7 +4362,6 @@ nav a {
   transform: translateY(-50%);
   width: 13px;
   height: 12px;
-  background: url("../img/icon-p.png") no-repeat center;
   opacity: 0;
 }
 
@@ -4726,6 +4742,14 @@ nav a {
   text-transform: uppercase;
   margin: 25px 0;
   text-align: center;
+}
+
+.aboutCompany-advantage_title span {
+  font-size: 48px;
+}
+
+.aboutCompany-advantage_title b {
+  font-size: 30px;
 }
 
 @media (min-width: 992px) {
@@ -5322,6 +5346,14 @@ nav a {
   display: none;
 }
 
+@media (min-width: 992px) {
+  .form-present_item {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+  }
+}
+
 .form-present .article-title {
   margin-bottom: 25px;
 }
@@ -5409,6 +5441,14 @@ nav a {
 
 .form-present .request-formData_item:first-child .request-personalData {
   margin-top: 25px;
+}
+
+@media (min-width: 992px) {
+  .form-personal_inner {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+  }
 }
 
 .focus-animate {
@@ -6394,11 +6434,11 @@ nav a {
 }
 
 .programs-about_group.active:after {
-  background: url(../img/icon-red-g.png) no-repeat center;
+  background: url("../img/icon-red-g.png") no-repeat center;
 }
 
 .programs-about_personal.active:after {
-  background: url(../img/icon-red-p.png) no-repeat center;
+  background: url("../img/icon-red-p.png") no-repeat center;
 }
 
 .request-programs_totalPrice {
@@ -6437,11 +6477,10 @@ nav a {
   font-size: 14px;
   color: black;
   background: #E7E7E7;
-  padding-top: 27px;
+  padding: 27px 10px 15px;
   resize: none;
   width: 100%;
   height: 173px;
-  padding-left: 10px;
   border: none;
 }
 
@@ -6451,6 +6490,18 @@ nav a {
     padding-bottom: 25px;
     padding-right: 500px;
   }
+}
+
+.logo-bg {
+  position: relative;
+}
+
+.logo-bg_img {
+  position: absolute;
+  width: 797px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .request-submit {
@@ -6669,4 +6720,25 @@ nav a {
   width: 48px;
   height: 46px;
   background: url("../img/check-present.png") no-repeat center;
+}
+
+.footer-dev .footer-dev_img {
+  margin-right: 15px;
+}
+
+.footer-dev a {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 15px 0px;
+}
+
+.footer-dev a span {
+  color: #CECECE;
+}
+
+.footer-dev a:hover span {
+  color: black;
 }

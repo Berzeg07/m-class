@@ -63,6 +63,12 @@
             text-transform: uppercase;
             margin: 25px 0;
             text-align: center;
+            span{
+                font-size: 48px;
+            }
+            b{
+                font-size: 30px;
+            }
             @media(min-width: 992px) {
                 margin: 56px 0 32px;
             }
@@ -104,20 +110,25 @@
     }
 }
 
-.master-courseList{
+.master-courseList {
     font-size: 14px;
-    ul{
+
+    ul {
         padding-top: 15px;
-        li{
+
+        li {
             margin-bottom: 5px;
-            &:nth-child(n+4){
+
+            &:nth-child(n+4) {
                 display: none;
             }
-            a{
+
+            a {
                 color: #373b40;
                 display: inline-block;
                 min-height: 20px;
-                &:hover{
+
+                &:hover {
                     font-family: "Gilroy-ExtraBold";
                 }
             }
@@ -125,7 +136,7 @@
     }
 }
 
-.master-courseList_btn{
+.master-courseList_btn {
     background: none;
     border: none;
     cursor: pointer;
@@ -133,17 +144,20 @@
     padding-top: 20px;
 }
 
-.master-article{
+.master-article {
     margin-bottom: 20px;
     font-size: 12px;
-    &_inner{
+
+    &_inner {
         height: 43px;
         overflow: hidden;
     }
-    &_inner.active{
+
+    &_inner.active {
         height: auto;
     }
-    &_btn{
+
+    &_btn {
         background: none;
         border: none;
         color: #FF8C7C;
@@ -157,14 +171,16 @@
     &_item {
         background: white;
         padding: 15px;
-        .master-name{
+
+        .master-name {
             font-size: 14px;
             text-transform: uppercase;
             padding-bottom: 10px;
             margin-bottom: 10px;
             border-bottom: 1px solid #D9D9DA;
         }
-        .master-exp{
+
+        .master-exp {
             font-size: 14px;
             text-transform: uppercase;
             color: #FF5C43;
@@ -616,6 +632,14 @@
     width: 100%;
     display: none;
 
+    &_item {
+        @media(min-width: 992px) {
+            display: -webkit-flex;
+            display: -ms-flex;
+            display: flex;
+        }
+    }
+
     .article-title {
         margin-bottom: 25px;
         @media(min-width: 992px) {
@@ -704,6 +728,16 @@
             .request-personalData {
                 margin-top: 25px;
             }
+        }
+    }
+}
+
+.form-personal {
+    &_inner {
+        @media(min-width: 992px) {
+            display: -webkit-flex;
+            display: -ms-flex;
+            display: flex;
         }
     }
 }
@@ -1671,15 +1705,15 @@
     }
 }
 
-.programs-about_group.active{
-    &:after{
-        background: url(../img/icon-red-g.png) no-repeat center;
+.programs-about_group.active {
+    &:after {
+        background: url("../img/icon-red-g.png") no-repeat center;
     }
 }
 
-.programs-about_personal.active{
-    &:after{
-        background: url(../img/icon-red-p.png) no-repeat center;
+.programs-about_personal.active {
+    &:after {
+        background: url("../img/icon-red-p.png") no-repeat center;
     }
 }
 
@@ -1717,17 +1751,27 @@
         font-size: 14px;
         color: black;
         background: #E7E7E7;
-        padding-top: 27px;
+        padding: 27px 10px 15px;
         resize: none;
         width: 100%;
         height: 173px;
-        padding-left: 10px;
         border: none;
         @media(min-width: 992px) {
             padding-left: 46px;
             padding-bottom: 25px;
             padding-right: 500px;
         }
+    }
+}
+
+.logo-bg{
+    position: relative;
+    &_img{
+        position: absolute;
+        width: 797px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
     }
 }
 
@@ -1949,5 +1993,27 @@
         width: 48px;
         height: 46px;
         background: url("../img/check-present.png") no-repeat center;
+    }
+}
+
+.footer-dev{
+    .footer-dev_img{
+        margin-right: 15px;
+    }
+    a{
+        display: -webkit-flex;
+        display: -ms-flex;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 15px 0px;
+        span{
+            color: #CECECE;
+        }
+        &:hover{
+            span{
+                color: black;
+            }
+        }
     }
 }
