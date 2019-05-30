@@ -26,48 +26,6 @@ $(document).ready(function() {
                 contParralax.style.backgroundPosition = `calc(50% + ${distX/50}px) calc(50% + ${distY/50}px)`;
             }
         });
-
-        // const blockItem_2 = contParralax_2.querySelector("img");
-        //
-        // function getMousePos2(xRef, yRef) {
-        //
-        //     let panelRect = contParralax_2.getBoundingClientRect();
-        //     return {
-        //         x: Math.floor(xRef - panelRect.left) / (panelRect.right - panelRect.left) * contParralax_2.offsetWidth,
-        //         y: Math.floor(yRef - panelRect.top) / (panelRect.bottom - panelRect.top) * contParralax_2.offsetHeight
-        //     };
-        // }
-        //
-        // contParralax_2.addEventListener("mousemove", function(e) {
-        //     let mousePos = getMousePos2(e.clientX, e.clientY),
-        //         distX = mousePos.x - blockItemCenterX,
-        //         distY = mousePos.y - blockItemCenterY;
-        //     if (Math.abs(distX) < 500 && distY < 200 && fluidblockItem.matches) {
-        //         blockItem_2.style.transform = "translate(" + (-1 * distX) / 12 + "px," + (-1 * distY) / 12 + "px)";
-        //         contParralax_2.style.backgroundPosition = `calc(50% + ${distX/50}px) calc(50% + ${distY/50}px)`;
-        //     }
-        // });
-        //
-        // const blockItem_3 = contParralax_3.querySelector("img");
-        //
-        // function getMousePos3(xRef, yRef) {
-        //
-        //     let panelRect = contParralax_3.getBoundingClientRect();
-        //     return {
-        //         x: Math.floor(xRef - panelRect.left) / (panelRect.right - panelRect.left) * contParralax_3.offsetWidth,
-        //         y: Math.floor(yRef - panelRect.top) / (panelRect.bottom - panelRect.top) * contParralax_3.offsetHeight
-        //     };
-        // }
-        //
-        // contParralax_3.addEventListener("mousemove", function(e) {
-        //     let mousePos = getMousePos3(e.clientX, e.clientY),
-        //         distX = mousePos.x - blockItemCenterX,
-        //         distY = mousePos.y - blockItemCenterY;
-        //     if (Math.abs(distX) < 500 && distY < 200 && fluidblockItem.matches) {
-        //         blockItem_3.style.transform = "translate(" + (-1 * distX) / 12 + "px," + (-1 * distY) / 12 + "px)";
-        //         contParralax_3.style.backgroundPosition = `calc(50% + ${distX/50}px) calc(50% + ${distY/50}px)`;
-        //     }
-        // });
     }
 
     $('.givePresent').click(function() {
@@ -87,7 +45,6 @@ $(document).ready(function() {
         } else {
             $('.form-present').css('display', 'none');
             $('.form-personal').fadeIn();
-            // $('.form-personal').css('display', 'flex');
             $('#text-replace_1').html('<span>Ваш ВОДИТЕЛЬСКИЙ СТАЖ</span> по водительскому удостоверению');
             $('#text-replace_2').html('<span>Ваш </span> реальный водителський стаж');
             $('#text-replace_3').html('Марка автомобиля мужа/жены, <span>которым Вы иногда будете управлять</span>');
@@ -392,57 +349,6 @@ $(document).ready(function() {
     });
     $('.contTabs a:first').click();
 
-
-    // var checkSticky = $("div").is("#airSticky");
-    // if (checkSticky) {
-    //     (function() {
-    //         var a = document.querySelector('#airSticky'),
-    //             b = null,
-    //             P = 50; // если ноль заменить на число, то блок будет прилипать до того, как верхний край окна браузера дойдёт до верхнего края элемента. Может быть отрицательным числом
-    //         window.addEventListener('scroll', Ascroll, false);
-    //         document.body.addEventListener('scroll', Ascroll, false);
-    //
-    //         function Ascroll() {
-    //             if (b == null) {
-    //                 var Sa = getComputedStyle(a, ''),
-    //                     s = '';
-    //                 for (var i = 0; i < Sa.length; i++) {
-    //                     if (Sa[i].indexOf('overflow') == 0 || Sa[i].indexOf('padding') == 0 || Sa[i].indexOf('border') == 0 || Sa[i].indexOf('outline') == 0 || Sa[i].indexOf('box-shadow') == 0 || Sa[i].indexOf('background') == 0) {
-    //                         s += Sa[i] + ': ' + Sa.getPropertyValue(Sa[i]) + '; '
-    //                     }
-    //                 }
-    //                 b = document.createElement('div');
-    //                 b.style.cssText = s + ' box-sizing: border-box; width: ' + a.offsetWidth + 'px;';
-    //                 a.insertBefore(b, a.firstChild);
-    //                 var l = a.childNodes.length;
-    //                 for (var i = 1; i < l; i++) {
-    //                     b.appendChild(a.childNodes[1]);
-    //                 }
-    //                 a.style.height = b.getBoundingClientRect().height + 'px';
-    //                 a.style.padding = '0';
-    //                 a.style.border = '0';
-    //             }
-    //             var Ra = a.getBoundingClientRect(),
-    //                 R = Math.round(Ra.top + b.getBoundingClientRect().height - document.querySelector('.lettersBlock').getBoundingClientRect().top + 90); // селектор блока, при достижении верхнего края которого нужно открепить прилипающий элемент;  Math.round() только для IE; если ноль заменить на число, то блок будет прилипать до того, как нижний край элемента дойдёт до футера
-    //             if ((Ra.top - P) <= 0) {
-    //                 if ((Ra.top - P) <= R) {
-    //                     b.className = 'stop';
-    //                     b.style.top = -R + 'px';
-    //                 } else {
-    //                     b.className = 'sticky';
-    //                     b.style.top = P + 'px';
-    //                 }
-    //             } else {
-    //                 b.className = '';
-    //                 b.style.top = '';
-    //             }
-    //             window.addEventListener('resize', function() {
-    //                 a.children[0].style.width = getComputedStyle(a, '').width
-    //             }, false);
-    //         }
-    //     })();
-    // }
-
     $('.season-choose a').click(function(e) {
         e.preventDefault();
         $('.season-choose a').removeClass('active');
@@ -519,7 +425,6 @@ $(document).ready(function() {
             $($this).removeClass('active');
             $($this).parents('li').find('.programs-about').slideUp();
         }
-
     });
 
     $('#programsArticle-tabs a').click(function(e) {
@@ -718,7 +623,7 @@ $(document).ready(function() {
     $('.transmission-num').hover(function() {
 
         $('.transmission-num').removeClass('active');
-        $(this).addClass('active');
+        // $(this).addClass('active');
         $('.transmission-article').removeClass('active');
         $('.transmission-num_pb').removeClass('active');
         var smallLine = $(this).find('.transmission-num_pb');
@@ -727,38 +632,175 @@ $(document).ready(function() {
             $(smallLine).addClass('active');
         }
 
+        function showLine() {
+            $(smallLine).addClass('active');
+        }
+
         var id = $(this).attr('id');
+
+        function replaceClass(addNewClass, num) {
+            $('#circle').removeAttr('class');
+            $('#circle').addClass(addNewClass);
+            $('#circle').addClass(num);
+        }
 
         if (id == 'num-1') {
             $('#tr-progressBar').css('width', '0%');
             $('#article-1').addClass('active');
+            if ($('#circle').hasClass('two')) {
+                replaceClass('animate_2-1', 'one');
+            }
+            if ($('#circle').hasClass('three')) {
+                replaceClass('animate_3-1', 'one');
+            }
+            if ($('#circle').hasClass('four')) {
+                replaceClass('animate_4-1', 'one');
+            }
+            if ($('#circle').hasClass('five')) {
+                replaceClass('animate_5-1', 'one');
+            }
+            if ($('#circle').hasClass('six')) {
+                replaceClass('animate_6-1', 'one');
+            }
             showLine();
         }
-        if (id == 'num-2' || id == 'num-3') {
+
+        if (id == 'num-2') {
             $('#tr-progressBar').css('width', '33.4%');
+            $('#article-2').addClass('active');
+            if ($('#circle').hasClass('one')) {
+                replaceClass('animate_1-2', 'two');
+            }
+            if ($('#circle').hasClass('three')) {
+                replaceClass('animate_3-2', 'two');
+            }
+            if ($('#circle').hasClass('four')) {
+                replaceClass('animate_4-2', 'two');
+            }
+            if ($('#circle').hasClass('five')) {
+                replaceClass('animate_5-2', 'two');
+            }
+            if ($('#circle').hasClass('six')) {
+                replaceClass('animate_6-2', 'two');
+            }
             showLine();
-            if (id == 'num-2') {
-                $('#article-2').addClass('active');
-            }
-            if (id == 'num-3') {
-                $('#article-3').addClass('active');
-            }
         }
-        if (id == 'num-4' || id == 'num-5') {
-            $('#tr-progressBar').css('width', '66.7%');
+
+        if (id == 'num-3') {
+            $('#tr-progressBar').css('width', '33.4%');
+            $('#article-3').addClass('active');
+            if ($('#circle').hasClass('one')) {
+                replaceClass('animate_1-3', 'three');
+            }
+            if ($('#circle').hasClass('two')) {
+                replaceClass('animate_2-3', 'three');
+            }
+            if ($('#circle').hasClass('four')) {
+                replaceClass('animate_4-3', 'three');
+            }
+            if ($('#circle').hasClass('five')) {
+                replaceClass('animate_5-3', 'three');
+            }
+            if ($('#circle').hasClass('six')) {
+                replaceClass('animate_6-3', 'three');
+            }
             showLine();
-            if (id == 'num-4') {
-                $('#article-4').addClass('active');
-            }
-            if (id == 'num-5') {
-                $('#article-5').addClass('active');
-            }
         }
+
+        if (id == 'num-4') {
+            $('#tr-progressBar').css('width', '66.6%');
+            $('#article-4').addClass('active');
+            if ($('#circle').hasClass('one')) {
+                replaceClass('animate_1-4', 'four');
+            }
+            if ($('#circle').hasClass('two')) {
+                replaceClass('animate_2-4', 'four');
+            }
+            if ($('#circle').hasClass('three')) {
+                replaceClass('animate_3-4', 'four');
+            }
+            if ($('#circle').hasClass('five')) {
+                replaceClass('animate_5-4', 'four');
+            }
+            if ($('#circle').hasClass('six')) {
+                replaceClass('animate_6-4', 'four');
+            }
+            showLine();
+        }
+
+        if (id == 'num-5') {
+            $('#tr-progressBar').css('width', '66.6%');
+            $('#article-5').addClass('active');
+            if ($('#circle').hasClass('one')) {
+                replaceClass('animate_1-5', 'five');
+            }
+            if ($('#circle').hasClass('two')) {
+                replaceClass('animate_2-5', 'five');
+            }
+            if ($('#circle').hasClass('three')) {
+                replaceClass('animate_3-5', 'five');
+            }
+            if ($('#circle').hasClass('four')) {
+                replaceClass('animate_4-5', 'five');
+            }
+            if ($('#circle').hasClass('six')) {
+                replaceClass('animate_6-5', 'five');
+            }
+            showLine();
+        }
+
         if (id == 'num-6') {
-            $('#tr-progressBar').css('width', '99.9%');
-            showLine();
+            $('#tr-progressBar').css('width', '100%');
             $('#article-6').addClass('active');
+            if ($('#circle').hasClass('one')) {
+                replaceClass('animate_1-6', 'six');
+            }
+            if ($('#circle').hasClass('two')) {
+                replaceClass('animate_2-6', 'six');
+            }
+            if ($('#circle').hasClass('three')) {
+                replaceClass('animate_3-6', 'six');
+            }
+            if ($('#circle').hasClass('four')) {
+                replaceClass('animate_4-6', 'six');
+            }
+            if ($('#circle').hasClass('five')) {
+                replaceClass('animate_5-6', 'six');
+            }
+            showLine();
         }
+
+
+        // if (id == 'num-1') {
+        //     $('#tr-progressBar').css('width', '0%');
+        //     $('#article-1').addClass('active');
+        //     showLine();
+        // }
+        // if (id == 'num-2' || id == 'num-3') {
+        //     $('#tr-progressBar').css('width', '33.4%');
+        //     showLine();
+        //     if (id == 'num-2') {
+        //         $('#article-2').addClass('active');
+        //     }
+        //     if (id == 'num-3') {
+        //         $('#article-3').addClass('active');
+        //     }
+        // }
+        // if (id == 'num-4' || id == 'num-5') {
+        //     $('#tr-progressBar').css('width', '66.7%');
+        //     showLine();
+        //     if (id == 'num-4') {
+        //         $('#article-4').addClass('active');
+        //     }
+        //     if (id == 'num-5') {
+        //         $('#article-5').addClass('active');
+        //     }
+        // }
+        // if (id == 'num-6') {
+        //     $('#tr-progressBar').css('width', '99.9%');
+        //     showLine();
+        //     $('#article-6').addClass('active');
+        // }
 
     });
 
